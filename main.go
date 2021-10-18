@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/ElLuchoMan/test_api/routers"
+	_ "github.com/ElLuchoMan/SaludApi/routers"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"

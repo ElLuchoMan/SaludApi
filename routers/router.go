@@ -1,14 +1,11 @@
 // @APIVersion 1.0.0
-//@Title Prueba API
-// @Description beego has a very cool tools to autogenerate documents for your API
-// @Contact astaxie@gmail.com
-// @TermsOfServiceUrl http://beego.me/
-// @License Apache 2.0
-// @LicenseUrl http://www.apache.org/licenses/LICENSE-2.0.html
+// @Title Salud API
+// @Description Api para el módulo de Salud del proyecto SIBUD
+// @Contact baluist@correo.udistrital.edu.co  - ddromeroq@correo.udistrital.edu.co
 package routers
 
 import (
-	"github.com/ElLuchoMan/test_api/controllers"
+	"github.com/ElLuchoMan/SaludApi/controllers"
 
 	"github.com/astaxie/beego"
 )

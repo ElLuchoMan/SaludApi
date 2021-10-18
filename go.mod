@@ -1,4 +1,4 @@
-module github.com/ElLuchoMan/test_api
+module github.com/ElLuchoMan/SaludApi
 
 go 1.17
 

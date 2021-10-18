@@ -3,7 +3,7 @@ package controllers
 import (
 	"encoding/json"
 
-	"github.com/ElLuchoMan/test_api/models"
+	"github.com/ElLuchoMan/SaludApi/models"
 
 	"github.com/astaxie/beego"
 )

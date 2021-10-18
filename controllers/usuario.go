@@ -3,9 +3,10 @@ package controllers
 import (
 	"encoding/json"
 	"errors"
-	"github.com/ElLuchoMan/test_api/models"
 	"strconv"
 	"strings"
+
+	"github.com/ElLuchoMan/SaludApi/models"
 
 	"github.com/astaxie/beego"
 )
