@@ -12,26 +12,26 @@ import (
 type Anamnesis struct {
 id_anamnesis int `orm:"column(id_anamnesis);pk;auto"`
 id_historia_clinica int `orm:"column(id_historia_clinica);null"`
-tratamiento text `orm:"column(tratamiento);null"`
-medicamentos text `orm:"column(medicamento);null"`
-alergias text `orm:"column(alergias);null"`
-hemorragias text `orm:"column(hemorragias);null"`
-irradiaciones text `orm:"column(irradiaciones);null"`
-sinusitis text `orm:"column(sinusitis);null"`
-enfermedad_respiratoria text `orm:"column(enfermedad_respiratoria);null"`
-cardiopatias text `orm:"column(cardiopatias);null"`
-diabetes text `orm:"column(diabetes);null"`
-fiebre_reumatica text `orm:"column(fiebre_reumatica);null"`
-hepatitis text `orm:"column(hepatitis);null"`
-hipertension text `orm:"column(hipertension);null"`
-antecedente_familiar text `orm:"column(antecedente_familiar);null"`
-cepillado text `orm:"column(cepillado);null"`
-ceda text `orm:"column(ceda);null"`
-enjuague text `orm:"column(enjuague);null"`
-dulces text `orm:"column(dulces);null"`
-fuma text `orm:"column(fuma);null"`
-chicle text `orm:"column(chicle);null"`
-otras text `orm:"column(otras);null"`
+tratamiento string `orm:"column(tratamiento);null"`
+medicamentos string `orm:"column(medicamento);null"`
+alergias string `orm:"column(alergias);null"`
+hemorragias string `orm:"column(hemorragias);null"`
+irradiaciones string `orm:"column(irradiaciones);null"`
+sinusitis string `orm:"column(sinusitis);null"`
+enfermedad_respiratoria string `orm:"column(enfermedad_respiratoria);null"`
+cardiopatias string `orm:"column(cardiopatias);null"`
+diabetes string `orm:"column(diabetes);null"`
+fiebre_reumatica string `orm:"column(fiebre_reumatica);null"`
+hepatitis string `orm:"column(hepatitis);null"`
+hipertension string `orm:"column(hipertension);null"`
+antecedente_familiar string `orm:"column(antecedente_familiar);null"`
+cepillado string `orm:"column(cepillado);null"`
+ceda string `orm:"column(ceda);null"`
+enjuague string `orm:"column(enjuague);null"`
+dulces string `orm:"column(dulces);null"`
+fuma string `orm:"column(fuma);null"`
+chicle string `orm:"column(chicle);null"`
+otras string `orm:"column(otras);null"`
 ultima_visita time.Time `orm:"column(ultima_visita);type(date);null"`
 }
 
@@ -44,6 +44,8 @@ func (t *Anamnesis) TableName() string  {
 func init() {
 	orm.RegisterModel(new(Anamnesis))
 }
+// AddAnamnesis insert a new Usuario into database and returns
+// Último registro insertado con éxito
 func AddAnamnesis(m *Anamnesis) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)

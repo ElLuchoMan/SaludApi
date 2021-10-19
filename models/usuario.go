@@ -24,7 +24,7 @@ func init() {
 }
 
 // AddUsuario insert a new Usuario into database and returns
-// last inserted Id on success.
+// Último registro insertado con éxito
 func AddUsuario(m *Usuario) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)

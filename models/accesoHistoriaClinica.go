@@ -26,6 +26,8 @@ func (t *AccesoHistoriaClinica) TableName() string {
 func init() {
 	orm.RegisterModel(new(AccesoHistoriaClinica))
 }
+//AddAccesoHistoriaClinica agrega un acceso a la historia clinica
+//Último registro insertado con exito
 func AddAccesoHistoriaClinica(m *AccesoHistoriaClinica) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
@@ -117,11 +119,10 @@ func GetAllAccesoHistoriaClinica(query map[string]string, fields []string, sortb
 func UpdateAccesoHistoriaClinica(m *AccesoHistoriaClinica) (err error) {
 	o := orm.NewOrm()
 	v := AccesoHistoriaClinica{IdAcceso: m.IdAcceso}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
-			fmt.Println("Número de registros actualizados en la base de datos:", num)
+			fmt.Println("Número de registros actualizados de la base de datos:", num)
 		}
 	}
 	return
