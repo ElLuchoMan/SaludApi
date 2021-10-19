@@ -16,9 +16,11 @@ fecha_acceso time.Time `orm:"column(fecha_acceso);type(date)";not null`
 profesional_id int `orm:"column(profesional_id)"`
 id_historia_clinica int `orm:"column(id_historia_clinica)"`
 }
-
-func (t *AccesoHistoriaClinica) TableName() string {
+func (t ¨*Anamnesis) Schema() string {
 	return "acceso_historia"
+}
+func (t *AccesoHistoriaClinica) TableName() string {
+	return "AccesoHistoriaClinica"
 }
 
 func init() {

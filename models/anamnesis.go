@@ -35,7 +35,10 @@ otras text `orm:"column(otras);null"`
 ultima_visita time.Time `orm:"column(ultima_visita);type(date);null"`
 }
 
-func (t *Anamnesis) TableName() string {
+func (t ¨*Anamnesis) Schema() string {
+	return "odontologia"
+}
+func (t *Anamnesis) TableName() string  {
 	return "anamnesis"
 }
 func init() {
