@@ -23,7 +23,7 @@ type OdontologiaExamenDental struct {
 	Observaciones    string `orm:"column(observaciones);null"`
 }
 
-func (this *OdontologiaExamenDental) TableName() string {
+func (t *OdontologiaExamenDental) TableName() string {
 	return "examendental"
 }
 func init() {
@@ -76,7 +76,7 @@ func GetAllOdontologiaExamenDental(query map[string]string, fields []string, sor
 				} else if order[i] == "asc" {
 					orderby = v
 				} else {
-					return nil, errors.New("Error: Orden inválido, debe ser del tipo [asc|desc]")
+					return nil, errors.New("error: Orden inválido, debe ser del tipo [asc|desc]")
 				}
 				sortFields = append(sortFields, orderby)
 			}
@@ -89,16 +89,16 @@ func GetAllOdontologiaExamenDental(query map[string]string, fields []string, sor
 				} else if order[0] == "asc" {
 					orderby = v
 				} else {
-					return nil, errors.New("Error: Orden inválido, debe ser del tipo [asc|desc]")
+					return nil, errors.New("error: Orden inválido, debe ser del tipo [asc|desc]")
 				}
 				sortFields = append(sortFields, orderby)
 			}
 		} else if len(sortby) != len(order) && len(order) != 1 {
-			return nil, errors.New("Error: los tamaños de 'sortby', 'order' no coinciden o el tamaño de 'order' no es 1")
+			return nil, errors.New("error: los tamaños de 'sortby', 'order' no coinciden o el tamaño de 'order' no es 1")
 		}
 	} else {
 		if len(order) != 0 {
-			return nil, errors.New("Error: campos de 'order' no utilizados")
+			return nil, errors.New("error: campos de 'order' no utilizados")
 		}
 	}
 	var l []OdontologiaExamenDental
