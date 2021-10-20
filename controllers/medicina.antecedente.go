@@ -65,25 +65,6 @@ func (c *MedicinaAntecedenteController) GetOne() {
 	c.ServeJSON()
 }
 
-//GetOneMedicina ...
-// @Title Get One
-// @Description get MedicinaAntecedente by id
-// @Param	id		path 	string	true		"The key for staticblock"
-// @Success 200 {object} models.MedicinaAntecedente
-// @Failure 403 :id is empty
-// @router /medicina/:id [get]
-func (c *MedicinaAntecedenteController) GetOneMedicina() {
-	idStr := c.Ctx.Input.Param(":id")
-	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetAntecedenteById(id)
-	if err != nil {
-		c.Data["json"] = err.Error()
-	} else {
-		c.Data["json"] = v
-	}
-	c.ServeJSON()
-}
-
 // GetAll ...
 // @Title Get All
 // @Description get MedicinaAntecedente
@@ -129,7 +110,7 @@ func (c *MedicinaAntecedenteController) GetAll() {
 		for _, cond := range strings.Split(v, ",") {
 			kv := strings.SplitN(cond, ":", 2)
 			if len(kv) != 2 {
-				c.Data["json"] = errors.New("Error: invalid query key/value pair")
+				c.Data["json"] = errors.New("error: invalid query key/value pair")
 				c.ServeJSON()
 				return
 			}

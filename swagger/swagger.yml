@@ -239,12 +239,67 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
-  /medicinaAntecedente/medicina/{id}:
+  /medicinaConsultaFisioterapia/:
     get:
       tags:
-      - medicinaAntecedente
-      description: get MedicinaAntecedente by id
-      operationId: MedicinaAntecedenteController.Get One
+      - medicinaConsultaFisioterapia
+      description: get MedicinaConsultaFisioterapia
+      operationId: MedicinaConsultaFisioterapiaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sort
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MedicinaConsultaFisioterapia'
+        "403":
+          description: ""
+    post:
+      tags:
+      - medicinaConsultaFisioterapia
+      description: create MedicinaConsultaFisioterapia
+      operationId: MedicinaConsultaFisioterapiaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for MedicinaConsultaFisioterapia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MedicinaConsultaFisioterapia'
+      responses:
+        "201":
+          description: '{int} models.MedicinaConsultaFisioterapia'
+        "403":
+          description: body is empty
+  /medicinaConsultaFisioterapia/{id}:
+    get:
+      tags:
+      - medicinaConsultaFisioterapia
+      description: get MedicinaConsultaFisioterapia by id
+      operationId: MedicinaConsultaFisioterapiaController.Get One
       parameters:
       - in: path
         name: id
@@ -255,9 +310,49 @@ paths:
         "200":
           description: ""
           schema:
-            $ref: '#/definitions/models.MedicinaAntecedente'
+            $ref: '#/definitions/models.MedicinaConsultaFisioterapia'
         "403":
           description: :id is empty
+    put:
+      tags:
+      - medicinaConsultaFisioterapia
+      description: update the MedicinaConsultaFisioterapia
+      operationId: MedicinaConsultaFisioterapiaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for MedicinaConsultaFisioterapia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MedicinaConsultaFisioterapia'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MedicinaConsultaFisioterapia'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - medicinaConsultaFisioterapia
+      description: delete the MedicinaConsultaFisioterapia
+      operationId: MedicinaConsultaFisioterapiaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
 definitions:
   models.AccesoHistoriaClinica:
     title: AccesoHistoriaClinica
@@ -289,4 +384,24 @@ definitions:
         type: integer
         format: int64
       Observaciones:
+        type: string
+  models.MedicinaConsultaFisioterapia:
+    title: MedicinaConsultaFisioterapia
+    type: object
+    properties:
+      Evolucion:
+        type: string
+      IdHojaHistoria:
+        type: integer
+        format: int64
+      IdMedicinaConsultaFisioterapia:
+        type: integer
+        format: int64
+      Motivo_consulta:
+        type: string
+      Observaciones:
+        type: string
+      PlanManejo:
+        type: string
+      Valoracion:
         type: string

@@ -11,10 +11,10 @@ import (
 
 type MedicinaConsultaFisioterapia struct {
 	IdMedicinaConsultaFisioterapia int    `orm:"column(id_consulta_fisioterapia);pk;auto"`
-	Id_hoja_historia               int    `orm:"column(id_hoja_historia_clinica);null"`
+	IdHojaHistoria                 int    `orm:"column(id_hoja_historia);null"`
 	Motivo_consulta                string `orm:"column(motivo_consulta);null"`
 	Valoracion                     string `orm:"column(valoracion);null"`
-	Plan_manejo                    string `orm:"column(plan_manejo);null"`
+	PlanManejo                     string `orm:"column(plan_manejo);null"`
 	Evolucion                      string `orm:"column(evolucion);null"`
 	Observaciones                  string `orm:"column(observaciones);null"`
 }
@@ -26,17 +26,17 @@ func init() {
 	orm.RegisterModel(new(MedicinaConsultaFisioterapia))
 }
 
-// AddConsultaFisioterapia inserta un registro en la tabla consultafisioterapia
+// AddMedicinaConsultaFisioterapia inserta un registro en la tabla consultafisioterapia
 // Último registro insertado con éxito
-func AddConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (id int64, err error) {
+func AddMedicinaConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetConsultaFisioterapiabyID obtiene un registro de la tabla consultafisioterapia por su id
+// GetMedicinaConsultaFisioterapiaById obtiene un registro de la tabla consultafisioterapia por su id
 // Id no existe
-func GetConsultaFisioterapiabyID(id int) (v *MedicinaConsultaFisioterapia, err error) {
+func GetMedicinaConsultaFisioterapiaById(id int) (v *MedicinaConsultaFisioterapia, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: id}
 	if err = o.Read(v); err == nil {
@@ -45,9 +45,9 @@ func GetConsultaFisioterapiabyID(id int) (v *MedicinaConsultaFisioterapia, err e
 	return nil, err
 }
 
-// GetAllConsultaFisioterapia obtiene todos los registros de la tabla consultafisioterapia
+// GetAllMedicinaConsultaFisioterapia obtiene todos los registros de la tabla consultafisioterapia
 // No existen registros
-func GetAllConsultaFisioterapia(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllMedicinaConsultaFisioterapia(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(MedicinaConsultaFisioterapia))
@@ -116,9 +116,9 @@ func GetAllConsultaFisioterapia(query map[string]string, fields []string, sortby
 	return nil, err
 }
 
-// UpdateConsultaFisioterapia actualiza un registro de la tabla consultafisioterapia
+// UpdateMedicinaConsultaFisioterapia actualiza un registro de la tabla consultafisioterapia
 // El registro a actualizar no existe
-func UpdateConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (err error) {
+func UpdateMedicinaConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: m.IdMedicinaConsultaFisioterapia}
 	// ascertain id exists in the database
@@ -131,9 +131,9 @@ func UpdateConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (err error) {
 	return
 }
 
-// DeleteConsultaFisioterapia  elimina un registro de la tabla consultafisioterapia
+// DeleteMedicinaConsultaFisioterapia  elimina un registro de la tabla consultafisioterapia
 // El registro a eliminar no existe
-func DeleteConsultaFisioterapia(id int) (err error) {
+func DeleteMedicinaConsultaFisioterapia(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: id}
 	// ascertain id exists in the database
