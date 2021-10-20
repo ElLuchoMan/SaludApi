@@ -123,7 +123,6 @@ func GetAllPsicologiaDiagnostico(query map[string]string, fields []string, sortb
 func UpdatePsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaDiagnostico{IdDiagnosticoPsicologia: m.IdDiagnosticoPsicologia}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
