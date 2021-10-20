@@ -118,7 +118,7 @@ func (c *AccesoHistoriaClinicaController) GetAll() {
 			query[k] = v
 		}
 	}
-	l, err := models.GetAllUsuario(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllAccesoHistoriaClinica(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		c.Data["json"] = err.Error()
 	} else {

@@ -4,8 +4,13 @@
         "title": "Salud API",
         "description": "Api para el módulo de Salud del proyecto SIBUD",
         "version": "1.0.0",
+        "termsOfService": "http://www.udistrital.edu.co/politicas-de-privacidad.pdf",
         "contact": {
-            "email": "baluist@correo.udistrital.edu.co  - ddromeroq@correo.udistrital.edu.co"
+            "email": "baluist@correo.udistrital.edu.co"
+        },
+        "license": {
+            "name": "BSD-3-Clause",
+            "url": "http://opensource.org/licenses/BSD-3-Clause"
         }
     },
     "basePath": "/v1",
@@ -183,88 +188,13 @@
                 }
             }
         },
-        "/prueba/": {
+        "/medicinaAntecedente/": {
             "get": {
                 "tags": [
-                    "prueba"
+                    "medicinaAntecedente"
                 ],
-                "description": "get Prueba",
-                "operationId": "PruebaController.Get All",
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.Prueba"
-                        }
-                    },
-                    "403": {
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "tags": [
-                    "prueba"
-                ],
-                "description": "create Prueba",
-                "operationId": "PruebaController.Post",
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "description": "body for Prueba content",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/models.Prueba"
-                        }
-                    }
-                ],
-                "responses": {
-                    "201": {
-                        "description": "{int} models.Prueba"
-                    },
-                    "403": {
-                        "description": "body is empty"
-                    }
-                }
-            }
-        },
-        "/prueba/GetA": {
-            "get": {
-                "tags": [
-                    "prueba"
-                ],
-                "description": "GetA",
-                "operationId": "PruebaController.GetA",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "nombre",
-                        "description": "The key for staticblock",
-                        "required": true,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "",
-                        "schema": {
-                            "$ref": "#/definitions/models.Prueba"
-                        }
-                    },
-                    "403": {
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/usuario/": {
-            "get": {
-                "tags": [
-                    "usuario"
-                ],
-                "description": "get Usuario",
-                "operationId": "UsuarioController.Get All",
+                "description": "get MedicinaAntecedente",
+                "operationId": "MedicinaAntecedenteController.Get All",
                 "parameters": [
                     {
                         "in": "query",
@@ -287,7 +217,7 @@
                     {
                         "in": "query",
                         "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sort",
                         "type": "string"
                     },
                     {
@@ -307,7 +237,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.Usuario"
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
                         }
                     },
                     "403": {
@@ -317,24 +247,24 @@
             },
             "post": {
                 "tags": [
-                    "usuario"
+                    "medicinaAntecedente"
                 ],
-                "description": "create Usuario",
-                "operationId": "UsuarioController.Post",
+                "description": "create MedicinaAntecedente",
+                "operationId": "MedicinaAntecedenteController.Post",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for Usuario content",
+                        "description": "body for MedicinaAntecedente content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Usuario"
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
                         }
                     }
                 ],
                 "responses": {
                     "201": {
-                        "description": "{int} models.Usuario"
+                        "description": "{int} models.MedicinaAntecedente"
                     },
                     "403": {
                         "description": "body is empty"
@@ -342,13 +272,13 @@
                 }
             }
         },
-        "/usuario/{id}": {
+        "/medicinaAntecedente/medicina/{id}": {
             "get": {
                 "tags": [
-                    "usuario"
+                    "medicinaAntecedente"
                 ],
-                "description": "get Usuario by id",
-                "operationId": "UsuarioController.Get One",
+                "description": "get MedicinaAntecedente by id",
+                "operationId": "MedicinaAntecedenteController.Get One",
                 "parameters": [
                     {
                         "in": "path",
@@ -362,7 +292,36 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.Usuario"
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
+                        }
+                    },
+                    "403": {
+                        "description": ":id is empty"
+                    }
+                }
+            }
+        },
+        "/medicinaAntecedente/{id}": {
+            "get": {
+                "tags": [
+                    "medicinaAntecedente"
+                ],
+                "description": "get MedicinaAntecedente by id",
+                "operationId": "MedicinaAntecedenteController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The key for staticblock",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
                         }
                     },
                     "403": {
@@ -372,10 +331,10 @@
             },
             "put": {
                 "tags": [
-                    "usuario"
+                    "medicinaAntecedente"
                 ],
-                "description": "update the Usuario",
-                "operationId": "UsuarioController.Put",
+                "description": "update the MedicinaAntecedente",
+                "operationId": "MedicinaAntecedenteController.Put",
                 "parameters": [
                     {
                         "in": "path",
@@ -387,10 +346,10 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for Usuario content",
+                        "description": "body for MedicinaAntecedente content",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/models.Usuario"
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
                         }
                     }
                 ],
@@ -398,7 +357,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.Usuario"
+                            "$ref": "#/definitions/models.MedicinaAntecedente"
                         }
                     },
                     "403": {
@@ -408,10 +367,10 @@
             },
             "delete": {
                 "tags": [
-                    "usuario"
+                    "medicinaAntecedente"
                 ],
-                "description": "delete the Usuario",
-                "operationId": "UsuarioController.Delete",
+                "description": "delete the MedicinaAntecedente",
+                "operationId": "MedicinaAntecedenteController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -455,44 +414,26 @@
                 }
             }
         },
-        "models.Prueba": {
-            "title": "Prueba",
+        "models.MedicinaAntecedente": {
+            "title": "MedicinaAntecedente",
             "type": "object",
             "properties": {
-                "Id": {
+                "IdMedicinaAntecedente": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "Nombre": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.Usuario": {
-            "title": "Usuario",
-            "type": "object",
-            "properties": {
-                "Apellido": {
-                    "type": "string"
-                },
-                "Id": {
+                "id_historia_clinica": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "Nombre": {
+                "id_tipo_antecedente": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "observaciones": {
                     "type": "string"
                 }
             }
         }
-    },
-    "tags": [
-        {
-            "name": "usuario",
-            "description": "UsuarioController operations for Usuario\n"
-        },
-        {
-            "name": "prueba",
-            "description": "PruebaController ...\n"
-        }
-    ]
+    }
 }

@@ -17,11 +17,8 @@ type AccesoHistoriaClinica struct {
 	id_historia_clinica int       `orm:"column(id_historia_clinica)"`
 }
 
-func (t *AccesoHistoriaClinica) Schema() string {
-	return "acceso_historia_clinica"
-}
 func (t *AccesoHistoriaClinica) TableName() string {
-	return "AccesoHistoriaClinica"
+	return "accesohistoriaclinica"
 }
 
 func init() {

@@ -11,13 +11,12 @@ import (
 	"github.com/astaxie/beego"
 )
 
-// UsuarioController operations for Usuario
-type UsuarioController struct {
+type MedicinaAntecedenteController struct {
 	beego.Controller
 }
 
-// URLMapping ...
-func (c *UsuarioController) URLMapping() {
+//URLMapping ...
+func (c *MedicinaAntecedenteController) URLMapping() {
 	c.Mapping("Post", c.Post)
 	c.Mapping("GetOne", c.GetOne)
 	c.Mapping("GetAll", c.GetAll)
@@ -27,15 +26,15 @@ func (c *UsuarioController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description create Usuario
-// @Param	body		body 	models.Usuario	true		"body for Usuario content"
-// @Success 201 {int} models.Usuario
+// @Description create MedicinaAntecedente
+// @Param	body		body 	models.MedicinaAntecedente	true		"body for MedicinaAntecedente content"
+// @Success 201 {int} models.MedicinaAntecedente
 // @Failure 403 body is empty
 // @router / [post]
-func (c *UsuarioController) Post() {
-	var v models.Usuario
+func (c *MedicinaAntecedenteController) Post() {
+	var v models.MedicinaAntecedente
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if _, err := models.AddUsuario(&v); err == nil {
+		if _, err := models.AddAntecendete(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)
 			c.Data["json"] = v
 		} else {
@@ -49,15 +48,34 @@ func (c *UsuarioController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description get Usuario by id
+// @Description get MedicinaAntecedente by id
 // @Param	id		path 	string	true		"The key for staticblock"
-// @Success 200 {object} models.Usuario
+// @Success 200 {object} models.MedicinaAntecedente
 // @Failure 403 :id is empty
 // @router /:id [get]
-func (c *UsuarioController) GetOne() {
+func (c *MedicinaAntecedenteController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetUsuarioById(id)
+	v, err := models.GetAntecedenteById(id)
+	if err != nil {
+		c.Data["json"] = err.Error()
+	} else {
+		c.Data["json"] = v
+	}
+	c.ServeJSON()
+}
+
+//GetOneMedicina ...
+// @Title Get One
+// @Description get MedicinaAntecedente by id
+// @Param	id		path 	string	true		"The key for staticblock"
+// @Success 200 {object} models.MedicinaAntecedente
+// @Failure 403 :id is empty
+// @router /medicina/:id [get]
+func (c *MedicinaAntecedenteController) GetOneMedicina() {
+	idStr := c.Ctx.Input.Param(":id")
+	id, _ := strconv.Atoi(idStr)
+	v, err := models.GetAntecedenteById(id)
 	if err != nil {
 		c.Data["json"] = err.Error()
 	} else {
@@ -68,17 +86,17 @@ func (c *UsuarioController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description get Usuario
+// @Description get MedicinaAntecedente
 // @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
 // @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
 // @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
-// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
+// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sort
 // @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
 // @Param	offset	query	string	false	"Start position of result set. Must be an integer"
-// @Success 200 {object} models.Usuario
+// @Success 200 {object} models.MedicinaAntecedente
 // @Failure 403
 // @router / [get]
-func (c *UsuarioController) GetAll() {
+func (c *MedicinaAntecedenteController) GetAll() {
 	var fields []string
 	var sortby []string
 	var order []string
@@ -119,8 +137,7 @@ func (c *UsuarioController) GetAll() {
 			query[k] = v
 		}
 	}
-
-	l, err := models.GetAllUsuario(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllAntecedente(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		c.Data["json"] = err.Error()
 	} else {
@@ -129,20 +146,20 @@ func (c *UsuarioController) GetAll() {
 	c.ServeJSON()
 }
 
-// Put ...
+//Put ...
 // @Title Put
-// @Description update the Usuario
+// @Description update the MedicinaAntecedente
 // @Param	id		path 	string	true		"The id you want to update"
-// @Param	body		body 	models.Usuario	true		"body for Usuario content"
-// @Success 200 {object} models.Usuario
+// @Param	body		body 	models.MedicinaAntecedente	true		"body for MedicinaAntecedente content"
+// @Success 200 {object} models.MedicinaAntecedente
 // @Failure 403 :id is not int
 // @router /:id [put]
-func (c *UsuarioController) Put() {
+func (c *MedicinaAntecedenteController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v := models.Usuario{Id: id}
+	v := models.MedicinaAntecedente{IdMedicinaAntecedente: id}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if err := models.UpdateUsuarioById(&v); err == nil {
+		if err := models.UpdateAntecedente(&v); err == nil {
 			c.Data["json"] = "OK"
 		} else {
 			c.Data["json"] = err.Error()
@@ -153,17 +170,17 @@ func (c *UsuarioController) Put() {
 	c.ServeJSON()
 }
 
-// Delete ...
+//Delete ...
 // @Title Delete
-// @Description delete the Usuario
+// @Description delete the MedicinaAntecedente
 // @Param	id		path 	string	true		"The id you want to delete"
 // @Success 200 {string} delete success!
 // @Failure 403 id is empty
 // @router /:id [delete]
-func (c *UsuarioController) Delete() {
+func (c *MedicinaAntecedenteController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	if err := models.DeleteUsuario(id); err == nil {
+	if err := models.DeleteAntecedente(id); err == nil {
 		c.Data["json"] = "OK"
 	} else {
 		c.Data["json"] = err.Error()

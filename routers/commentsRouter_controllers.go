@@ -52,7 +52,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"],
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
         beego.ControllerComments{
             Method: "Post",
             Router: "/",
@@ -61,7 +61,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"],
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
         beego.ControllerComments{
             Method: "GetAll",
             Router: "/",
@@ -70,34 +70,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:PruebaController"],
-        beego.ControllerComments{
-            Method: "GetA",
-            Router: "/GetA",
-            AllowHTTPMethods: []string{"get"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"],
-        beego.ControllerComments{
-            Method: "Post",
-            Router: "/",
-            AllowHTTPMethods: []string{"post"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"],
-        beego.ControllerComments{
-            Method: "GetAll",
-            Router: "/",
-            AllowHTTPMethods: []string{"get"},
-            MethodParams: param.Make(),
-            Filters: nil,
-            Params: nil})
-
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"],
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
         beego.ControllerComments{
             Method: "GetOne",
             Router: "/:id",
@@ -106,7 +79,7 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"],
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
         beego.ControllerComments{
             Method: "Put",
             Router: "/:id",
@@ -115,11 +88,20 @@ func init() {
             Filters: nil,
             Params: nil})
 
-    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:UsuarioController"],
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
         beego.ControllerComments{
             Method: "Delete",
             Router: "/:id",
             AllowHTTPMethods: []string{"delete"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:MedicinaAntecedenteController"],
+        beego.ControllerComments{
+            Method: "GetOneMedicina",
+            Router: "/medicina/:id",
+            AllowHTTPMethods: []string{"get"},
             MethodParams: param.Make(),
             Filters: nil,
             Params: nil})
