@@ -11,14 +11,11 @@ import (
 
 type MedicinaAntecedente struct {
 	IdMedicinaAntecedente int    `orm:"column(id_antecedente);pk;auto"`
-	id_tipo_antecedente   int    `orm:"column(id_tipo_antecedente);null"`
-	observaciones         string `orm:"column(observaciones);null"`
-	id_historia_clinica   int    `orm:"column(id_historia_clinica);null"`
+	Id_tipo_antecedente   int    `orm:"column(id_tipo_antecedente)"`
+	Observaciones         string `orm:"column(observaciones)"`
+	Id_historia_clinica   int    `orm:"column(id_historia_clinica);null"`
 }
 
-func (t *MedicinaAntecedente) Schema() string {
-	return "medicina"
-}
 func (t *MedicinaAntecedente) TableName() string {
 	return "antecedente"
 }
@@ -26,7 +23,7 @@ func init() {
 	orm.RegisterModel(new(MedicinaAntecedente))
 }
 
-// AddAntecedente insert a new Usuario into database and returns
+// AddAntecedente inserta un registro en la tabla Antecedente
 // Último registro insertado con éxito
 func AddAntecendete(m *MedicinaAntecedente) (id int64, err error) {
 	o := orm.NewOrm()
@@ -117,7 +114,7 @@ func GetAllAntecedente(query map[string]string, fields []string, sortby []string
 }
 
 //UpdateAntecedente actualiza un antecedente
-//El regustro a actualizar no existe
+//El registro a actualizar no existe
 func UpdateAntecedente(m *MedicinaAntecedente) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaAntecedente{IdMedicinaAntecedente: m.IdMedicinaAntecedente}

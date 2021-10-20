@@ -12,33 +12,30 @@ import (
 
 type OdontologiaAnamnesis struct {
 	IdOdontologiaAnamnesis  int       `orm:"column(id_anamnesis);pk;auto"`
-	id_historia_clinica     int       `orm:"column(id_historia_clinica);null"`
-	tratamiento             string    `orm:"column(tratamiento);null"`
-	medicamentos            string    `orm:"column(medicamento);null"`
-	alergias                string    `orm:"column(alergias);null"`
-	hemorragias             string    `orm:"column(hemorragias);null"`
-	irradiaciones           string    `orm:"column(irradiaciones);null"`
-	sinusitis               string    `orm:"column(sinusitis);null"`
-	enfermedad_respiratoria string    `orm:"column(enfermedad_respiratoria);null"`
-	cardiopatias            string    `orm:"column(cardiopatias);null"`
-	diabetes                string    `orm:"column(diabetes);null"`
-	fiebre_reumatica        string    `orm:"column(fiebre_reumatica);null"`
-	hepatitis               string    `orm:"column(hepatitis);null"`
-	hipertension            string    `orm:"column(hipertension);null"`
-	antecedente_familiar    string    `orm:"column(antecedente_familiar);null"`
-	cepillado               string    `orm:"column(cepillado);null"`
-	ceda                    string    `orm:"column(ceda);null"`
-	enjuague                string    `orm:"column(enjuague);null"`
-	dulces                  string    `orm:"column(dulces);null"`
-	fuma                    string    `orm:"column(fuma);null"`
-	chicle                  string    `orm:"column(chicle);null"`
-	otras                   string    `orm:"column(otras);null"`
-	ultima_visita           time.Time `orm:"column(ultima_visita);type(date);null"`
+	Id_historia_clinica     int       `orm:"column(id_historia_clinica);null"`
+	Tratamiento             string    `orm:"column(tratamiento);null"`
+	Medicamentos            string    `orm:"column(medicamento);null"`
+	Alergias                string    `orm:"column(alergias);null"`
+	Hemorragias             string    `orm:"column(hemorragias);null"`
+	Irradiaciones           string    `orm:"column(irradiaciones);null"`
+	Sinusitis               string    `orm:"column(sinusitis);null"`
+	Enfermedad_respiratoria string    `orm:"column(enfermedad_respiratoria);null"`
+	Cardiopatias            string    `orm:"column(cardiopatias);null"`
+	Diabetes                string    `orm:"column(diabetes);null"`
+	Fiebre_reumatica        string    `orm:"column(fiebre_reumatica);null"`
+	Hepatitis               string    `orm:"column(hepatitis);null"`
+	Hipertension            string    `orm:"column(hipertension);null"`
+	Antecedente_familiar    string    `orm:"column(antecedente_familiar);null"`
+	Cepillado               string    `orm:"column(cepillado);null"`
+	Ceda                    string    `orm:"column(ceda);null"`
+	Enjuague                string    `orm:"column(enjuague);null"`
+	Dulces                  string    `orm:"column(dulces);null"`
+	Fuma                    string    `orm:"column(fuma);null"`
+	Chicle                  string    `orm:"column(chicle);null"`
+	Otras                   string    `orm:"column(otras);null"`
+	Ultima_visita           time.Time `orm:"column(ultima_visita);type(date);null"`
 }
 
-func (t *OdontologiaAnamnesis) Schema() string {
-	return "odontologia"
-}
 func (t *OdontologiaAnamnesis) TableName() string {
 	return "anamnesis"
 }

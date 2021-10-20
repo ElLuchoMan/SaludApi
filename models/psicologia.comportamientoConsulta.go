@@ -11,17 +11,13 @@ import (
 
 type PsicologiaComportamientoConsulta struct {
 	IdComportamientoConsulta int    `orm:"column(id_comportamiento_consulta);pk;auto"`
-	id_hoja_historia         int    `orm:"column(id_hoja_historia);null"`
-	problematica             string `orm:"column(problematica)";null`
-	afrontamiento            string `orm:"column(afrontamiento)";null`
-}
-
-func (t *PsicologiaComportamientoConsulta) Schema() string {
-	return "psicologia"
+	Id_hoja_historia         int    `orm:"column(id_hoja_historia);null"`
+	Problematica             string `orm:"column(problematica);null"`
+	Afrontamiento            string `orm:"column(afrontamiento);null"`
 }
 
 func (t *PsicologiaComportamientoConsulta) TableName() string {
-	return "ComportamientoConsulta"
+	return "comportamientoconsulta"
 }
 func init() {
 	orm.RegisterModel(new(PsicologiaComportamientoConsulta))

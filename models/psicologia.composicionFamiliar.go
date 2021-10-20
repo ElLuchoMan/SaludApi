@@ -11,15 +11,12 @@ import (
 
 type PsicologiaComposicionFamiliar struct {
 	IdPsicologiaComposicionFamiliar int    `orm:"column(id_composicion_familiar);pk;auto"`
-	id_hoja_historia                int    `orm:"column(id_hoja_historia);null"`
-	observaciones                   string `orm:"column(observaciones);null"`
+	Id_hoja_historia                int    `orm:"column(id_hoja_historia);null"`
+	Observaciones                   string `orm:"column(observaciones);null"`
 }
 
-func (t *PsicologiaComposicionFamiliar) Schema() string {
-	return "psicologia"
-}
 func (t *PsicologiaComposicionFamiliar) TableName() string {
-	return "ComposicionFamiliar"
+	return "composicionfamiliar"
 }
 func init() {
 	orm.RegisterModel(new(PsicologiaComposicionFamiliar))

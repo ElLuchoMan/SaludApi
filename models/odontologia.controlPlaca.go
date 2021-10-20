@@ -12,21 +12,17 @@ import (
 
 type OdontologiaControlPlaca struct {
 	IdcontrolPlaca      int       `orm:"column(idcontrol_placa);pk;auto"`
-	indice_anterior     int       `orm:"column(indice_anterior)";null`
-	indice_actual       int       `orm:"column(indice_actual)";null`
-	fecha               time.Time `orm:"column(fecha);type(date);null"`
-	id_hoja_historia    int       `orm:"column(id_hoja_historia);null"`
-	vestibulares        string    `orm:"column(vestibulares);null"`
-	observaciones       string    `orm:"column(observaciones);null"`
-	id_tipo_odontograma int       `orm:"column(id_tipo_odontograma);null"`
-}
-
-func (t *OdontologiaControlPlaca) Schema() string {
-	return "odontologia"
+	Indice_anterior     int       `orm:"column(indice_anterior)0;null"`
+	Indice_actual       int       `orm:"column(indice_actual);null"`
+	Fecha               time.Time `orm:"column(fecha);type(date);null"`
+	Id_hoja_historia    int       `orm:"column(id_hoja_historia);null"`
+	Vestibulares        string    `orm:"column(vestibulares);null"`
+	Observaciones       string    `orm:"column(observaciones);null"`
+	Id_tipo_odontograma int       `orm:"column(id_tipo_odontograma);null"`
 }
 
 func (t *OdontologiaControlPlaca) TableName() string {
-	return "ControlPlaca"
+	return "controlplaca"
 }
 func init() {
 	orm.RegisterModel(new(OdontologiaControlPlaca))

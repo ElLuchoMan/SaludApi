@@ -263,30 +263,30 @@ definitions:
     title: AccesoHistoriaClinica
     type: object
     properties:
+      Fecha_acceso:
+        type: string
+        format: datetime
+      Id_historia_clinica:
+        type: integer
+        format: int64
       IdAccesoHistoria:
         type: integer
         format: int64
-      fecha_acceso:
-        type: string
-        format: datetime
-      id_historia_clinica:
-        type: integer
-        format: int64
-      profesional_id:
+      Profesional_id:
         type: integer
         format: int64
   models.MedicinaAntecedente:
     title: MedicinaAntecedente
     type: object
     properties:
+      Id_historia_clinica:
+        type: integer
+        format: int64
+      Id_tipo_antecedente:
+        type: integer
+        format: int64
       IdMedicinaAntecedente:
         type: integer
         format: int64
-      id_historia_clinica:
-        type: integer
-        format: int64
-      id_tipo_antecedente:
-        type: integer
-        format: int64
-      observaciones:
+      Observaciones:
         type: string

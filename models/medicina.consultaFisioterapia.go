@@ -11,19 +11,16 @@ import (
 
 type MedicinaConsultaFisioterapia struct {
 	IdMedicinaConsultaFisioterapia int    `orm:"column(id_consulta_fisioterapia);pk;auto"`
-	id_hoja_historia               int    `orm:"column(id_hoja_historia_clinica);null"`
-	motivo_consulta                string `orm:"column(motivo_consulta);null"`
-	valoracion                     string `orm:"column(valoracion);null"`
-	plan_manejo                    string `orm:"column(plan_manejo);null"`
-	evolucion                      string `orm:"column(evolucion);null"`
-	observaciones                  string `orm:"column(observaciones);null"`
+	Id_hoja_historia               int    `orm:"column(id_hoja_historia_clinica);null"`
+	Motivo_consulta                string `orm:"column(motivo_consulta);null"`
+	Valoracion                     string `orm:"column(valoracion);null"`
+	Plan_manejo                    string `orm:"column(plan_manejo);null"`
+	Evolucion                      string `orm:"column(evolucion);null"`
+	Observaciones                  string `orm:"column(observaciones);null"`
 }
 
-func (t *MedicinaConsultaFisioterapia) Schema() string {
-	return "medicina"
-}
 func (t *MedicinaConsultaFisioterapia) TableName() string {
-	return "ConsultaFisioterapia"
+	return "consultafisioterapia"
 }
 func init() {
 	orm.RegisterModel(new(MedicinaConsultaFisioterapia))

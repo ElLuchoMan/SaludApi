@@ -11,17 +11,14 @@ import (
 
 type PsicologiaAntecedente struct {
 	IdPsicologiaAntecedente         int    `orm:"column(id_antecedente);pk"`
-	actual_somatico                 string `orm:"column(actual_somatico);null"`
-	pasado_somatico                 string `orm:"column(pasado_somatico);null"`
-	id_tipo_antecedente_psicologico int    `orm:"column(id_tipo_antecedente_psicologico);null"`
-	id_historia_clinica             int    `orm:"column(id_historia_clinica);null"`
+	Actual_somatico                 string `orm:"column(actual_somatico);null"`
+	Pasado_somatico                 string `orm:"column(pasado_somatico);null"`
+	Id_tipo_antecedente_psicologico int    `orm:"column(id_tipo_antecedente_psicologico);null"`
+	Id_historia_clinica             int    `orm:"column(id_historia_clinica);null"`
 }
 
-func (t *PsicologiaAntecedente) Schema() string {
-	return "psicologia"
-}
 func (t *PsicologiaAntecedente) TableName() string {
-	return "AntecedentePsicologico"
+	return "antecedentepsicologico"
 }
 func init() {
 	orm.RegisterModel(new(PsicologiaAntecedente))
