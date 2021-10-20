@@ -10,7 +10,7 @@ import (
 )
 
 type OdontologiaExamenDental struct {
-	IdExamenDental   int    `orm:"column(id_examen_dental);pk;null"`
+	IdExamenDental   int    `orm:"column(id_examen_dental);pk;auto"`
 	IdHojaHistoria   int    `orm:"column(id_hoja_historia);null"`
 	Supernumerarios  string `orm:"column(supernumerarios);null"`
 	Abrasion         string `orm:"column(abrasion);null"`

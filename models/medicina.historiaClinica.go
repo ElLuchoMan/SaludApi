@@ -10,7 +10,7 @@ import (
 )
 
 type MedicinaHistoriaClinica struct {
-	IdHistoriaClinica int `orm:"column(id_historia_clinica);pk;ayto"`
+	IdHistoriaClinica int `orm:"column(id_historia_clinica);pk;auto"`
 	IdTercero         int `orm:"column(id_tercero);null"`
 }
 

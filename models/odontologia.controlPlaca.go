@@ -12,7 +12,7 @@ import (
 
 type OdontologiaControlPlaca struct {
 	IdcontrolPlaca      int       `orm:"column(idcontrol_placa);pk;auto"`
-	Indice_anterior     int       `orm:"column(indice_anterior)0;null"`
+	Indice_anterior     int       `orm:"column(indice_anterior);null"`
 	Indice_actual       int       `orm:"column(indice_actual);null"`
 	Fecha               time.Time `orm:"column(fecha);type(date);null"`
 	Id_hoja_historia    int       `orm:"column(id_hoja_historia);null"`
