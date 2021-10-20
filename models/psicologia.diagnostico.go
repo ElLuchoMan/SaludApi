@@ -19,7 +19,7 @@ type PsicologiaDiagnostico struct {
 }
 
 func (p *PsicologiaDiagnostico) TableName() string {
-	return "DiagnosticoPsicologia"
+	return "diagnosticopsicologia"
 }
 func init() {
 	orm.RegisterModel(new(PsicologiaDiagnostico))
@@ -138,7 +138,6 @@ func UpdatePsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 func DeletePsicologiaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaDiagnostico{IdDiagnosticoPsicologia: id}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Delete(&PsicologiaDiagnostico{IdDiagnosticoPsicologia: id}); err == nil {
