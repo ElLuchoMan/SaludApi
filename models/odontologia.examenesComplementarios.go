@@ -12,12 +12,12 @@ import (
 type OdontologiaExamenesComplementarios struct {
 	IdExamenesComplementarios int    `orm:"column(id_examenes_complenmetarios);pk;auto"`
 	PeriapicalInicio          int    `orm:"column(periapical_inicio);null"`
-	PeriapicalFinal           []byte `orm:"column(periapical_final);null"`
-	PanoramicaInicio          []byte `orm:"column(panoramica_inicio);null"`
-	OtraInicio                []byte `orm:"column(otra_inicio);null"`
-	OtraFinal                 []byte `orm:"column(otra_final);null"`
-	LaboratorioInicio         []byte `orm:"column(laboratorio_inicio);null"`
-	LaboratorioFinal          []byte `orm:"column(laboratorio_final);null"`
+	PeriapicalFinal           byte   `orm:"column(periapical_final);null"`
+	PanoramicaInicio          byte   `orm:"column(panoramica_inicio);null"`
+	OtraInicio                byte   `orm:"column(otra_inicio);null"`
+	OtraFinal                 byte   `orm:"column(otra_final);null"`
+	LaboratorioInicio         byte   `orm:"column(laboratorio_inicio);null"`
+	LaboratorioFinal          byte   `orm:"column(laboratorio_final);null"`
 	IdHojaHistoria            int    `orm:"column(id_hoja_historia);null"`
 	Tp                        string `orm:"column(tp);null"`
 	Tpt                       string `orm:"column(tpt);null"`

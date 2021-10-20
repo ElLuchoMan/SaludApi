@@ -10,7 +10,7 @@ import (
 )
 
 type MedicinaSistemas struct {
-	IdSistema      int    `orm:"column(id_sistema);pk:auto"`
+	IdSistema      int    `orm:"column(id_sistema);pk;auto"`
 	NombreSistema  string `orm:"column(nombre_sistema);null"`
 	Observacion    string `orm:"column(observacion);null"`
 	IdHojaHistoria int    `orm:"column(id_hoja_historia);null"`
