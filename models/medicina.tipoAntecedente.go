@@ -23,7 +23,7 @@ func (p *MedicinaTipoAntecedente) TableName() string {
 	return "tipoantecedente"
 }
 func init() {
-	orm.RegisterModel(new(PsicologiaDiagnostico))
+	orm.RegisterModel(new(MedicinaTipoAntecedente))
 }
 
 //AddMedicinaTipoAntecedente inserta un registro en la tabla diagnostico_psicologia
