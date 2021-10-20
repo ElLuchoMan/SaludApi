@@ -24,6 +24,11 @@ func init() {
 				&controllers.PruebaController{},
 			),
 		),
+		beego.NSNamespace("/accesoHistoria",
+			beego.NSInclude(
+				&controllers.AccesoHistoriaClinicaController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }
