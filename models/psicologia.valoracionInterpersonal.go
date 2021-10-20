@@ -32,7 +32,7 @@ func init() {
 	orm.RegisterModel(new(PsicologiaValoracionInterpersonal))
 }
 
-// AddPsicologiaValoracionInterpersonal inserta un registro en la tabla Antecedente
+// AddPsicologiaValoracionInterpersonal inserta un registro en la tabla valoracioninterpersonal
 // Último registro insertado con éxito
 func AddPsicologiaValoracionInterpersonal(m *PsicologiaValoracionInterpersonal) (id int64, err error) {
 	o := orm.NewOrm()
@@ -40,8 +40,8 @@ func AddPsicologiaValoracionInterpersonal(m *PsicologiaValoracionInterpersonal) 
 	return
 }
 
-//GetPsicologiaValoracionInterpersonalById obtiene un antecedente por su id
-//Id no existe
+// GePsicologiaValoracionInterpersonalById obtiene un registro de la tabla valoracioninterpersonal por su id
+// Id no existe
 func GePsicologiaValoracionInterpersonalById(id int) (v *PsicologiaValoracionInterpersonal, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaValoracionInterpersonal{IdValoracionInterpersonal: id}
@@ -51,8 +51,8 @@ func GePsicologiaValoracionInterpersonalById(id int) (v *PsicologiaValoracionInt
 	return nil, err
 }
 
-//GetAllPsicologiaValoracionInterpersonal obtiene todos los antecedentes
-//No existen registros
+// GetAllPsicologiaValoracionInterpersonal obtiene todos los registros de la tabla valoracioninterpersonal
+// No existen registros
 func GetAllPsicologiaValoracionInterpersonal(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -122,8 +122,8 @@ func GetAllPsicologiaValoracionInterpersonal(query map[string]string, fields []s
 	return nil, err
 }
 
-//UpdatePsicologiaValoracionInterpersonal actualiza un antecedente
-//El registro a actualizar no existe
+// UpdatePsicologiaValoracionInterpersonal actualiza un registro de la tabla valoracioninterpersonal
+// El registro a actualizar no existe
 func UpdatePsicologiaValoracionInterpersonal(m *PsicologiaValoracionInterpersonal) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaValoracionInterpersonal{IdValoracionInterpersonal: m.IdValoracionInterpersonal}
@@ -136,8 +136,8 @@ func UpdatePsicologiaValoracionInterpersonal(m *PsicologiaValoracionInterpersona
 	return
 }
 
-//DeletePsicologiaValoracionInterpersonal elimina un antecedente
-//El registro a eliminar no existe
+// DeletePsicologiaValoracionInterpersonal elimina un registro de la tabla valoracioninterpersonal
+// El registro a eliminar no existe
 func DeletePsicologiaValoracionInterpersonal(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaValoracionInterpersonal{IdValoracionInterpersonal: id}

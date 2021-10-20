@@ -25,8 +25,8 @@ func init() {
 	orm.RegisterModel(new(OdontologiaTipoOdontograma))
 }
 
-//AddOdontologiaTipoOdontograma inserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddOdontologiaTipoOdontograma inserta un registro en la tabla tipoodontograma
+// Último registro insertado con éxito
 func AddOdontologiaTipoOdontograma(m *OdontologiaTipoOdontograma) (err error) {
 	o := orm.NewOrm()
 	m.IdTipoOdontograma = 0
@@ -36,8 +36,8 @@ func AddOdontologiaTipoOdontograma(m *OdontologiaTipoOdontograma) (err error) {
 	return err
 }
 
-//GetOdontologiaTipoOdontogramaById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetOdontologiaTipoOdontogramaById obtiene un registro de la tabla tipoodontograma por su id
+// Id no existe
 func GetOdontologiaTipoOdontogramaById(id int) (v *OdontologiaTipoOdontograma, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaTipoOdontograma{IdTipoOdontograma: id}
@@ -47,8 +47,8 @@ func GetOdontologiaTipoOdontogramaById(id int) (v *OdontologiaTipoOdontograma, e
 	return nil, err
 }
 
-//GetAllOdontologiaTipoOdontograma trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllOdontologiaTipoOdontograma obtiene todos los registros de la tabla tipoodontograma
+// No existen registros
 func GetAllOdontologiaTipoOdontograma(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -118,8 +118,8 @@ func GetAllOdontologiaTipoOdontograma(query map[string]string, fields []string, 
 	return nil, err
 }
 
-//UpdateOdontologiaTipoOdontograma actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdateOdontologiaTipoOdontograma actualiza un registro de la tabla tipoodontograma
+// El registro a actualizar no existe
 func UpdateOdontologiaTipoOdontograma(m *OdontologiaTipoOdontograma) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaTipoOdontograma{IdTipoOdontograma: m.IdTipoOdontograma}
@@ -132,8 +132,8 @@ func UpdateOdontologiaTipoOdontograma(m *OdontologiaTipoOdontograma) (err error)
 	return
 }
 
-//DeleteOdontologiaTipoOdontograma elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeleteOdontologiaTipoOdontograma elimina un registro de la tabla tipoodontograma
+// El registro a eliminar no existe
 func DeleteOdontologiaTipoOdontograma(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaTipoOdontograma{IdTipoOdontograma: id}

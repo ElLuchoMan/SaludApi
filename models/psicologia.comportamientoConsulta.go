@@ -23,8 +23,8 @@ func init() {
 	orm.RegisterModel(new(PsicologiaComportamientoConsulta))
 }
 
-//AddComportamientoConsulta agrega un comportamiento consulta
-//Último registro insertado con exito
+// AddComportamientoConsulta inserta un registro en la tabla comportamientoconsulta
+// Último registro insertado con éxito
 func AddComportamientoConsulta(m *PsicologiaComportamientoConsulta) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
@@ -42,8 +42,8 @@ func GetComportamientoConsultaById(id int) (v *PsicologiaComportamientoConsulta,
 	return nil, err
 }
 
-// GetAllComportamientoConsulta consulta todos los comportamientos
-//No existen registros
+// GetAllComportamientoConsulta obtiene todos los registros de la tabla comportamientoconsulta
+// No existen registros
 func GetAllComportamientoConsulta(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -113,8 +113,8 @@ func GetAllComportamientoConsulta(query map[string]string, fields []string, sort
 	return nil, err
 }
 
-//UpdateComportamientoConsulta actualiza un comportamiento consulta
-//El regisro a actualizar no existe
+// UpdateComportamientoConsulta actualiza un registro de la tabla comportamientoconsulta
+// El registro a actualizar no existe
 func UpdateComportamientoConsulta(m *PsicologiaComportamientoConsulta) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComportamientoConsulta{IdComportamientoConsulta: m.IdComportamientoConsulta}
@@ -127,8 +127,8 @@ func UpdateComportamientoConsulta(m *PsicologiaComportamientoConsulta) (err erro
 	return
 }
 
-//DeleteComportamientoConsulta elimina un comportamiento consulta
-//El registro a eliminar no existe
+// DeleteComportamientoConsulta elimina un registro de la tabla comportamientoconsulta
+// El registro a eliminar no existe
 func DeleteComportamientoConsulta(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComportamientoConsulta{IdComportamientoConsulta: id}

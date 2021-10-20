@@ -30,8 +30,8 @@ func init() {
 	orm.RegisterModel(new(OdontologiaExamenDental))
 }
 
-//AddOdontologiaExamenDental inserta un nuevo registro en la tabla examendental
-//Último registro insertado con éxito
+// AddOdontologiaExamenDental inserta un registro en la tabla examendental
+// Último registro insertado con éxito
 func AddOdontologiaExamenDental(m *OdontologiaExamenDental) (err error) {
 	o := orm.NewOrm()
 	m.IdExamenDental = 0
@@ -41,8 +41,8 @@ func AddOdontologiaExamenDental(m *OdontologiaExamenDental) (err error) {
 	return err
 }
 
-//GetOdontologiaExamenDentalById trae un registro de la tabla examendental
-//Id no existe
+// GetOdontologiaExamenDentalById obtiene un registro de la tabla examendental por su id
+// Id no existe
 func GetOdontologiaExamenDentalById(id int) (v *OdontologiaExamenDental, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaExamenDental{IdExamenDental: id}
@@ -52,8 +52,8 @@ func GetOdontologiaExamenDentalById(id int) (v *OdontologiaExamenDental, err err
 	return nil, err
 }
 
-//GetAllOdontologiaExamenDental trae todos los registros de la tabla examendental
-//No existen registros
+// GetAllOdontologiaExamenDental obtiene todos los registros de la tabla examendental
+// No existen registros
 func GetAllOdontologiaExamenDental(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -123,8 +123,8 @@ func GetAllOdontologiaExamenDental(query map[string]string, fields []string, sor
 	return nil, err
 }
 
-//UpdateOdontologiaExamenDental actualiza un registro de la tabla examendental
-//El registro a actualizar no existe
+// UpdateOdontologiaExamenDental actualiza un registro de la tabla examendental
+// El registro a actualizar no existe
 func UpdateOdontologiaExamenDental(m *OdontologiaExamenDental) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaExamenDental{IdExamenDental: m.IdExamenDental}
@@ -138,12 +138,11 @@ func UpdateOdontologiaExamenDental(m *OdontologiaExamenDental) (err error) {
 	return
 }
 
-//DeleteOdontologiaExamenDental elimina un registro de la tabla examendental
-//El registro a eliminar no existe
+// DeleteOdontologiaExamenDental elimina un registro de la tabla examendental
+// El registro a eliminar no existe
 func DeleteOdontologiaExamenDental(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaExamenDental{IdExamenDental: id}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Delete(&OdontologiaExamenDental{IdExamenDental: id}); err == nil {

@@ -22,16 +22,16 @@ func init() {
 	orm.RegisterModel(new(PsicologiaComposicionFamiliar))
 }
 
-//AddComposicionFamiliar agrega un acceso a la historia clinica
-//Último registro insertado con exito
+// AddComposicionFamiliar inserta un registro en la tabla composicionfamiliar
+// Último registro insertado con éxito
 func AddComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-//GetComposicionFamiliarById consulta el acceso a la historia clinica por su id
-//Id no existe
+// GetComposicionFamiliarById obtiene un registro de la tabla composicionfamiliar por su id
+// Id no existe
 func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: v.IdPsicologiaComposicionFamiliar}
@@ -41,8 +41,8 @@ func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err e
 	return nil, err
 }
 
-// GetAllComposicionFamiliar consulta todos los accesos a la historia clinica
-//No existen registros
+// GetAllComposicionFamiliar obtiene todos los registros de la tabla composicionfamiliar
+// No existen registros
 func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -112,8 +112,8 @@ func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby 
 	return nil, err
 }
 
-//UpdateComposicionFamiliar actualiza un acceso a la historia clinica
-//El regisro a actualizar no existe
+// UpdateComposicionFamiliar actualiza un registro de la tabla composicionfamiliar
+// El registro a actualizar no existe
 func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: m.IdPsicologiaComposicionFamiliar}
@@ -126,8 +126,8 @@ func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 	return
 }
 
-//DeleteComposicionFamiliar elimina un acceso a la historia clinica
-//El registro a eliminar no existe
+// DeleteComposicionFamiliar elimina un registro de la tabla composicionfamiliar
+// El registro a eliminar no existe
 func DeleteComposicionFamiliar(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}

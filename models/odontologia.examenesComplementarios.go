@@ -33,8 +33,8 @@ func init() {
 	orm.RegisterModel(new(OdontologiaExamenesComplementarios))
 }
 
-//AddOdontologiaExamenesComplementarios inserta un nuevo registro en la tabla examenescomplementarios
-//Úlyimo registro insertado con éxito
+// AddOdontologiaExamenesComplementarios inserta un registro en la tabla examenescomplementarios
+// Último registro insertado con éxito
 func AddOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementarios) (err error) {
 	o := orm.NewOrm()
 	m.IdExamenesComplementarios = 0
@@ -44,8 +44,8 @@ func AddOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementarios
 	return err
 }
 
-//GetOdontologiaExamenesComplementariosById trae un registro de la tabla examenescomplementarios por su id
-//Id no existe
+// GetOdontologiaExamenesComplementariosById obtiene un registro de la tabla examenescomplementarios por su id
+// Id no existe
 func GetOdontologiaExamenesComplementariosById(id int) (v *OdontologiaExamenesComplementarios, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaExamenesComplementarios{IdExamenesComplementarios: id}
@@ -55,8 +55,8 @@ func GetOdontologiaExamenesComplementariosById(id int) (v *OdontologiaExamenesCo
 	return nil, err
 }
 
-//GetAllOdontologiaExamenesComplementarios trae todos los registros de la tabla examenescomplementarios
-//No existen registros
+// GetAllOdontologiaExamenesComplementarios obtiene todos los registros de la tabla examenescomplementarios
+// No existen registros
 func GetAllOdontologiaExamenesComplementarios(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -126,8 +126,8 @@ func GetAllOdontologiaExamenesComplementarios(query map[string]string, fields []
 	return nil, err
 }
 
-//UpdateOdontologiaExamenesComplementarios actualiza un registro de la tabla examenescomplementarios
-//El registro a actualizar no existe
+// UpdateOdontologiaExamenesComplementarios actualiza un registro de la tabla examenescomplementarios
+// El registro a actualizar no existe
 func UpdateOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementarios) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaExamenesComplementarios{IdExamenesComplementarios: m.IdExamenesComplementarios}
@@ -140,8 +140,8 @@ func UpdateOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementar
 	return
 }
 
-//DeleteOdontologiaExamenesComplementarios borra un registro de la tabla examenescomplementarios
-//El registro a eliminar no existe
+// DeleteOdontologiaExamenesComplementarios elimina un registro de la tabla examenescomplementarios
+// El registro a eliminar no existe
 func DeleteOdontologiaExamenesComplementarios(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaExamenesComplementarios{IdExamenesComplementarios: id}

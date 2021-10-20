@@ -21,8 +21,8 @@ func init() {
 	orm.RegisterModel(new(MedicinaHistoriaClinica))
 }
 
-//AddMedicinaHistoriaClinica inserta un registro en la tabla historiaclinica
-//Último registro insertado con éxito
+// AddMedicinaHistoriaClinica inserta un registro en la tabla  historiaclinica
+// Último registro insertado con éxito
 func AddMedicinaHistoriaClinica(m *MedicinaHistoriaClinica) (err error) {
 	o := orm.NewOrm()
 	m.IdHistoriaClinica = 0
@@ -32,8 +32,8 @@ func AddMedicinaHistoriaClinica(m *MedicinaHistoriaClinica) (err error) {
 	return err
 }
 
-//GetMedicinaHistoriaClinicaById trae un registro de la tabla historiaclinica
-//Id no existe
+// GetMedicinaHistoriaClinicaById obtiene un registro de la tabla historiaclinica por su id
+// Id no existe
 func GetMedicinaHistoriaClinicaById(id int) (v *MedicinaHistoriaClinica, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaHistoriaClinica{IdHistoriaClinica: id}
@@ -43,8 +43,8 @@ func GetMedicinaHistoriaClinicaById(id int) (v *MedicinaHistoriaClinica, err err
 	return nil, err
 }
 
-//GetAllMedicinaHistoriaClinica trae todos los registros de la tabla historiaclinica
-//No existen registros
+// GetAllMedicinaHistoriaClinica obtiene todos los registros de la tabla historiaclinica
+// No existen registros
 func GetAllMedicinaHistoriaClinica(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -114,8 +114,8 @@ func GetAllMedicinaHistoriaClinica(query map[string]string, fields []string, sor
 	return nil, err
 }
 
-//UpdateMedicinaHistoriaClinica actualiza un registro en la tabla historiaclinica
-//El registro a actualizar no existe
+// UpdateMedicinaHistoriaClinicaById actualiza un registro de la tabla historiaclinica
+// El registro a actualizar no existe
 func UpdateMedicinaHistoriaClinicaById(m *MedicinaHistoriaClinica) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaHistoriaClinica{IdHistoriaClinica: m.IdHistoriaClinica}
@@ -128,8 +128,8 @@ func UpdateMedicinaHistoriaClinicaById(m *MedicinaHistoriaClinica) (err error) {
 	return
 }
 
-//DeleteMedicinaHistoriaClinica elimina un registro de la tabla historiaclinica
-//El registro a eliminar no existe
+// DeleteMedicinaHistoriaClinica elimina un registro de la tabla historiaclinica
+// El registro a eliminar no existe
 func DeleteMedicinaHistoriaClinica(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaHistoriaClinica{IdHistoriaClinica: id}

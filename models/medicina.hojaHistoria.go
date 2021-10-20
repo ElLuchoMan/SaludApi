@@ -30,8 +30,8 @@ func init() {
 	orm.RegisterModel(new(MedicinaHojaHistoria))
 }
 
-// AddMedicinaHojaHistoria inserta un registro en la tabla hoja_historia
-//Último registro insertado con éxito
+// AddMedicinaHojaHistoria inserta un registro en la tabla hojahistoria
+// Último registro insertado con éxito
 func AddMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
 	o := orm.NewOrm()
 	m.IdHojaHistoria = 0
@@ -41,8 +41,8 @@ func AddMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
 	return err
 }
 
-//GetMedicinaHojaHistoriaById trae un registro de la tabla hoja_historia
-//Id no existe
+// GetMedicinaHojaHistoriaById obtiene un registro de la tabla hojahistoria por su id
+// Id no existe
 func GetMedicinaHojaHistoriaById(id int) (v *MedicinaHojaHistoria, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaHojaHistoria{IdHojaHistoria: id}
@@ -52,8 +52,8 @@ func GetMedicinaHojaHistoriaById(id int) (v *MedicinaHojaHistoria, err error) {
 	return nil, err
 }
 
-//GetAllMedicinaHojaHistoria trae todos los registros de la tabla hoja_historia
-//No existen registros
+// GetAllMedicinaHojaHistoria obtiene todos los registros de la tabla hojahistoria
+// No existen registros
 func GetAllMedicinaHojaHistoria(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -123,8 +123,8 @@ func GetAllMedicinaHojaHistoria(query map[string]string, fields []string, sortby
 	return nil, err
 }
 
-//UpdateMedicinaHojaHistoria actualiza un registro en la tabla hoja_historia
-//El registro a actualizar no existe
+// UpdateMedicinaHojaHistoria actualiza un registro de la tabla hojahistoria
+// El registro a actualizar no existe
 func UpdateMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaHojaHistoria{IdHojaHistoria: m.IdHojaHistoria}
@@ -137,8 +137,8 @@ func UpdateMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
 	return
 }
 
-//DeleteMedicinaHojaHistoria elimina un registro de la tabla hoja_historia
-//EL registro a eliminar no existe
+// DeleteMedicinaHojaHistoria elimina un registro de la tabla
+// El registro a eliminar no existe
 func DeleteMedicinaHojaHistoria(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaHojaHistoria{IdHojaHistoria: id}

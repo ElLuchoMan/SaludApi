@@ -28,17 +28,17 @@ func init() {
 	orm.RegisterModel(new(OdontologiaControlPlaca))
 }
 
-//AddControl plata inserta un registro en la tabla ControlPlacca
-//Último registro insertado con éxito
-func AddControl(m *OdontologiaControlPlaca) (id int64, err error) {
+// AddOdontologiaControlPlaca inserta un registro en la tabla controlplaca
+// Último registro insertado con éxito
+func AddOdontologiaControlPlaca(m *OdontologiaControlPlaca) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-//GetControlPlacaById consulta un registro en la tabla ControlPlaca por su id
-//Id no existe
-func GetControlPlacaById(id int) (v *OdontologiaControlPlaca, err error) {
+// GetOdontologiaControlPlacaById obtiene un registro de la tabla controlplaca por su id
+// Id no existe
+func GetOdontologiaControlPlacaById(id int) (v *OdontologiaControlPlaca, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaControlPlaca{IdcontrolPlaca: id}
 	if err = o.Read(v); err == nil {
@@ -47,9 +47,9 @@ func GetControlPlacaById(id int) (v *OdontologiaControlPlaca, err error) {
 	return nil, err
 }
 
-//GetAllControlPlaca consulta todos los registros en la tabla ControlPlaca
-//No existen registros
-func GetAllControlPlaca(query map[string]string, fields []string, sortby []string, order []string,
+// GetOdontologiaControlPlaca obtiene todos los registros de la tabla controlplaca
+// No existen registros
+func GetOdontologiaControlPlaca(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(OdontologiaControlPlaca))
@@ -118,9 +118,9 @@ func GetAllControlPlaca(query map[string]string, fields []string, sortby []strin
 	return nil, err
 }
 
-//UpdateControlPlaca actualiza un registro en la tabla ControlPlaca
-//El registro a actualizar no existe
-func UpdateControlPlaca(m *OdontologiaControlPlaca) (err error) {
+// UpdateOdontologiaControlPlaca actualiza un registro de la tabla controlplaca
+// El registro a actualizar no existe
+func UpdateOdontologiaControlPlaca(m *OdontologiaControlPlaca) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaControlPlaca{IdcontrolPlaca: m.IdcontrolPlaca}
 	// ascertain id exists in the database
@@ -133,9 +133,9 @@ func UpdateControlPlaca(m *OdontologiaControlPlaca) (err error) {
 	return
 }
 
-//DeleteControlPlaca elimina un registro en la tabla ControlPlaca
-//El registro a eliminar no existe
-func DeleteControlPlaca(id int) (err error) {
+// DeleteOdontologiaControlPlaca elimina un registro de la tabla controlplaca
+// El registro a eliminar no existe
+func DeleteOdontologiaControlPlaca(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaControlPlaca{IdcontrolPlaca: id}
 	// ascertain id exists in the database

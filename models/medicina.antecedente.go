@@ -23,7 +23,7 @@ func init() {
 	orm.RegisterModel(new(MedicinaAntecedente))
 }
 
-// AddAntecedente inserta un registro en la tabla Antecedente
+// AddAntecendete inserta un registro en la tabla antecedente
 // Último registro insertado con éxito
 func AddAntecendete(m *MedicinaAntecedente) (id int64, err error) {
 	o := orm.NewOrm()
@@ -31,8 +31,8 @@ func AddAntecendete(m *MedicinaAntecedente) (id int64, err error) {
 	return
 }
 
-//GetAntecedenteById obtiene un antecedente por su id
-//Id no existe
+// GetAntecedenteById obtiene un registro de la tabla antecedente por su id
+// Id no existe
 func GetAntecedenteById(id int) (v *MedicinaAntecedente, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaAntecedente{IdMedicinaAntecedente: id}
@@ -42,8 +42,8 @@ func GetAntecedenteById(id int) (v *MedicinaAntecedente, err error) {
 	return nil, err
 }
 
-//GetAllAntecedente obtiene todos los antecedentes
-//No existen registros
+// GetAllAntecedente obtiene todos los registros de la tabla antecedente
+// No existen registros
 func GetAllAntecedente(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -113,8 +113,8 @@ func GetAllAntecedente(query map[string]string, fields []string, sortby []string
 	return nil, err
 }
 
-//UpdateAntecedente actualiza un antecedente
-//El registro a actualizar no existe
+// UpdateAntecedente actualiza un registro de la tabla antecedente
+// El registro a actualizar no existe
 func UpdateAntecedente(m *MedicinaAntecedente) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaAntecedente{IdMedicinaAntecedente: m.IdMedicinaAntecedente}
@@ -127,8 +127,8 @@ func UpdateAntecedente(m *MedicinaAntecedente) (err error) {
 	return
 }
 
-//DeleteAntecedente elimina un antecedente
-//El registro a eliminar no existe
+// DeleteAntecedente elimina un registro de la tabla antecedente
+// El registro a eliminar no existe
 func DeleteAntecedente(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaAntecedente{IdMedicinaAntecedente: id}

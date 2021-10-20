@@ -21,8 +21,8 @@ func init() {
 	orm.RegisterModel(new(MedicinaTipoExamen))
 }
 
-//AddMedicinaTipoExameninserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddMedicinaTipoExamen inserta un registro en la tabla tipoexamen
+// Último registro insertado con éxito
 func AddMedicinaTipoExamen(m *MedicinaTipoExamen) (err error) {
 	o := orm.NewOrm()
 	m.IdTipoExamen = 0
@@ -32,8 +32,8 @@ func AddMedicinaTipoExamen(m *MedicinaTipoExamen) (err error) {
 	return err
 }
 
-//GetMedicinaTipoExamenById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetMedicinaTipoExamenById obtiene un registro de la tabla tipoexamen por su id
+// Id no existe
 func GetMedicinaTipoExamenById(id int) (v *MedicinaTipoExamen, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaTipoExamen{IdTipoExamen: id}
@@ -43,8 +43,8 @@ func GetMedicinaTipoExamenById(id int) (v *MedicinaTipoExamen, err error) {
 	return nil, err
 }
 
-//GetAllMedicinaTipoExamen trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllMedicinaTipoExamen obtiene todos los registros de la tabla tipoexamen
+// No existen registros
 func GetAllMedicinaTipoExamen(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -114,8 +114,8 @@ func GetAllMedicinaTipoExamen(query map[string]string, fields []string, sortby [
 	return nil, err
 }
 
-//UpdateMedicinaTipoExamen actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdateMedicinaTipoExamen actualiza un registro de la tabla tipoexamen
+// El registro a actualizar no existe
 func UpdateMedicinaTipoExamen(m *MedicinaTipoExamen) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaTipoExamen{IdTipoExamen: m.IdTipoExamen}
@@ -128,8 +128,8 @@ func UpdateMedicinaTipoExamen(m *MedicinaTipoExamen) (err error) {
 	return
 }
 
-//DeleteMedicinaTipoExamen elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeleteMedicinaTipoExamen elimina un registro de la tabla tipoexamen
+// El registro a eliminar no existe
 func DeleteMedicinaTipoExamen(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaTipoExamen{IdTipoExamen: id}

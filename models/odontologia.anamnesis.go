@@ -43,7 +43,7 @@ func init() {
 	orm.RegisterModel(new(OdontologiaAnamnesis))
 }
 
-// AddAnamnesis insert a new Usuario into database and returns
+// AddAnamnesis inserta un registro en la tabla anamnesis
 // Último registro insertado con éxito
 func AddAnamnesis(m *OdontologiaAnamnesis) (id int64, err error) {
 	o := orm.NewOrm()
@@ -51,8 +51,8 @@ func AddAnamnesis(m *OdontologiaAnamnesis) (id int64, err error) {
 	return
 }
 
-//GetAnamnesisById consulta una anamnesis por su id
-//Id no existe
+// GetAnamnesisById obtiene un registro de la tabla anamnesis por su id
+// Id no existe
 func GetAnamnesisById(id int) (v *OdontologiaAnamnesis, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaAnamnesis{IdOdontologiaAnamnesis: id}
@@ -133,12 +133,11 @@ func GetAllAnamnesis(query map[string]string, fields []string, sortby []string, 
 	return nil, err
 }
 
-//UpdateAnamnesis actualiza una anamnesis por su id
-//El registro a actualizar no existe
+// UpdateAnamnesisById actualiza un registro de la tabla anamnesis
+// El registro a actualizar no existe
 func UpdateAnamnesisById(m *OdontologiaAnamnesis) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaAnamnesis{IdOdontologiaAnamnesis: m.IdOdontologiaAnamnesis}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
@@ -148,12 +147,11 @@ func UpdateAnamnesisById(m *OdontologiaAnamnesis) (err error) {
 	return
 }
 
-//DeleteAnamnesis elimina una anamnesis por su id
-//El registro a eliminar no existe
+// DeleteAnamnesis elimina un registro de la tabla anamnesis
+// El registro a eliminar no existe
 func DeleteAnamnesis(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaAnamnesis{IdOdontologiaAnamnesis: id}
-	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Delete(&OdontologiaAnamnesis{IdOdontologiaAnamnesis: id}); err == nil {

@@ -23,8 +23,8 @@ func init() {
 	orm.RegisterModel(new(MedicinaSistemas))
 }
 
-//AddMedicinaSistemas inserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddMedicinaSistemas inserta un registro en la tabla sistemas
+// Último registro insertado con éxito
 func AddMedicinaSistemas(m *MedicinaSistemas) (err error) {
 	o := orm.NewOrm()
 	m.IdSistema = 0
@@ -34,8 +34,8 @@ func AddMedicinaSistemas(m *MedicinaSistemas) (err error) {
 	return err
 }
 
-//GetMedicinaSistemasById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetMedicinaSistemasById obtiene un registro de la tabla sistemas por su id
+// Id no existe
 func GetMedicinaSistemasById(id int) (v *MedicinaSistemas, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaSistemas{IdSistema: id}
@@ -45,8 +45,8 @@ func GetMedicinaSistemasById(id int) (v *MedicinaSistemas, err error) {
 	return nil, err
 }
 
-//GetAllMedicinaSistemas trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllMedicinaSistemas obtiene todos los registros de la tabla sistemas
+// No existen registros
 func GetAllMedicinaSistemas(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -116,8 +116,8 @@ func GetAllMedicinaSistemas(query map[string]string, fields []string, sortby []s
 	return nil, err
 }
 
-//UpdateMedicinaSistemas actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdateMedicinaSistemas actualiza un registro de la tabla sistemas
+// El registro a actualizar no existe
 func UpdateMedicinaSistemas(m *MedicinaSistemas) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaSistemas{IdSistema: m.IdSistema}
@@ -130,8 +130,8 @@ func UpdateMedicinaSistemas(m *MedicinaSistemas) (err error) {
 	return
 }
 
-//DeleteMedicinaSistemas elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeleteMedicinaSistemas elimina un registro de la tabla sistemas
+// El registro a eliminar no existe
 func DeleteMedicinaSistemas(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaSistemas{IdSistema: id}

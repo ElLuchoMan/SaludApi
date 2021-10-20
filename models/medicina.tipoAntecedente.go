@@ -26,8 +26,8 @@ func init() {
 	orm.RegisterModel(new(MedicinaTipoAntecedente))
 }
 
-//AddMedicinaTipoAntecedente inserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddMedicinaTipoAntecedente inserta un registro en la tabla tipoantecedente
+// Último registro insertado con éxito
 func AddMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (err error) {
 	o := orm.NewOrm()
 	m.IdTipoAntecedente = 0
@@ -37,8 +37,8 @@ func AddMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (err error) {
 	return err
 }
 
-//GetMedicinaTipoAntecedenteById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetMedicinaTipoAntecedenteById obtiene un registro de la tabla tipoantecedente por su id
+// Id no existe
 func GetMedicinaTipoAntecedenteById(id int) (v *MedicinaTipoAntecedente, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaTipoAntecedente{IdTipoAntecedente: id}
@@ -48,8 +48,8 @@ func GetMedicinaTipoAntecedenteById(id int) (v *MedicinaTipoAntecedente, err err
 	return nil, err
 }
 
-//GetAllMedicinaTipoAntecedenteo trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllMedicinaTipoAntecedente obtiene todos los registros de la tabla tipoantecedente
+// No existen registros
 func GetAllMedicinaTipoAntecedente(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -119,8 +119,8 @@ func GetAllMedicinaTipoAntecedente(query map[string]string, fields []string, sor
 	return nil, err
 }
 
-//UpdateMedicinaTipoAntecedente actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdateMedicinaTipoAntecedente actualiza un registro de la tabla tipoantecedente
+// El registro a actualizar no existe
 func UpdateMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaTipoAntecedente{IdTipoAntecedente: m.IdTipoAntecedente}
@@ -133,8 +133,8 @@ func UpdateMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (err error) {
 	return
 }
 
-//DeleteMedicinaTipoAntecedente elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeleteMedicinaTipoAntecedente elimina un registro de la tabla tipoantecedente
+// El registro a eliminar no existe
 func DeleteMedicinaTipoAntecedente(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaTipoAntecedente{IdTipoAntecedente: id}

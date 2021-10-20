@@ -19,22 +19,22 @@ type OdontologiaDiagnostico struct {
 }
 
 func (t *OdontologiaDiagnostico) TableName() string {
-	return "DiagnosticoOdontologia"
+	return "diagnosticoodontologia"
 }
 func init() {
 	orm.RegisterModel(new(OdontologiaDiagnostico))
 }
 
-// AddOdontologiaDiagnostico inserta un registro en la tabla DiagnosticoOdontologia
-//Último registro insertado con éxito
+// AddOdontologiaDiagnostico inserta un registro en la tabla diagnosticoodontologia
+// Último registro insertado con éxito
 func AddOdontologiaDiagnostico(m *OdontologiaDiagnostico) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetOdontologiaDiagnosticoById busca un registro en la tabla DiagnosticoOdontologia
-//Id no existe
+// GetOdontologiaDiagnosticoById obtiene un registro de la tabla diagnosticoodontologia por su id
+// Id no existe
 func GetOdontologiaDiagnosticoById(id int) (v *OdontologiaDiagnostico, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaDiagnostico{IdDiagnostico: id}
@@ -44,8 +44,8 @@ func GetOdontologiaDiagnosticoById(id int) (v *OdontologiaDiagnostico, err error
 	return nil, err
 }
 
-// GetAllOdontologiaDiagnostico trae todos los registros de la tabla DiagnosticoOdontologia
-//No existen registros
+// GetAllOdontologiaDiagnostico obtiene todos los registros de la tabla diagnosticoodontologia
+// No existen registros
 func GetAllOdontologiaDiagnostico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -115,8 +115,8 @@ func GetAllOdontologiaDiagnostico(query map[string]string, fields []string, sort
 	return nil, err
 }
 
-//UpdateOdontologiaDiagnostico actualiza un registro en la tabla DiagnosticoOdontologia
-//El registro a actualizar no existe
+// UpdateOdontologiaDiagnostico actualiza un registro de la tabla diagnosticoodontologia
+// El registro a actualizar no existe
 func UpdateOdontologiaDiagnostico(m *OdontologiaDiagnostico) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaDiagnostico{IdDiagnostico: m.IdDiagnostico}
@@ -130,8 +130,8 @@ func UpdateOdontologiaDiagnostico(m *OdontologiaDiagnostico) (err error) {
 	return
 }
 
-//DeleteOdontologiaDiagnostico elimina un registro en la tabla DiagnosticoOdontologia
-//El registro a eliminar no existe
+// DeleteOdontologiaDiagnostico elimina un registro de la tabla diagnosticoodontologia
+// El registro a eliminar no existe
 func DeleteOdontologiaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaDiagnostico{IdDiagnostico: id}

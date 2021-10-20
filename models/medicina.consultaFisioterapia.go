@@ -26,16 +26,16 @@ func init() {
 	orm.RegisterModel(new(MedicinaConsultaFisioterapia))
 }
 
-//AddConsultaFisioterapia agrega un registro a la tabla ConsultaFisioterapia
-//Último regisro insertado con éxito
+// AddConsultaFisioterapia inserta un registro en la tabla consultafisioterapia
+// Último registro insertado con éxito
 func AddConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-//GetConsultaFisioterapiabyID obtiene un registro de la tabla ConsultaFisioterapia por su id
-//Id no existe
+// GetConsultaFisioterapiabyID obtiene un registro de la tabla consultafisioterapia por su id
+// Id no existe
 func GetConsultaFisioterapiabyID(id int) (v *MedicinaConsultaFisioterapia, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: id}
@@ -45,8 +45,8 @@ func GetConsultaFisioterapiabyID(id int) (v *MedicinaConsultaFisioterapia, err e
 	return nil, err
 }
 
-//GetAllConsultaFisioterapia obtiene todos los registros de la tabla ConsultaFisioterapia
-//No existen registros
+// GetAllConsultaFisioterapia obtiene todos los registros de la tabla consultafisioterapia
+// No existen registros
 func GetAllConsultaFisioterapia(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -116,8 +116,8 @@ func GetAllConsultaFisioterapia(query map[string]string, fields []string, sortby
 	return nil, err
 }
 
-//UpdateConsultaFisioterapia actualiza un registro de la tabla ConsultaFisioterapia
-//El registro a actualizar no existe
+// UpdateConsultaFisioterapia actualiza un registro de la tabla consultafisioterapia
+// El registro a actualizar no existe
 func UpdateConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: m.IdMedicinaConsultaFisioterapia}
@@ -131,8 +131,8 @@ func UpdateConsultaFisioterapia(m *MedicinaConsultaFisioterapia) (err error) {
 	return
 }
 
-//DeleteConsultaFisioterapia elimina un registro de la tabla ConsultaFisioterapia
-//El registro a eliminar no existe
+// DeleteConsultaFisioterapia  elimina un registro de la tabla consultafisioterapia
+// El registro a eliminar no existe
 func DeleteConsultaFisioterapia(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaConsultaFisioterapia{IdMedicinaConsultaFisioterapia: id}

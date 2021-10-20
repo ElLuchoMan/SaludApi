@@ -25,8 +25,8 @@ func init() {
 	orm.RegisterModel(new(PsicologiaDiagnostico))
 }
 
-//AddPsicologiaDiagnostico inserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddPsicologiaDiagnostico inserta un registro en la tabla diagnosticopsicologia
+// Último registro insertado con éxito
 func AddPsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 	o := orm.NewOrm()
 	m.IdDiagnosticoPsicologia = 0
@@ -36,8 +36,8 @@ func AddPsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 	return err
 }
 
-//GetPsicologiaDiagnosticoById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetPsicologiaDiagnosticoById obtiene un registro de la tabla diagnosticopsicologia por su id
+// Id no existe
 func GetPsicologiaDiagnosticoById(id int) (v *PsicologiaDiagnostico, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaDiagnostico{IdDiagnosticoPsicologia: id}
@@ -47,8 +47,8 @@ func GetPsicologiaDiagnosticoById(id int) (v *PsicologiaDiagnostico, err error) 
 	return nil, err
 }
 
-//GetAllPsicologiaDiagnostico trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllPsicologiaDiagnostico obtiene todos los registros de la tabla diagnostico_psicologia
+// No existen registros
 func GetAllPsicologiaDiagnostico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -118,8 +118,8 @@ func GetAllPsicologiaDiagnostico(query map[string]string, fields []string, sortb
 	return nil, err
 }
 
-//UpdatePsicologiaDiagnostico actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdatePsicologiaDiagnostico actualiza un registro de la tabla diagnosticopsicologia
+// El registro a actualizar no existe
 func UpdatePsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaDiagnostico{IdDiagnosticoPsicologia: m.IdDiagnosticoPsicologia}
@@ -132,8 +132,8 @@ func UpdatePsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
 	return
 }
 
-//DeletePsicologiaDiagnostico elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeletePsicologiaDiagnostico elimina un registro de la tabla diagnosticopsicologia
+// El registro a eliminar no existe
 func DeletePsicologiaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaDiagnostico{IdDiagnosticoPsicologia: id}

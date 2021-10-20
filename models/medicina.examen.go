@@ -26,16 +26,16 @@ func init() {
 	orm.RegisterModel(new(MecicinaExamen))
 }
 
-//AddMecicinaExamen inserta un registro en la tabla examen
-//Último registro insertado con éxito
+// AddMecicinaExamen inserta un registro en la tabla examen
+// Último registro insertado con éxito
 func AddMecicinaExamen(m *MecicinaExamen) (int64, error) {
 	o := orm.NewOrm()
 	id, err := o.Insert(m)
 	return id, err
 }
 
-//GetMecicinaExamenById obtiene un registro de la tabla examen
-//Id no existe
+// GetMecicinaExamenById obtiene un registro de la tabla examen por su id
+// Id no existe
 func GetMecicinaExamenById(id int) (MecicinaExamen, error) {
 	o := orm.NewOrm()
 	m := MecicinaExamen{IdExamen: id}
@@ -43,8 +43,8 @@ func GetMecicinaExamenById(id int) (MecicinaExamen, error) {
 	return m, err
 }
 
-//GetAllMecicinaExamen obtiene todos los registros de la tabla examen
-//No existen registros
+// GetAllMecicinaExamen obtiene todos los registros de la tabla examen
+// No existen registros
 func GetAllMecicinaExamen(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -114,8 +114,8 @@ func GetAllMecicinaExamen(query map[string]string, fields []string, sortby []str
 	return nil, err
 }
 
-//UpdateMecicinaExamen actualiza un registro en la tabla examen
-//El registro a actualizar no existe
+// UpdateMecicinaExamen actualiza un registro de la tabla examen
+// El registro a actualizar no existe
 func UpdateMecicinaExamen(m *MecicinaExamen) (err error) {
 	o := orm.NewOrm()
 	v := MecicinaExamen{IdExamen: m.IdExamen}
@@ -129,8 +129,8 @@ func UpdateMecicinaExamen(m *MecicinaExamen) (err error) {
 	return
 }
 
-//DeleteMecicinaExamen elimina un registro de la tabla examen
-//El registro a eliminar no existe
+// DeleteMecicinaExamen elimina un registro de la tabla examen
+// El registro a eliminar no existe
 func DeleteMecicinaExamen(id int) (err error) {
 	o := orm.NewOrm()
 	v := MecicinaExamen{IdExamen: id}

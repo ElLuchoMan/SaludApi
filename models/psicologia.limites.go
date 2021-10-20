@@ -24,8 +24,8 @@ func init() {
 	orm.RegisterModel(new(PsicologiaLimites))
 }
 
-//AddPsicologiaLimites inserta un registro en la tabla diagnostico_psicologia
-//Último registro insertado con éxito
+// AddPsicologiaLimites inserta un registro en la tabla limites
+// Último registro insertado con éxito
 func AddPsicologiaLimites(m *PsicologiaLimites) (err error) {
 	o := orm.NewOrm()
 	m.IdLimite = 0
@@ -35,8 +35,8 @@ func AddPsicologiaLimites(m *PsicologiaLimites) (err error) {
 	return err
 }
 
-//GetPsicologiaLimitesById trae un registro de la tabla diagnostico_psicologia
-//Id no existe
+// GetPsicologiaLimitesById obtiene un registro de la tabla limites por su id
+// Id no existe
 func GetPsicologiaLimitesById(id int) (v *PsicologiaLimites, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaLimites{IdLimite: id}
@@ -46,8 +46,8 @@ func GetPsicologiaLimitesById(id int) (v *PsicologiaLimites, err error) {
 	return nil, err
 }
 
-//GetAllPsicologiaLimites trae todos los registros de la tabla diagnostico_psicologia
-//No existen registros
+// GetAllPsicologiaLimites obtiene todos los registros de la tabla limites
+// No existen registros
 func GetAllPsicologiaLimites(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
@@ -117,8 +117,8 @@ func GetAllPsicologiaLimites(query map[string]string, fields []string, sortby []
 	return nil, err
 }
 
-//UpdatePsicologiaLimites actualiza un registro en la tabla diagnostico_psicologia
-//El registro a actualizar no existe
+// UpdatePsicologiaLimites actualiza un registro de la tabla
+// El registro a actualizar no existe
 func UpdatePsicologiaLimites(m *PsicologiaLimites) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaLimites{IdLimite: m.IdLimite}
@@ -131,8 +131,8 @@ func UpdatePsicologiaLimites(m *PsicologiaLimites) (err error) {
 	return
 }
 
-//DeletePsicologiaLimites elimina un registro de la tabla diagnostico_psicologia
-//El registro a eliminar no existe
+// DeletePsicologiaLimites elimina un registro de la tabla limites
+// El registro a eliminar no existe
 func DeletePsicologiaLimites(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaLimites{IdLimite: id}
