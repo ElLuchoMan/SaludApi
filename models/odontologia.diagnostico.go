@@ -9,44 +9,47 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type PsicologiaComposicionFamiliar struct {
-	IdPsicologiaComposicionFamiliar int    `orm:"column(id_composicion_familiar);pk;auto"`
-	IdHojaHistoria                  int    `orm:"column(id_hoja_historia);null"`
-	Observaciones                   string `orm:"column(observaciones);null"`
+type OdontologiaDiagnostico struct {
+	IdDiagnostico  int    `orm:"column(id_diagnostico);pk;auto"`
+	Diagnostivo    string `orm:"column(diagnostivo);null"`
+	Pronostico     string `orm:"column(pronostico);null"`
+	Evolucion      string `orm:"column(evolucion);null"`
+	Observaciones  string `orm:"column(observaciones);null"`
+	IdHojaHistoria int    `orm:"column(id_hoja_historia);null"`
 }
 
-func (t *PsicologiaComposicionFamiliar) TableName() string {
-	return "composicionfamiliar"
+func (t *OdontologiaDiagnostico) TableName() string {
+	return "DiagnosticoOdontologia"
 }
 func init() {
-	orm.RegisterModel(new(PsicologiaComposicionFamiliar))
+	orm.RegisterModel(new(OdontologiaDiagnostico))
 }
 
-//AddComposicionFamiliar agrega un acceso a la historia clinica
-//Último registro insertado con exito
-func AddComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err error) {
+// AddOdontologiaDiagnostico inserta un registro en la tabla DiagnosticoOdontologia
+//Último registro insertado con éxito
+func AddOdontologiaDiagnostico(m *OdontologiaDiagnostico) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-//GetComposicionFamiliarById consulta el acceso a la historia clinica por su id
+// GetOdontologiaDiagnosticoById busca un registro en la tabla DiagnosticoOdontologia
 //Id no existe
-func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
+func GetOdontologiaDiagnosticoById(id int) (v *OdontologiaDiagnostico, err error) {
 	o := orm.NewOrm()
-	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: v.IdPsicologiaComposicionFamiliar}
+	v = &OdontologiaDiagnostico{IdDiagnostico: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
 	return nil, err
 }
 
-// GetAllComposicionFamiliar consulta todos los accesos a la historia clinica
+// GetAllOdontologiaDiagnostico trae todos los registros de la tabla DiagnosticoOdontologia
 //No existen registros
-func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllOdontologiaDiagnostico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(PsicologiaComposicionFamiliar))
+	qs := o.QueryTable(new(OdontologiaDiagnostico))
 	for k, v := range query {
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
@@ -90,7 +93,7 @@ func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby 
 			return nil, errors.New("Error: campos de 'order' no utilizados")
 		}
 	}
-	var l []PsicologiaComposicionFamiliar
+	var l []OdontologiaDiagnostico
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -112,29 +115,31 @@ func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby 
 	return nil, err
 }
 
-//UpdateComposicionFamiliar actualiza un acceso a la historia clinica
-//El regisro a actualizar no existe
-func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
+//UpdateOdontologiaDiagnostico actualiza un registro en la tabla DiagnosticoOdontologia
+//El registro a actualizar no existe
+func UpdateOdontologiaDiagnostico(m *OdontologiaDiagnostico) (err error) {
 	o := orm.NewOrm()
-	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: m.IdPsicologiaComposicionFamiliar}
+	v := OdontologiaDiagnostico{IdDiagnostico: m.IdDiagnostico}
+	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
-			fmt.Println("Número de registros actualizados de la base de datos:", num)
+			fmt.Println("Numero de registros actualizados:", num)
 		}
 	}
 	return
 }
 
-//DeleteComposicionFamiliar elimina un acceso a la historia clinica
+//DeleteOdontologiaDiagnostico elimina un registro en la tabla DiagnosticoOdontologia
 //El registro a eliminar no existe
-func DeleteComposicionFamiliar(id int) (err error) {
+func DeleteOdontologiaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
-	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}
+	v := OdontologiaDiagnostico{IdDiagnostico: id}
+	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}); err == nil {
-			fmt.Println("Número de registros eliminados en la base de datos:", num)
+		if num, err = o.Delete(&OdontologiaDiagnostico{IdDiagnostico: id}); err == nil {
+			fmt.Println("Numero de registros eliminados:", num)
 		}
 	}
 	return

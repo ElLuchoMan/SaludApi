@@ -396,7 +396,7 @@
             "title": "AccesoHistoriaClinica",
             "type": "object",
             "properties": {
-                "Fecha_acceso": {
+                "FechaAcceso": {
                     "type": "string",
                     "format": "datetime"
                 },
@@ -404,11 +404,11 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "Id_historia_clinica": {
+                "IdHistoriaClinica": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "Profesional_id": {
+                "ProfesionaId": {
                     "type": "integer",
                     "format": "int64"
                 }
