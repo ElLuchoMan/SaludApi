@@ -5,15 +5,16 @@ import (
 	"fmt"
 	"reflect"
 	"strings"
-	"time"
 
 	"github.com/astaxie/beego/orm"
 )
+
 type PsicologiaComposicionFamiliar struct {
-	id_composicion_familiar int `orm:"column(id_composicion_familiar);pk;auto"`
-	id_hoja_historia int `orm:"column(id_hoja_historia);null"`
-	observaciones string `orm:"column(observaciones);null"`
+	IdPsicologiaComposicionFamiliar int    `orm:"column(id_composicion_familiar);pk;auto"`
+	id_hoja_historia                int    `orm:"column(id_hoja_historia);null"`
+	observaciones                   string `orm:"column(observaciones);null"`
 }
+
 func (t *PsicologiaComposicionFamiliar) Schema() string {
 	return "psicologia"
 }
@@ -23,18 +24,20 @@ func (t *PsicologiaComposicionFamiliar) TableName() string {
 func init() {
 	orm.RegisterModel(new(PsicologiaComposicionFamiliar))
 }
+
 //AddComposicionFamiliar agrega un acceso a la historia clinica
 //Último registro insertado con exito
-func AddComposicionFamiliar(m *ComposicionFamiliar) (id int64, err error) {
+func AddComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
+
 //GetComposicionFamiliarById consulta el acceso a la historia clinica por su id
 //Id no existe
 func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
 	o := orm.NewOrm()
-	v = &PsicologiaComposicionFamiliar{IdComposicionFamiliar: IdComposicionFamiliar}
+	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: v.IdPsicologiaComposicionFamiliar}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
@@ -111,11 +114,12 @@ func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby 
 	}
 	return nil, err
 }
+
 //UpdateComposicionFamiliar actualiza un acceso a la historia clinica
 //El regisro a actualizar no existe
 func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 	o := orm.NewOrm()
-	v := PsicologiaComposicionFamiliar{IdComposicionFamiliar: m.IdComposicionFamiliar}
+	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: m.IdPsicologiaComposicionFamiliar}
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
@@ -129,14 +133,12 @@ func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 //El registro a eliminar no existe
 func DeleteComposicionFamiliar(id int) (err error) {
 	o := orm.NewOrm()
-	v := PsicologiaComposicionFamiliar{IdComposicionFamiliar: IdComposicionFamiliar}
+	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&PsicologiaComposicionFamiliar{IdComposicionFamiliar: IdComposicionFamiliar}); err == nil {
+		if num, err = o.Delete(&PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}); err == nil {
 			fmt.Println("Número de registros eliminados en la base de datos:", num)
 		}
 	}
 	return
 }
-
-

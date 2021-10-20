@@ -11,13 +11,14 @@ import (
 )
 
 type AccesoHistoriaClinica struct {
-id_acceso int `orm:"column(id_acceso);pk;auto"`
-fecha_acceso time.Time `orm:"column(fecha_acceso);type(date)";not null`
-profesional_id int `orm:"column(profesional_id)"`
-id_historia_clinica int `orm:"column(id_historia_clinica)"`
+	IdAccesoHistoria    int       `orm:"column(id_acceso);pk;auto"`
+	fecha_acceso        time.Time `orm:"column(fecha_acceso);type(date)";not null`
+	profesional_id      int       `orm:"column(profesional_id)"`
+	id_historia_clinica int       `orm:"column(id_historia_clinica)"`
 }
-func (t ¨*Anamnesis) Schema() string {
-	return "acceso_historia"
+
+func (t *AccesoHistoriaClinica) Schema() string {
+	return "acceso_historia_clinica"
 }
 func (t *AccesoHistoriaClinica) TableName() string {
 	return "AccesoHistoriaClinica"
@@ -26,6 +27,7 @@ func (t *AccesoHistoriaClinica) TableName() string {
 func init() {
 	orm.RegisterModel(new(AccesoHistoriaClinica))
 }
+
 //AddAccesoHistoriaClinica agrega un acceso a la historia clinica
 //Último registro insertado con exito
 func AddAccesoHistoriaClinica(m *AccesoHistoriaClinica) (id int64, err error) {
@@ -33,11 +35,12 @@ func AddAccesoHistoriaClinica(m *AccesoHistoriaClinica) (id int64, err error) {
 	id, err = o.Insert(m)
 	return
 }
+
 //GetAccesoHistoriaClinicaById consulta el acceso a la historia clinica por su id
 //Id no existe
 func GetAccesoHistoriaClinicaById(id int) (v *AccesoHistoriaClinica, err error) {
 	o := orm.NewOrm()
-	v = &AccesoHistoriaClinica{IdAcceso: id}
+	v = &AccesoHistoriaClinica{IdAccesoHistoria: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
@@ -114,11 +117,12 @@ func GetAllAccesoHistoriaClinica(query map[string]string, fields []string, sortb
 	}
 	return nil, err
 }
+
 //UpdateAccesoHistoriaClinica actualiza un acceso a la historia clinica
 //El regisro a actualizar no existe
 func UpdateAccesoHistoriaClinica(m *AccesoHistoriaClinica) (err error) {
 	o := orm.NewOrm()
-	v := AccesoHistoriaClinica{IdAcceso: m.IdAcceso}
+	v := AccesoHistoriaClinica{IdAccesoHistoria: m.IdAccesoHistoria}
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
@@ -132,10 +136,10 @@ func UpdateAccesoHistoriaClinica(m *AccesoHistoriaClinica) (err error) {
 //El registro a eliminar no existe
 func DeleteAccesoHistoriaClinica(id int) (err error) {
 	o := orm.NewOrm()
-	v := AccesoHistoriaClinica{IdAcceso: id}
+	v := AccesoHistoriaClinica{IdAccesoHistoria: id}
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&AccesoHistoriaClinica{IdAcceso: id}); err == nil {
+		if num, err = o.Delete(&AccesoHistoriaClinica{IdAccesoHistoria: id}); err == nil {
 			fmt.Println("Número de registros eliminados en la base de datos:", num)
 		}
 	}
