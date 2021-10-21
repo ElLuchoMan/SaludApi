@@ -38,6 +38,11 @@ func init() {
 				&controllers.MedicinaDiagnosticoController{},
 			),
 		),
+		beego.NSNamespace("/medicinaExamen",
+			beego.NSInclude(
+				&controllers.MedicinaExamenController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

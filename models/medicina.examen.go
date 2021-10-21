@@ -10,7 +10,7 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type MecicinaExamen struct {
+type MedicinaExamen struct {
 	IdExamen       int                   `orm:"column(id_examen);pk;auto"`
 	IdHojaHistoria *MedicinaHojaHistoria `orm:"column(id_hoja_historia);rel(fk);null"`
 	Nombre         string                `orm:"column(nombre);null"`
@@ -19,36 +19,36 @@ type MecicinaExamen struct {
 	FechaExamen    time.Time             `orm:"column(fecha_examen);type(date);null"`
 }
 
-func (t *MecicinaExamen) TableName() string {
+func (t *MedicinaExamen) TableName() string {
 	return "examen"
 }
 func init() {
-	orm.RegisterModel(new(MecicinaExamen))
+	orm.RegisterModel(new(MedicinaExamen))
 }
 
-// AddMecicinaExamen inserta un registro en la tabla examen
+// AddMedicinaExamen inserta un registro en la tabla examen
 // Último registro insertado con éxito
-func AddMecicinaExamen(m *MecicinaExamen) (int64, error) {
+func AddMedicinaExamen(m *MedicinaExamen) (int64, error) {
 	o := orm.NewOrm()
 	id, err := o.Insert(m)
 	return id, err
 }
 
-// GetMecicinaExamenById obtiene un registro de la tabla examen por su id
+// GetMedicinaExamenById obtiene un registro de la tabla examen por su id
 // Id no existe
-func GetMecicinaExamenById(id int) (MecicinaExamen, error) {
+func GetMedicinaExamenById(id int) (MedicinaExamen, error) {
 	o := orm.NewOrm()
-	m := MecicinaExamen{IdExamen: id}
+	m := MedicinaExamen{IdExamen: id}
 	err := o.Read(&m)
 	return m, err
 }
 
-// GetAllMecicinaExamen obtiene todos los registros de la tabla examen
+// GetAllMedicinaExamen obtiene todos los registros de la tabla examen
 // No existen registros
-func GetAllMecicinaExamen(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllMedicinaExamen(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(MecicinaExamen))
+	qs := o.QueryTable(new(MedicinaExamen))
 	for k, v := range query {
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
@@ -92,7 +92,7 @@ func GetAllMecicinaExamen(query map[string]string, fields []string, sortby []str
 			return nil, errors.New("error: campos de 'order' no utilizados")
 		}
 	}
-	var l []MecicinaExamen
+	var l []MedicinaExamen
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -114,11 +114,11 @@ func GetAllMecicinaExamen(query map[string]string, fields []string, sortby []str
 	return nil, err
 }
 
-// UpdateMecicinaExamen actualiza un registro de la tabla examen
+// UpdateMedicinaExamen actualiza un registro de la tabla examen
 // El registro a actualizar no existe
-func UpdateMecicinaExamen(m *MecicinaExamen) (err error) {
+func UpdateMedicinaExamen(m *MedicinaExamen) (err error) {
 	o := orm.NewOrm()
-	v := MecicinaExamen{IdExamen: m.IdExamen}
+	v := MedicinaExamen{IdExamen: m.IdExamen}
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
@@ -129,14 +129,14 @@ func UpdateMecicinaExamen(m *MecicinaExamen) (err error) {
 	return
 }
 
-// DeleteMecicinaExamen elimina un registro de la tabla examen
+// DeleteMedicinaExamen elimina un registro de la tabla examen
 // El registro a eliminar no existe
-func DeleteMecicinaExamen(id int) (err error) {
+func DeleteMedicinaExamen(id int) (err error) {
 	o := orm.NewOrm()
-	v := MecicinaExamen{IdExamen: id}
+	v := MedicinaExamen{IdExamen: id}
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&MecicinaExamen{IdExamen: id}); err == nil {
+		if num, err = o.Delete(&MedicinaExamen{IdExamen: id}); err == nil {
 			fmt.Println("Numero de registros eliminados:", num)
 		}
 	}
