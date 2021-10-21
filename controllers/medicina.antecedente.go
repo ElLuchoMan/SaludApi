@@ -26,10 +26,10 @@ func (c *MedicinaAntecedenteController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description create MedicinaAntecedente
+// @Description agregar un registro en la tabla MedicinaAntecedente
 // @Param	body		body 	models.MedicinaAntecedente	true		"Cuerpo para el contenido de MedicinaAntecedente"
 // @Success 201 {int} models.MedicinaAntecedente
-// @Failure 403 body is empty
+// @Failure 403 Cuerpo Vacío
 // @router / [post]
 func (c *MedicinaAntecedenteController) Post() {
 	var v models.MedicinaAntecedente
@@ -48,10 +48,10 @@ func (c *MedicinaAntecedenteController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description get MedicinaAntecedente by id
+// @Description consultar un registro de la tabla MedicinaAntecedente por su id
 // @Param	id		path 	string	true		"Id a consultar"
 // @Success 200 {object} models.MedicinaAntecedente
-// @Failure 403 :id is empty
+// @Failure 403 :id  está vacío
 // @router /:id [get]
 func (c *MedicinaAntecedenteController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
@@ -67,13 +67,13 @@ func (c *MedicinaAntecedenteController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description get MedicinaAntecedente
-// @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
-// @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
-// @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
-// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sort
-// @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
-// @Param	offset	query	string	false	"Start position of result set. Must be an integer"
+// @Description consulta todos los registros de la tabla MedicinaAntecedente
+// @Param   query   consulta    string  false   "Filtro. Por ejemplo, col1: v1, col2: v2 ..."
+// @Param   fields  consulta    string  false   "Campos devueltos. Por ejemplo, col1, col2 ..."
+// @Param   sortby  consulta    string  false   "Campos ordenados por. Por ejemplo, Col1, col2 ..."
+// @Param   order   consulta    string  false   "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ..."
+// @Param   limit   consulta    string  false   "Limite el tamaño del conjunto de resultados. Debe ser un número entero"
+// @Param   offset  consulta    string  false   "Posición inicial del conjunto de resultados. Debe ser un número entero"
 // @Success 200 {object} models.MedicinaAntecedente
 // @Failure 403
 // @router / [get]
@@ -129,11 +129,11 @@ func (c *MedicinaAntecedenteController) GetAll() {
 
 //Put ...
 // @Title Put
-// @Description update the MedicinaAntecedente
-// @Param	id		path 	string	true		"The id you want to update"
-// @Param	body		body 	models.MedicinaAntecedente	true		"body for MedicinaAntecedente content"
+// @Description actualizar un registro de la tabla MedicinaAntecedente
+// @Param	id		path 	string	true		"Id del registro a actualizar"
+// @Param	body		body 	models.MedicinaAntecedente	true		"Cuerpo para el contenido de MedicinaAntecedente"
 // @Success 200 {object} models.MedicinaAntecedente
-// @Failure 403 :id is not int
+// @Failure 403 :id no es entero
 // @router /:id [put]
 func (c *MedicinaAntecedenteController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
@@ -153,10 +153,10 @@ func (c *MedicinaAntecedenteController) Put() {
 
 //Delete ...
 // @Title Delete
-// @Description delete the MedicinaAntecedente
-// @Param	id		path 	string	true		"The id you want to delete"
-// @Success 200 {string} delete success!
-// @Failure 403 id is empty
+// @Description elimina un registro de la tabla MedicinaAntecedente
+// @Param	id		path 	string	true		"Id del registro a eliminar"
+// @Success 200 {string} borrado exitoso!
+// @Failure 403 Id vacío
 // @router /:id [delete]
 func (c *MedicinaAntecedenteController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")

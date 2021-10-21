@@ -26,10 +26,10 @@ func (c *AccesoHistoriaClinicaController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description create AccesoHistoriaClinica
+// @Description agregar un registro en la tabla AccesoHistoriaClinica
 // @Param	body		body 	models.AccesoHistoriaClinica	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
 // @Success 201 {int} models.AccesoHistoriaClinica
-// @Failure 403 body is empty
+// @Failure 403 Cuerpo Vacío
 // @router / [post]
 func (c *AccesoHistoriaClinicaController) Post() {
 	var v models.AccesoHistoriaClinica
@@ -48,10 +48,10 @@ func (c *AccesoHistoriaClinicaController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description get AccesoHistoriaClinica by id
+// @Description consultar un registro de la tabla AccesoHistoriaClinica por su id
 // @Param	id		path 	string	true		"Id a consultar"
 // @Success 200 {object} models.AccesoHistoriaClinica
-// @Failure 403 :id is empty
+// @Failure 403 :id está vacío
 // @router /:id [get]
 func (c *AccesoHistoriaClinicaController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
@@ -67,13 +67,13 @@ func (c *AccesoHistoriaClinicaController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description get AccesoHistoriaClinica
-// @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
-// @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
-// @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
-// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
-// @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
-// @Param	offset	query	string	false	"Start position of result set. Must be an integer"
+// @Description consulta todos los registros de la tabla AccesoHistoriaClinica
+// @Param   query   consulta    string  false   "Filtro. Por ejemplo, col1: v1, col2: v2 ..."
+// @Param   fields  consulta    string  false   "Campos devueltos. Por ejemplo, col1, col2 ..."
+// @Param   sortby  consulta    string  false   "Campos ordenados por. Por ejemplo, Col1, col2 ..."
+// @Param   order   consulta    string  false   "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ..."
+// @Param   limit   consulta    string  false   "Limite el tamaño del conjunto de resultados. Debe ser un número entero"
+// @Param   offset  consulta    string  false   "Posición inicial del conjunto de resultados. Debe ser un número entero"
 // @Success 200 {object} models.AccesoHistoriaClinica
 // @Failure 403
 // @router / [get]
@@ -129,11 +129,11 @@ func (c *AccesoHistoriaClinicaController) GetAll() {
 
 // Put ...
 // @Title Put
-// @Description update the AccesoHistoriaClinica
-// @Param	id		path 	string	true		"The id you want to update"
-// @Param	body		body 	models.AccesoHistoriaClinica	true		"body for AccesoHistoriaClinica content"
+// @Description actualizar un registro de la tabla AccesoHistoriaClinica
+// @Param	id		path 	string	true		"Id del registro a actualizar"
+// @Param	body		body 	models.AccesoHistoriaClinica	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
 // @Success 200 {object} models.AccesoHistoriaClinica
-// @Failure 403 :id is not int
+// @Failure 403 :id no es entero
 // @router /:id [put]
 func (c *AccesoHistoriaClinicaController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
@@ -153,10 +153,10 @@ func (c *AccesoHistoriaClinicaController) Put() {
 
 // Delete ...
 // @Title Delete
-// @Description delete the AccesoHistoriaClinica
-// @Param	id		path 	string	true		"The id you want to delete"
-// @Success 200 {string} delete success!
-// @Failure 403 id is empty
+// @Description elimina un registro de la tabla AccesoHistoriaClinica
+// @Param	id		path 	string	true		"Id del registro a eliminar"
+// @Success 200 {string} borrado exitoso!
+// @Failure 403 Id vacío
 // @router /:id [delete]
 func (c *AccesoHistoriaClinicaController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")

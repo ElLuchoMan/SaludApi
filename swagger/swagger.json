@@ -20,43 +20,43 @@
                 "tags": [
                     "accesoHistoria"
                 ],
-                "description": "get AccesoHistoriaClinica",
+                "description": "consulta todos los registros de la tabla AccesoHistoriaClinica",
                 "operationId": "AccesoHistoriaClinicaController.Get All",
                 "parameters": [
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     }
                 ],
@@ -76,7 +76,7 @@
                 "tags": [
                     "accesoHistoria"
                 ],
-                "description": "create AccesoHistoriaClinica",
+                "description": "agregar un registro en la tabla AccesoHistoriaClinica",
                 "operationId": "AccesoHistoriaClinicaController.Post",
                 "parameters": [
                     {
@@ -94,7 +94,7 @@
                         "description": "{int} models.AccesoHistoriaClinica"
                     },
                     "403": {
-                        "description": "body is empty"
+                        "description": "Cuerpo Vacío"
                     }
                 }
             }
@@ -104,7 +104,7 @@
                 "tags": [
                     "accesoHistoria"
                 ],
-                "description": "get AccesoHistoriaClinica by id",
+                "description": "consultar un registro de la tabla AccesoHistoriaClinica por su id",
                 "operationId": "AccesoHistoriaClinicaController.Get One",
                 "parameters": [
                     {
@@ -123,7 +123,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is empty"
+                        "description": ":id está vacío"
                     }
                 }
             },
@@ -131,20 +131,20 @@
                 "tags": [
                     "accesoHistoria"
                 ],
-                "description": "update the AccesoHistoriaClinica",
+                "description": "actualizar un registro de la tabla AccesoHistoriaClinica",
                 "operationId": "AccesoHistoriaClinicaController.Put",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to update",
+                        "description": "Id del registro a actualizar",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for AccesoHistoriaClinica content",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.AccesoHistoriaClinica"
@@ -159,7 +159,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is not int"
+                        "description": ":id no es entero"
                     }
                 }
             },
@@ -167,23 +167,23 @@
                 "tags": [
                     "accesoHistoria"
                 ],
-                "description": "delete the AccesoHistoriaClinica",
+                "description": "elimina un registro de la tabla AccesoHistoriaClinica",
                 "operationId": "AccesoHistoriaClinicaController.Delete",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del registro a eliminar",
                         "required": true,
                         "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} delete success!"
+                        "description": "{string} borrado exitoso!"
                     },
                     "403": {
-                        "description": "id is empty"
+                        "description": "Id vacío"
                     }
                 }
             }
@@ -193,43 +193,43 @@
                 "tags": [
                     "medicinaAntecedente"
                 ],
-                "description": "get MedicinaAntecedente",
+                "description": "consulta todos los registros de la tabla MedicinaAntecedente",
                 "operationId": "MedicinaAntecedenteController.Get All",
                 "parameters": [
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sort",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     }
                 ],
@@ -249,7 +249,7 @@
                 "tags": [
                     "medicinaAntecedente"
                 ],
-                "description": "create MedicinaAntecedente",
+                "description": "agregar un registro en la tabla MedicinaAntecedente",
                 "operationId": "MedicinaAntecedenteController.Post",
                 "parameters": [
                     {
@@ -267,7 +267,7 @@
                         "description": "{int} models.MedicinaAntecedente"
                     },
                     "403": {
-                        "description": "body is empty"
+                        "description": "Cuerpo Vacío"
                     }
                 }
             }
@@ -277,7 +277,7 @@
                 "tags": [
                     "medicinaAntecedente"
                 ],
-                "description": "get MedicinaAntecedente by id",
+                "description": "consultar un registro de la tabla MedicinaAntecedente por su id",
                 "operationId": "MedicinaAntecedenteController.Get One",
                 "parameters": [
                     {
@@ -296,7 +296,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is empty"
+                        "description": ":id  está vacío"
                     }
                 }
             },
@@ -304,20 +304,20 @@
                 "tags": [
                     "medicinaAntecedente"
                 ],
-                "description": "update the MedicinaAntecedente",
+                "description": "actualizar un registro de la tabla MedicinaAntecedente",
                 "operationId": "MedicinaAntecedenteController.Put",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to update",
+                        "description": "Id del registro a actualizar",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaAntecedente content",
+                        "description": "Cuerpo para el contenido de MedicinaAntecedente",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaAntecedente"
@@ -332,7 +332,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is not int"
+                        "description": ":id no es entero"
                     }
                 }
             },
@@ -340,23 +340,23 @@
                 "tags": [
                     "medicinaAntecedente"
                 ],
-                "description": "delete the MedicinaAntecedente",
+                "description": "elimina un registro de la tabla MedicinaAntecedente",
                 "operationId": "MedicinaAntecedenteController.Delete",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del registro a eliminar",
                         "required": true,
                         "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} delete success!"
+                        "description": "{string} borrado exitoso!"
                     },
                     "403": {
-                        "description": "id is empty"
+                        "description": "Id vacío"
                     }
                 }
             }
@@ -366,43 +366,43 @@
                 "tags": [
                     "medicinaConsultaFisioterapia"
                 ],
-                "description": "get MedicinaConsultaFisioterapia",
+                "description": "consulta todos los registros de la tabla MedicinaConsultaFisioterapia",
                 "operationId": "MedicinaConsultaFisioterapiaController.Get All",
                 "parameters": [
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sort",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     }
                 ],
@@ -422,7 +422,7 @@
                 "tags": [
                     "medicinaConsultaFisioterapia"
                 ],
-                "description": "create MedicinaConsultaFisioterapia",
+                "description": "agregar un registro en la tabla MedicinaConsultaFisioterapia",
                 "operationId": "MedicinaConsultaFisioterapiaController.Post",
                 "parameters": [
                     {
@@ -440,7 +440,7 @@
                         "description": "{int} models.MedicinaConsultaFisioterapia"
                     },
                     "403": {
-                        "description": "body is empty"
+                        "description": "Cuerpo Vacío"
                     }
                 }
             }
@@ -450,7 +450,7 @@
                 "tags": [
                     "medicinaConsultaFisioterapia"
                 ],
-                "description": "get MedicinaConsultaFisioterapia by id",
+                "description": "consultar un registro de la tabla MedicinaConsultaFisioterapia por su id",
                 "operationId": "MedicinaConsultaFisioterapiaController.Get One",
                 "parameters": [
                     {
@@ -469,7 +469,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is empty"
+                        "description": ":id está vacío"
                     }
                 }
             },
@@ -477,20 +477,20 @@
                 "tags": [
                     "medicinaConsultaFisioterapia"
                 ],
-                "description": "update the MedicinaConsultaFisioterapia",
+                "description": "actualizar un registro de la tabla MedicinaConsultaFisioterapia",
                 "operationId": "MedicinaConsultaFisioterapiaController.Put",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to update",
+                        "description": "Id del registro a actualizar",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaConsultaFisioterapia content",
+                        "description": "Cuerpo para el contenido de MedicinaConsultaFisioterapia",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaConsultaFisioterapia"
@@ -505,7 +505,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is not int"
+                        "description": ":id no es entero"
                     }
                 }
             },
@@ -513,23 +513,23 @@
                 "tags": [
                     "medicinaConsultaFisioterapia"
                 ],
-                "description": "delete the MedicinaConsultaFisioterapia",
+                "description": "elimina un registro de la tabla MedicinaConsultaFisioterapia",
                 "operationId": "MedicinaConsultaFisioterapiaController.Delete",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del registro a eliminar",
                         "required": true,
                         "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} delete success!"
+                        "description": "{string} borrado exitoso!"
                     },
                     "403": {
-                        "description": "id is empty"
+                        "description": "Id vacío"
                     }
                 }
             }
@@ -539,43 +539,43 @@
                 "tags": [
                     "medicinaDiagnostico"
                 ],
-                "description": "get MedicinaDiagnostico",
+                "description": "consulta todos los registros de la tabla MedicinaDiagnostico",
                 "operationId": "MedicinaDiagnosticoController.Get All",
                 "parameters": [
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "query",
-                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "fields",
-                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "sortby",
-                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "order",
-                        "description": "Order corresponding to each sortby field, if single value, apply to all sort",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "limit",
-                        "description": "Limit the size of result set. Must be an integer",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     },
                     {
-                        "in": "query",
+                        "in": "consulta",
                         "name": "offset",
-                        "description": "Start position of result set. Must be an integer",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
                         "type": "string"
                     }
                 ],
@@ -595,7 +595,7 @@
                 "tags": [
                     "medicinaDiagnostico"
                 ],
-                "description": "create MedicinaDiagnostico",
+                "description": "agregar un registro en la tabla MedicinaDiagnostico",
                 "operationId": "MedicinaDiagnosticoController.Post",
                 "parameters": [
                     {
@@ -613,7 +613,7 @@
                         "description": "{int} models.MedicinaDiagnostico"
                     },
                     "403": {
-                        "description": "body is empty"
+                        "description": "Cuerpo Vacío"
                     }
                 }
             }
@@ -623,7 +623,7 @@
                 "tags": [
                     "medicinaDiagnostico"
                 ],
-                "description": "get MedicinaDiagnostico by id",
+                "description": "consultar un registro de la tabla MedicinaDiagnostico por su id",
                 "operationId": "MedicinaDiagnosticoController.Get One",
                 "parameters": [
                     {
@@ -642,7 +642,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is empty"
+                        "description": ":id está vacío"
                     }
                 }
             },
@@ -650,20 +650,20 @@
                 "tags": [
                     "medicinaDiagnostico"
                 ],
-                "description": "update the MedicinaDiagnostico",
+                "description": "actualizar un registro de la tabla MedicinaDiagnostico",
                 "operationId": "MedicinaDiagnosticoController.Put",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to update",
+                        "description": "Id del registro a actualizar",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaConsultaFisioterapia content",
+                        "description": "Cuerpo para el contenido de MedicinaConsultaFisioterapia",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaDiagnostico"
@@ -678,7 +678,7 @@
                         }
                     },
                     "403": {
-                        "description": ":id is not int"
+                        "description": ":id no es entero"
                     }
                 }
             },
@@ -686,23 +686,23 @@
                 "tags": [
                     "medicinaDiagnostico"
                 ],
-                "description": "delete the MedicinaDiagnostico",
+                "description": "elimina un registro de la tabla MedicinaDiagnostico",
                 "operationId": "MedicinaDiagnosticoController.Delete",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The id you want to delete",
+                        "description": "Id del registro a eliminar",
                         "required": true,
                         "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "{string} delete success!"
+                        "description": "{string} borrado exitoso!"
                     },
                     "403": {
-                        "description": "id is empty"
+                        "description": "Id vacío"
                     }
                 }
             }
