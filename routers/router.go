@@ -50,6 +50,15 @@ func init() {
 			beego.NSInclude(
 				&controllers.MedicinaHojaHistoriaController{},
 			),
+		), beego.NSNamespace("/medicinaSistemas",
+			beego.NSInclude(
+				&controllers.MedicinaSistemasController{},
+			),
+		),
+		beego.NSNamespace("/medicinaTipoAntecedente",
+			beego.NSInclude(
+				&controllers.MedicinaTipoAntecedenteController{},
+			),
 		),
 	)
 	beego.AddNamespace(ns)

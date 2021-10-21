@@ -28,13 +28,10 @@ func init() {
 
 // AddMedicinaTipoAntecedente inserta un registro en la tabla tipoantecedente
 // Último registro insertado con éxito
-func AddMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (err error) {
+func AddMedicinaTipoAntecedente(m *MedicinaTipoAntecedente) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdTipoAntecedente = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetMedicinaTipoAntecedenteById obtiene un registro de la tabla tipoantecedente por su id

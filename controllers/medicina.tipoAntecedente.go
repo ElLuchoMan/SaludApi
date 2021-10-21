@@ -11,12 +11,12 @@ import (
 	"github.com/astaxie/beego"
 )
 
-type MedicinaSistemasController struct {
+type MedicinaTipoAntecedenteController struct {
 	beego.Controller
 }
 
 // URLMapping ...
-func (c *MedicinaSistemasController) URLMapping() {
+func (c *MedicinaTipoAntecedenteController) URLMapping() {
 	c.Mapping("Post", c.Post)
 	c.Mapping("GetOne", c.GetOne)
 	c.Mapping("GetAll", c.GetAll)
@@ -26,15 +26,15 @@ func (c *MedicinaSistemasController) URLMapping() {
 
 // Post ...
 // @Title Post
-// @Description agregar un registro en la tabla MedicinaSistemas
-// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
-// @Success 201 {int} models.MedicinaSistemas
+// @Description agregar un registro en la tabla MedicinaTipoAntecedente
+// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Success 201 {int} models.MedicinaTipoAntecedente
 // @Failure 403 Cuerpo Vacío
 // @router / [post]
-func (c *MedicinaSistemasController) Post() {
-	var v models.MedicinaSistemas
+func (c *MedicinaTipoAntecedenteController) Post() {
+	var v models.MedicinaTipoAntecedente
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if _, err := models.AddMedicinaSistemas(&v); err == nil {
+		if _, err := models.AddMedicinaTipoAntecedente(&v); err == nil {
 			c.Ctx.Output.SetStatus(201)
 			c.Data["json"] = v
 		} else {
@@ -48,15 +48,15 @@ func (c *MedicinaSistemasController) Post() {
 
 // GetOne ...
 // @Title Get One
-// @Description consultar un registro de la tabla MedicinaSistemas por su id
+// @Description consultar un registro de la tabla MedicinaTipoAntecedente por su id
 // @Param	id		path 	string	true		"Id a consultar"
-// @Success 200 {object} models.MedicinaSistemas
+// @Success 200 {object} models.MedicinaTipoAntecedente
 // @Failure 403 :id está vacío
 // @router /:id [get]
-func (c *MedicinaSistemasController) GetOne() {
+func (c *MedicinaTipoAntecedenteController) GetOne() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v, err := models.GetMedicinaSistemasById(id)
+	v, err := models.GetMedicinaTipoAntecedenteById(id)
 	if err != nil {
 		c.Data["json"] = err.Error()
 	} else {
@@ -67,17 +67,17 @@ func (c *MedicinaSistemasController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description consulta todos los registros de la tabla MedicinaSistemas
+// @Description consulta todos los registros de la tabla AccesoHistoriaClinica
 // @Param   query   consulta    string  false   "Filtro. Por ejemplo, col1: v1, col2: v2 ..."
 // @Param   fields  consulta    string  false   "Campos devueltos. Por ejemplo, col1, col2 ..."
 // @Param   sortby  consulta    string  false   "Campos ordenados por. Por ejemplo, Col1, col2 ..."
 // @Param   order   consulta    string  false   "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ..."
 // @Param   limit   consulta    string  false   "Limite el tamaño del conjunto de resultados. Debe ser un número entero"
 // @Param   offset  consulta    string  false   "Posición inicial del conjunto de resultados. Debe ser un número entero"
-// @Success 200 {object} models.MedicinaSistemas
+// @Success 200 {object} models.AccesoHistoriaClinica
 // @Failure 403
 // @router / [get]
-func (c *MedicinaSistemasController) GetAll() {
+func (c *MedicinaTipoAntecedenteController) GetAll() {
 	var fields []string
 	var sortby []string
 	var order []string
@@ -110,7 +110,7 @@ func (c *MedicinaSistemasController) GetAll() {
 		for _, cond := range strings.Split(v, ",") {
 			kv := strings.SplitN(cond, ":", 2)
 			if len(kv) != 2 {
-				c.Data["json"] = errors.New("error: invalid query key/value pair")
+				c.Data["json"] = errors.New("Error: invalid query key/value pair")
 				c.ServeJSON()
 				return
 			}
@@ -118,7 +118,7 @@ func (c *MedicinaSistemasController) GetAll() {
 			query[k] = v
 		}
 	}
-	l, err := models.GetAllMedicinaSistemas(query, fields, sortby, order, offset, limit)
+	l, err := models.GetAllMedicinaTipoAntecedente(query, fields, sortby, order, offset, limit)
 	if err != nil {
 		c.Data["json"] = err.Error()
 	} else {
@@ -129,18 +129,18 @@ func (c *MedicinaSistemasController) GetAll() {
 
 // Put ...
 // @Title Put
-// @Description actualizar un registro de la tabla MedicinaSistemas
+// @Description actualizar un registro de la tabla MedicinaTipoAntecedente
 // @Param	id		path 	string	true		"Id del registro a actualizar"
-// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
-// @Success 200 {object} models.MedicinaSistemas
+// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Success 200 {object} models.MedicinaTipoAntecedente
 // @Failure 403 :id no es entero
 // @router /:id [put]
-func (c *MedicinaSistemasController) Put() {
+func (c *MedicinaTipoAntecedenteController) Put() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	v := models.MedicinaSistemas{IdSistema: id}
+	v := models.MedicinaTipoAntecedente{IdTipoAntecedente: id}
 	if err := json.Unmarshal(c.Ctx.Input.RequestBody, &v); err == nil {
-		if err := models.UpdateMedicinaSistemas(&v); err == nil {
+		if err := models.UpdateMedicinaTipoAntecedente(&v); err == nil {
 			c.Data["json"] = "OK"
 		} else {
 			c.Data["json"] = err.Error()
@@ -153,15 +153,15 @@ func (c *MedicinaSistemasController) Put() {
 
 // Delete ...
 // @Title Delete
-// @Description elimina un registro de la tabla MedicinaSistemas
+// @Description elimina un registro de la tabla MedicinaTipoAntecedente
 // @Param	id		path 	string	true		"Id del registro a eliminar"
 // @Success 200 {string} borrado exitoso!
 // @Failure 403 Id vacío
 // @router /:id [delete]
-func (c *MedicinaSistemasController) Delete() {
+func (c *MedicinaTipoAntecedenteController) Delete() {
 	idStr := c.Ctx.Input.Param(":id")
 	id, _ := strconv.Atoi(idStr)
-	if err := models.DeleteMedicinaSistemas(id); err == nil {
+	if err := models.DeleteMedicinaTipoAntecedente(id); err == nil {
 		c.Data["json"] = "OK"
 	} else {
 		c.Data["json"] = err.Error()
