@@ -27,7 +27,7 @@ func (c *MedicinaDiagnosticoController) URLMapping() {
 // Post ...
 // @Title Post
 // @Description create MedicinaDiagnostico
-// @Param	body		body 	models.MedicinaDiagnostico	true		"body for MedicinaConsultaFisioterapia content"
+// @Param	body		body 	models.MedicinaDiagnostico	true		"Cuerpo para el contenido de MedicinaConsultaFisioterapia"
 // @Success 201 {int} models.MedicinaDiagnostico
 // @Failure 403 body is empty
 // @router / [post]
@@ -49,7 +49,7 @@ func (c *MedicinaDiagnosticoController) Post() {
 // GetOne ...
 // @Title Get One
 // @Description get MedicinaDiagnostico by id
-// @Param	id		path 	string	true		"The key for staticblock"
+// @Param	id		path 	string	true		"Id a consultar"
 // @Success 200 {object} models.MedicinaDiagnostico
 // @Failure 403 :id is empty
 // @router /:id [get]

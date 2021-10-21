@@ -27,7 +27,7 @@ func (c *AccesoHistoriaClinicaController) URLMapping() {
 // Post ...
 // @Title Post
 // @Description create AccesoHistoriaClinica
-// @Param	body		body 	models.AccesoHistoriaClinica	true		"body for AccesoHistoriaClinica content"
+// @Param	body		body 	models.AccesoHistoriaClinica	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
 // @Success 201 {int} models.AccesoHistoriaClinica
 // @Failure 403 body is empty
 // @router / [post]
@@ -49,7 +49,7 @@ func (c *AccesoHistoriaClinicaController) Post() {
 // GetOne ...
 // @Title Get One
 // @Description get AccesoHistoriaClinica by id
-// @Param	id		path 	string	true		"The key for staticblock"
+// @Param	id		path 	string	true		"Id a consultar"
 // @Success 200 {object} models.AccesoHistoriaClinica
 // @Failure 403 :id is empty
 // @router /:id [get]

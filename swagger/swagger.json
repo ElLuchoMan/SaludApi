@@ -82,7 +82,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for AccesoHistoriaClinica content",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.AccesoHistoriaClinica"
@@ -110,7 +110,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The key for staticblock",
+                        "description": "Id a consultar",
                         "required": true,
                         "type": "string"
                     }
@@ -255,7 +255,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaAntecedente content",
+                        "description": "Cuerpo para el contenido de MedicinaAntecedente",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaAntecedente"
@@ -283,7 +283,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The key for staticblock",
+                        "description": "Id a consultar",
                         "required": true,
                         "type": "string"
                     }
@@ -428,7 +428,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaConsultaFisioterapia content",
+                        "description": "Cuerpo para el contenido de MedicinaConsultaFisioterapia",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaConsultaFisioterapia"
@@ -456,7 +456,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The key for staticblock",
+                        "description": "Id a consultar",
                         "required": true,
                         "type": "string"
                     }
@@ -601,7 +601,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "body for MedicinaConsultaFisioterapia content",
+                        "description": "Cuerpo para el contenido de MedicinaConsultaFisioterapia",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaDiagnostico"
@@ -629,7 +629,7 @@
                     {
                         "in": "path",
                         "name": "id",
-                        "description": "The key for staticblock",
+                        "description": "Id a consultar",
                         "required": true,
                         "type": "string"
                     }

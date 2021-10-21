@@ -27,7 +27,7 @@ func (c *MedicinaAntecedenteController) URLMapping() {
 // Post ...
 // @Title Post
 // @Description create MedicinaAntecedente
-// @Param	body		body 	models.MedicinaAntecedente	true		"body for MedicinaAntecedente content"
+// @Param	body		body 	models.MedicinaAntecedente	true		"Cuerpo para el contenido de MedicinaAntecedente"
 // @Success 201 {int} models.MedicinaAntecedente
 // @Failure 403 body is empty
 // @router / [post]
@@ -49,7 +49,7 @@ func (c *MedicinaAntecedenteController) Post() {
 // GetOne ...
 // @Title Get One
 // @Description get MedicinaAntecedente by id
-// @Param	id		path 	string	true		"The key for staticblock"
+// @Param	id		path 	string	true		"Id a consultar"
 // @Success 200 {object} models.MedicinaAntecedente
 // @Failure 403 :id is empty
 // @router /:id [get]
