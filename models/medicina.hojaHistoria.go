@@ -32,13 +32,10 @@ func init() {
 
 // AddMedicinaHojaHistoria inserta un registro en la tabla hojahistoria
 // Último registro insertado con éxito
-func AddMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
+func AddMedicinaHojaHistoria(m *MedicinaHojaHistoria) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdHojaHistoria = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetMedicinaHojaHistoriaById obtiene un registro de la tabla hojahistoria por su id
@@ -131,7 +128,7 @@ func UpdateMedicinaHojaHistoria(m *MedicinaHojaHistoria) (err error) {
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
-			fmt.Println("Numero de registros actualizados:", num)
+			fmt.Println("Número de registros actualizados de la base de datos:", num)
 		}
 	}
 	return

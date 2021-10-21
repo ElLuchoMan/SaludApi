@@ -46,6 +46,10 @@ func init() {
 			beego.NSInclude(
 				&controllers.MedicinaHistoriaClinicaController{},
 			),
+		), beego.NSNamespace("/medicinaHojaHistoria",
+			beego.NSInclude(
+				&controllers.MedicinaHojaHistoriaController{},
+			),
 		),
 	)
 	beego.AddNamespace(ns)
