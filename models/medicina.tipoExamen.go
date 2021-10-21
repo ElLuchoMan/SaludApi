@@ -23,13 +23,10 @@ func init() {
 
 // AddMedicinaTipoExamen inserta un registro en la tabla tipoexamen
 // Último registro insertado con éxito
-func AddMedicinaTipoExamen(m *MedicinaTipoExamen) (err error) {
+func AddMedicinaTipoExamen(m *MedicinaTipoExamen) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdTipoExamen = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetMedicinaTipoExamenById obtiene un registro de la tabla tipoexamen por su id

@@ -43,17 +43,17 @@ func init() {
 	orm.RegisterModel(new(OdontologiaAnamnesis))
 }
 
-// AddAnamnesis inserta un registro en la tabla anamnesis
+// AddOdontologiaAnamnesis inserta un registro en la tabla anamnesis
 // Último registro insertado con éxito
-func AddAnamnesis(m *OdontologiaAnamnesis) (id int64, err error) {
+func AddOdontologiaAnamnesis(m *OdontologiaAnamnesis) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetAnamnesisById obtiene un registro de la tabla anamnesis por su id
+// GetOdontologiaAnamnesisById obtiene un registro de la tabla anamnesis por su id
 // Id no existe
-func GetAnamnesisById(id int) (v *OdontologiaAnamnesis, err error) {
+func GetOdontologiaAnamnesisById(id int) (v *OdontologiaAnamnesis, err error) {
 	o := orm.NewOrm()
 	v = &OdontologiaAnamnesis{IdOdontologiaAnamnesis: id}
 	if err = o.Read(v); err == nil {
@@ -62,9 +62,9 @@ func GetAnamnesisById(id int) (v *OdontologiaAnamnesis, err error) {
 	return nil, err
 }
 
-//GetAllAnamnesis consulta todas las anamnesis
-//No existen registros
-func GetAllAnamnesis(query map[string]string, fields []string, sortby []string, order []string,
+// GetAllOdontologiaAnamnesis consulta todas las anamnesis
+// No existen registros
+func GetAllOdontologiaAnamnesis(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(OdontologiaAnamnesis))
@@ -133,9 +133,9 @@ func GetAllAnamnesis(query map[string]string, fields []string, sortby []string, 
 	return nil, err
 }
 
-// UpdateAnamnesisById actualiza un registro de la tabla anamnesis
+// UpdateOdontologiaAnamnesisById actualiza un registro de la tabla anamnesis
 // El registro a actualizar no existe
-func UpdateAnamnesisById(m *OdontologiaAnamnesis) (err error) {
+func UpdateOdontologiaAnamnesis(m *OdontologiaAnamnesis) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaAnamnesis{IdOdontologiaAnamnesis: m.IdOdontologiaAnamnesis}
 	if err = o.Read(&v); err == nil {
@@ -147,9 +147,9 @@ func UpdateAnamnesisById(m *OdontologiaAnamnesis) (err error) {
 	return
 }
 
-// DeleteAnamnesis elimina un registro de la tabla anamnesis
+// DeleteOdontologiaAnamnesis elimina un registro de la tabla anamnesis
 // El registro a eliminar no existe
-func DeleteAnamnesis(id int) (err error) {
+func DeleteOdontologiaAnamnesis(id int) (err error) {
 	o := orm.NewOrm()
 	v := OdontologiaAnamnesis{IdOdontologiaAnamnesis: id}
 	if err = o.Read(&v); err == nil {

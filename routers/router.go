@@ -60,6 +60,16 @@ func init() {
 				&controllers.MedicinaTipoAntecedenteController{},
 			),
 		),
+		beego.NSNamespace("/medicinaTipoExamen",
+			beego.NSInclude(
+				&controllers.MedicinaTipoExamenController{},
+			),
+		),
+		beego.NSNamespace("/odontologiaAnamnesis",
+			beego.NSInclude(
+				&controllers.OdontologiaAnamnesisController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

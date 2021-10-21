@@ -1571,6 +1571,352 @@
                     }
                 }
             }
+        },
+        "/medicinaTipoExamen/": {
+            "get": {
+                "tags": [
+                    "medicinaTipoExamen"
+                ],
+                "description": "consulta todos los registros de la tabla MedicinaTipoExamen",
+                "operationId": "MedicinaTipoExamenController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaTipoExamen"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "medicinaTipoExamen"
+                ],
+                "description": "agregar un registro en la tabla MedicinaTipoExamen",
+                "operationId": "MedicinaTipoExamenController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaTipoExamen"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.MedicinaTipoExamen"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/medicinaTipoExamen/{id}": {
+            "get": {
+                "tags": [
+                    "medicinaTipoExamen"
+                ],
+                "description": "consultar un registro de la tabla MedicinaTipoExamen por su id",
+                "operationId": "MedicinaTipoExamenController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaTipoExamen"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "medicinaTipoExamen"
+                ],
+                "description": "actualizar un registro de la tabla MedicinaTipoExamen",
+                "operationId": "MedicinaTipoExamenController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaTipoExamen"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.MedicinaTipoExamen"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "medicinaTipoExamen"
+                ],
+                "description": "elimina un registro de la tabla MedicinaTipoExamen",
+                "operationId": "MedicinaTipoExamenController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaAnamnesis/": {
+            "get": {
+                "tags": [
+                    "odontologiaAnamnesis"
+                ],
+                "description": "consulta todos los registros de la tabla AccesoHistoriaClinica",
+                "operationId": "OdontologiaAnamnesisController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.AccesoHistoriaClinica"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "odontologiaAnamnesis"
+                ],
+                "description": "agregar un registro en la tabla OdontologiaAnamnesis",
+                "operationId": "OdontologiaAnamnesisController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaAnamnesis"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.OdontologiaAnamnesis"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaAnamnesis/{id}": {
+            "get": {
+                "tags": [
+                    "odontologiaAnamnesis"
+                ],
+                "description": "consultar un registro de la tabla OdontologiaAnamnesis por su id",
+                "operationId": "OdontologiaAnamnesisController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaAnamnesis"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "odontologiaAnamnesis"
+                ],
+                "description": "actualizar un registro de la tabla OdontologiaAnamnesis",
+                "operationId": "OdontologiaAnamnesisController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaAnamnesis"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaAnamnesis"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "odontologiaAnamnesis"
+                ],
+                "description": "elimina un registro de la tabla OdontologiaAnamnesis",
+                "operationId": "OdontologiaAnamnesisController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -1816,6 +2162,83 @@
                 },
                 "Nombre": {
                     "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaAnamnesis": {
+            "title": "OdontologiaAnamnesis",
+            "type": "object",
+            "properties": {
+                "Alergias": {
+                    "type": "string"
+                },
+                "AntecedenteFamiliar": {
+                    "type": "string"
+                },
+                "Cardiopatias": {
+                    "type": "string"
+                },
+                "Ceda": {
+                    "type": "string"
+                },
+                "Cepillado": {
+                    "type": "string"
+                },
+                "Chicle": {
+                    "type": "string"
+                },
+                "Diabetes": {
+                    "type": "string"
+                },
+                "Dulces": {
+                    "type": "string"
+                },
+                "EnfermedadRespiratoria": {
+                    "type": "string"
+                },
+                "Enjuague": {
+                    "type": "string"
+                },
+                "FiebreReumatica": {
+                    "type": "string"
+                },
+                "Fuma": {
+                    "type": "string"
+                },
+                "Hemorragias": {
+                    "type": "string"
+                },
+                "Hepatitis": {
+                    "type": "string"
+                },
+                "Hipertension": {
+                    "type": "string"
+                },
+                "IdHistoriaClinica": {
+                    "$ref": "#/definitions/models.MedicinaHistoriaClinica"
+                },
+                "IdOdontologiaAnamnesis": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Irradiaciones": {
+                    "type": "string"
+                },
+                "Medicamentos": {
+                    "type": "string"
+                },
+                "Otras": {
+                    "type": "string"
+                },
+                "Sinusitis": {
+                    "type": "string"
+                },
+                "Tratamiento": {
+                    "type": "string"
+                },
+                "UltimaVisita": {
+                    "type": "string",
+                    "format": "datetime"
                 }
             }
         }
