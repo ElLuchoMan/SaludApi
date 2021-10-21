@@ -17,9 +17,9 @@ type DiagnosticoMedicina struct {
 	Descripcion           string    `orm:"column(descripcion);null"`
 	Numero                int       `orm:"column(numero);null"`
 	Activo                bool      `orm:"column(activo);null"`
-	Fecha_creacion        time.Time `orm:"column(fecha_creacion);type(timestamp without time zone)"`
-	Fecha_modificacion    time.Time `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
-	Plan_manejo           string    `orm:"column(plan_manejo);null"`
+	FechaCreacion         time.Time `orm:"column(fecha_creacion);type(date)"`
+	FechaModificacion     time.Time `orm:"column(fecha_modificacion);type(date)"`
+	PlanManejo            string    `orm:"column(plan_manejo);null"`
 	Analisis              string    `orm:"column(analisis);null"`
 }
 

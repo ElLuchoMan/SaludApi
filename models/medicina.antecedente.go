@@ -10,10 +10,10 @@ import (
 )
 
 type MedicinaAntecedente struct {
-	IdMedicinaAntecedente int    `orm:"column(id_antecedente);pk;auto"`
-	Id_tipo_antecedente   int    `orm:"column(id_tipo_antecedente)"`
-	Observaciones         string `orm:"column(observaciones)"`
-	Id_historia_clinica   int    `orm:"column(id_historia_clinica);null"`
+	IdMedicinaAntecedente int                      `orm:"column(id_antecedente);pk;auto"`
+	IdTipoAntecedente     *MedicinaTipoAntecedente `orm:"column(id_tipo_antecedente);rel(fk);null"`
+	Observaciones         string                   `orm:"column(observaciones)"`
+	IdHistoriaClinica     *MedicinaHistoriaClinica `orm:"column(id_historia_clinica);rel(fk);null"`
 }
 
 func (t *MedicinaAntecedente) TableName() string {

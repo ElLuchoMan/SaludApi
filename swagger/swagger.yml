@@ -365,24 +365,47 @@ definitions:
         type: integer
         format: int64
       IdHistoriaClinica:
-        type: integer
-        format: int64
+        $ref: '#/definitions/models.MedicinaHistoriaClinica'
       ProfesionaId:
         type: integer
         format: int64
+  models.DiagnosticoMedicina:
+    title: DiagnosticoMedicina
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      Analisis:
+        type: string
+      Descripcion:
+        type: string
+      FechaCreacion:
+        type: string
+        format: datetime
+      FechaModificacion:
+        type: string
+        format: datetime
+      IdDiagnosticoMedicina:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      Numero:
+        type: integer
+        format: int64
+      PlanManejo:
+        type: string
   models.MedicinaAntecedente:
     title: MedicinaAntecedente
     type: object
     properties:
-      Id_historia_clinica:
-        type: integer
-        format: int64
-      Id_tipo_antecedente:
-        type: integer
-        format: int64
+      IdHistoriaClinica:
+        $ref: '#/definitions/models.MedicinaHistoriaClinica'
       IdMedicinaAntecedente:
         type: integer
         format: int64
+      IdTipoAntecedente:
+        $ref: '#/definitions/models.MedicinaTipoAntecedente'
       Observaciones:
         type: string
   models.MedicinaConsultaFisioterapia:
@@ -404,6 +427,16 @@ definitions:
         type: string
       Valoracion:
         type: string
+  models.MedicinaHistoriaClinica:
+    title: MedicinaHistoriaClinica
+    type: object
+    properties:
+      IdHistoriaClinica:
+        type: integer
+        format: int64
+      IdTercero:
+        type: integer
+        format: int64
   models.MedicinaHojaHistoria:
     title: MedicinaHojaHistoria
     type: object
@@ -414,14 +447,12 @@ definitions:
         type: string
         format: datetime
       IdDiagnostico:
-        type: integer
-        format: int64
+        $ref: '#/definitions/models.DiagnosticoMedicina'
       IdEspecialidad:
         type: integer
         format: int64
       IdHistoriaClinica:
-        type: integer
-        format: int64
+        $ref: '#/definitions/models.MedicinaHistoriaClinica'
       IdHojaHistoria:
         type: integer
         format: int64
@@ -434,4 +465,23 @@ definitions:
       Motivo:
         type: string
       Observacion:
+        type: string
+  models.MedicinaTipoAntecedente:
+    title: MedicinaTipoAntecedente
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      Descripcion:
+        type: string
+      FechaCreacion:
+        type: string
+        format: datetime
+      FechaModificacion:
+        type: string
+        format: datetime
+      IdTipoAntecedente:
+        type: integer
+        format: int64
+      Nombre:
         type: string

@@ -11,10 +11,10 @@ import (
 )
 
 type AccesoHistoriaClinica struct {
-	IdAccesoHistoria  int       `orm:"column(id_acceso);pk;auto"`
-	FechaAcceso       time.Time `orm:"column(fecha_acceso);type(date)"`
-	ProfesionaId      int       `orm:"column(profesional_id)"`
-	IdHistoriaClinica int       `orm:"column(id_historia_clinica)"`
+	IdAccesoHistoria  int                      `orm:"column(id_acceso);pk;auto"`
+	FechaAcceso       time.Time                `orm:"column(fecha_acceso);type(date);null"`
+	ProfesionaId      int                      `orm:"column(profesional_id);null"`
+	IdHistoriaClinica *MedicinaHistoriaClinica `orm:"column(id_historia_clinica);rel(fk);null"`
 }
 
 func (t *AccesoHistoriaClinica) TableName() string {

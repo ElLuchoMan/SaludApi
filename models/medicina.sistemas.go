@@ -10,10 +10,10 @@ import (
 )
 
 type MedicinaSistemas struct {
-	IdSistema      int    `orm:"column(id_sistema);pk;auto"`
-	NombreSistema  string `orm:"column(nombre_sistema);null"`
-	Observacion    string `orm:"column(observacion);null"`
-	IdHojaHistoria int    `orm:"column(id_hoja_historia);null"`
+	IdSistema      int                   `orm:"column(id_sistema);pk;auto"`
+	NombreSistema  string                `orm:"column(nombre_sistema);null"`
+	Observacion    string                `orm:"column(observacion);null"`
+	IdHojaHistoria *MedicinaHojaHistoria `orm:"column(id_hoja_historia);rel(fk);null"`
 }
 
 func (p *MedicinaSistemas) TableName() string {

@@ -11,12 +11,12 @@ import (
 )
 
 type MecicinaExamen struct {
-	IdExamen       int       `orm:"column(id_examen);pk;auto"`
-	IdHojaHistoria int       `orm:"column(id_hoja_historia);null"`
-	Nombre         string    `orm:"column(nombre);null"`
-	Observacion    string    `orm:"column(observacion);null"`
-	IdTipoExamen   int       `orm:"column(id_tipo_examen);null"`
-	FechaExamen    time.Time `orm:"column(fecha_examen);type(date);null"`
+	IdExamen       int                   `orm:"column(id_examen);pk;auto"`
+	IdHojaHistoria *MedicinaHojaHistoria `orm:"column(id_hoja_historia);rel(fk);null"`
+	Nombre         string                `orm:"column(nombre);null"`
+	Observacion    string                `orm:"column(observacion);null"`
+	IdTipoExamen   *MedicinaTipoExamen   `orm:"column(id_tipo_examen);rel(fk);null"`
+	FechaExamen    time.Time             `orm:"column(fecha_examen);type(date);null"`
 }
 
 func (t *MecicinaExamen) TableName() string {

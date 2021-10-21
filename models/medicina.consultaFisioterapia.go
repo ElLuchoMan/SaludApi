@@ -50,7 +50,7 @@ func GetMedicinaConsultaFisioterapiaById(id int) (v *MedicinaConsultaFisioterapi
 func GetAllMedicinaConsultaFisioterapia(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(MedicinaConsultaFisioterapia)).RelatedSel()
+	qs := o.QueryTable(new(MedicinaConsultaFisioterapia))
 	for k, v := range query {
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
