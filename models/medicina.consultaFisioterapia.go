@@ -10,13 +10,13 @@ import (
 )
 
 type MedicinaConsultaFisioterapia struct {
-	IdMedicinaConsultaFisioterapia int    `orm:"column(id_consulta_fisioterapia);pk;auto"`
-	IdHojaHistoria                 int    `orm:"column(id_hoja_historia);null"`
-	Motivo_consulta                string `orm:"column(motivo_consulta);null"`
-	Valoracion                     string `orm:"column(valoracion);null"`
-	PlanManejo                     string `orm:"column(plan_manejo);null"`
-	Evolucion                      string `orm:"column(evolucion);null"`
-	Observaciones                  string `orm:"column(observaciones);null"`
+	IdMedicinaConsultaFisioterapia int                   `orm:"column(id_consulta_fisioterapia);pk;auto"`
+	IdHojaHistoria                 *MedicinaHojaHistoria `orm:"column(id_hoja_historia);rel(fk);null"`
+	Motivo_consulta                string                `orm:"column(motivo_consulta);null"`
+	Valoracion                     string                `orm:"column(valoracion);null"`
+	PlanManejo                     string                `orm:"column(plan_manejo);null"`
+	Evolucion                      string                `orm:"column(evolucion);null"`
+	Observaciones                  string                `orm:"column(observaciones);null"`
 }
 
 func (t *MedicinaConsultaFisioterapia) TableName() string {
@@ -50,7 +50,7 @@ func GetMedicinaConsultaFisioterapiaById(id int) (v *MedicinaConsultaFisioterapi
 func GetAllMedicinaConsultaFisioterapia(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(MedicinaConsultaFisioterapia))
+	qs := o.QueryTable(new(MedicinaConsultaFisioterapia)).RelatedSel()
 	for k, v := range query {
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {

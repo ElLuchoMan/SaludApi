@@ -392,8 +392,7 @@ definitions:
       Evolucion:
         type: string
       IdHojaHistoria:
-        type: integer
-        format: int64
+        $ref: '#/definitions/models.MedicinaHojaHistoria'
       IdMedicinaConsultaFisioterapia:
         type: integer
         format: int64
@@ -404,4 +403,35 @@ definitions:
       PlanManejo:
         type: string
       Valoracion:
+        type: string
+  models.MedicinaHojaHistoria:
+    title: MedicinaHojaHistoria
+    type: object
+    properties:
+      Evolucion:
+        type: string
+      FechaConsulta:
+        type: string
+        format: datetime
+      IdDiagnostico:
+        type: integer
+        format: int64
+      IdEspecialidad:
+        type: integer
+        format: int64
+      IdHistoriaClinica:
+        type: integer
+        format: int64
+      IdHojaHistoria:
+        type: integer
+        format: int64
+      IdPersona:
+        type: integer
+        format: int64
+      IdProfesional:
+        type: integer
+        format: int64
+      Motivo:
+        type: string
+      Observacion:
         type: string
