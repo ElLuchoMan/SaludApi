@@ -353,6 +353,120 @@ paths:
           description: '{string} delete success!'
         "403":
           description: id is empty
+  /medicinaDiagnostico/:
+    get:
+      tags:
+      - medicinaDiagnostico
+      description: get MedicinaDiagnostico
+      operationId: MedicinaDiagnosticoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply to all sort
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MedicinaDiagnostico'
+        "403":
+          description: ""
+    post:
+      tags:
+      - medicinaDiagnostico
+      description: create MedicinaDiagnostico
+      operationId: MedicinaDiagnosticoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for MedicinaConsultaFisioterapia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MedicinaDiagnostico'
+      responses:
+        "201":
+          description: '{int} models.MedicinaDiagnostico'
+        "403":
+          description: body is empty
+  /medicinaDiagnostico/{id}:
+    get:
+      tags:
+      - medicinaDiagnostico
+      description: get MedicinaDiagnostico by id
+      operationId: MedicinaDiagnosticoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MedicinaDiagnostico'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - medicinaDiagnostico
+      description: update the MedicinaDiagnostico
+      operationId: MedicinaDiagnosticoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for MedicinaConsultaFisioterapia content
+        required: true
+        schema:
+          $ref: '#/definitions/models.MedicinaDiagnostico'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.MedicinaDiagnostico'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - medicinaDiagnostico
+      description: delete the MedicinaDiagnostico
+      operationId: MedicinaDiagnosticoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
 definitions:
   models.AccesoHistoriaClinica:
     title: AccesoHistoriaClinica

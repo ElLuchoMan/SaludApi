@@ -30,17 +30,17 @@ func init() {
 	orm.RegisterModel(new(MedicinaDiagnostico))
 }
 
-// AddDiagnosticoMedicina inserta un registro en la tabla diagnosticomedicina
+// AddMedicinaDiagnostico inserta un registro en la tabla diagnosticomedicina
 // Último registro insertado con éxito
-func AddDiagnosticoMedicina(m *MedicinaDiagnostico) (id int64, err error) {
+func AddMedicinaDiagnostico(m *MedicinaDiagnostico) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetDiagnosticoMedicinaById obtiene un registro de la tabla diagnostico medicina por su id
+// GetMedicinaDiagnosticoById obtiene un registro de la tabla diagnostico medicina por su id
 // Id no existe
-func GetDiagnosticoMedicinaById(id int) (v *MedicinaDiagnostico, err error) {
+func GetMedicinaDiagnosticoById(id int) (v *MedicinaDiagnostico, err error) {
 	o := orm.NewOrm()
 	v = &MedicinaDiagnostico{IdDiagnosticoMedicina: id}
 	if err = o.Read(v); err == nil {
@@ -49,9 +49,9 @@ func GetDiagnosticoMedicinaById(id int) (v *MedicinaDiagnostico, err error) {
 	return nil, err
 }
 
-// GetAllDiagnosticoMedicina obtiene todos los registros de la tabla diagnostico medicina
+// GetAllMedicinaDiagnostico obtiene todos los registros de la tabla diagnostico medicina
 // No existen registros
-func GetAllDiagnosticoMedicina(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllMedicinaDiagnostico(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(MedicinaDiagnostico))
@@ -120,9 +120,9 @@ func GetAllDiagnosticoMedicina(query map[string]string, fields []string, sortby 
 	return nil, err
 }
 
-// UpdateDiagnosticoMedicina actualiza un registro de la tabla diagnosticomedicina
+// UpdateMedicinaDiagnostico actualiza un registro de la tabla diagnosticomedicina
 // El registro a actualizar no existe
-func UpdateDiagnosticoMedicina(m *MedicinaDiagnostico) (err error) {
+func UpdateMedicinaDiagnostico(m *MedicinaDiagnostico) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaDiagnostico{IdDiagnosticoMedicina: m.IdDiagnosticoMedicina}
 	if err = o.Read(&v); err == nil {
@@ -134,9 +134,9 @@ func UpdateDiagnosticoMedicina(m *MedicinaDiagnostico) (err error) {
 	return
 }
 
-// DeleteDiagnosticoMedicina elimina un registro de la tabla diagnosticomedicina
+// DeleteMedicinaDiagnostico elimina un registro de la tabla diagnosticomedicina
 // El registro a eliminar no existe
-func DeleteDiagnosticoMedicina(id int) (err error) {
+func DeleteMedicinaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaDiagnostico{IdDiagnosticoMedicina: id}
 	if err = o.Read(&v); err == nil {
