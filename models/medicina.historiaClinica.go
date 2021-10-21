@@ -23,13 +23,10 @@ func init() {
 
 // AddMedicinaHistoriaClinica inserta un registro en la tabla  historiaclinica
 // Último registro insertado con éxito
-func AddMedicinaHistoriaClinica(m *MedicinaHistoriaClinica) (err error) {
+func AddMedicinaHistoriaClinica(m *MedicinaHistoriaClinica) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdHistoriaClinica = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetMedicinaHistoriaClinicaById obtiene un registro de la tabla historiaclinica por su id
@@ -114,9 +111,9 @@ func GetAllMedicinaHistoriaClinica(query map[string]string, fields []string, sor
 	return nil, err
 }
 
-// UpdateMedicinaHistoriaClinicaById actualiza un registro de la tabla historiaclinica
+// UpdateMedicinaHistoriaClinica actualiza un registro de la tabla historiaclinica
 // El registro a actualizar no existe
-func UpdateMedicinaHistoriaClinicaById(m *MedicinaHistoriaClinica) (err error) {
+func UpdateMedicinaHistoriaClinica(m *MedicinaHistoriaClinica) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaHistoriaClinica{IdHistoriaClinica: m.IdHistoriaClinica}
 	if err = o.Read(&v); err == nil {
