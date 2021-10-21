@@ -11,7 +11,7 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
-type DiagnosticoMedicina struct {
+type MedicinaDiagnostico struct {
 	IdDiagnosticoMedicina int       `orm:"column(id_diagnostico_medicina);pk;auto"`
 	Nombre                string    `orm:"column(nombre);null"`
 	Descripcion           string    `orm:"column(descripcion);null"`
@@ -23,16 +23,16 @@ type DiagnosticoMedicina struct {
 	Analisis              string    `orm:"column(analisis);null"`
 }
 
-func (t *DiagnosticoMedicina) TableName() string {
+func (t *MedicinaDiagnostico) TableName() string {
 	return "diagnosticomedicina"
 }
 func init() {
-	orm.RegisterModel(new(DiagnosticoMedicina))
+	orm.RegisterModel(new(MedicinaDiagnostico))
 }
 
 // AddDiagnosticoMedicina inserta un registro en la tabla diagnosticomedicina
 // Último registro insertado con éxito
-func AddDiagnosticoMedicina(m *DiagnosticoMedicina) (id int64, err error) {
+func AddDiagnosticoMedicina(m *MedicinaDiagnostico) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
@@ -40,9 +40,9 @@ func AddDiagnosticoMedicina(m *DiagnosticoMedicina) (id int64, err error) {
 
 // GetDiagnosticoMedicinaById obtiene un registro de la tabla diagnostico medicina por su id
 // Id no existe
-func GetDiagnosticoMedicinaById(id int) (v *DiagnosticoMedicina, err error) {
+func GetDiagnosticoMedicinaById(id int) (v *MedicinaDiagnostico, err error) {
 	o := orm.NewOrm()
-	v = &DiagnosticoMedicina{IdDiagnosticoMedicina: id}
+	v = &MedicinaDiagnostico{IdDiagnosticoMedicina: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
@@ -54,7 +54,7 @@ func GetDiagnosticoMedicinaById(id int) (v *DiagnosticoMedicina, err error) {
 func GetAllDiagnosticoMedicina(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
-	qs := o.QueryTable(new(DiagnosticoMedicina))
+	qs := o.QueryTable(new(MedicinaDiagnostico))
 	for k, v := range query {
 		k = strings.Replace(k, ".", "__", -1)
 		if strings.Contains(k, "isnull") {
@@ -98,7 +98,7 @@ func GetAllDiagnosticoMedicina(query map[string]string, fields []string, sortby 
 			return nil, errors.New("error: campos de 'order' no utilizados")
 		}
 	}
-	var l []DiagnosticoMedicina
+	var l []MedicinaDiagnostico
 	qs = qs.OrderBy(sortFields...)
 	if _, err = qs.Limit(limit, offset).All(&l, fields...); err == nil {
 		if len(fields) == 0 {
@@ -122,9 +122,9 @@ func GetAllDiagnosticoMedicina(query map[string]string, fields []string, sortby 
 
 // UpdateDiagnosticoMedicina actualiza un registro de la tabla diagnosticomedicina
 // El registro a actualizar no existe
-func UpdateDiagnosticoMedicina(m *DiagnosticoMedicina) (err error) {
+func UpdateDiagnosticoMedicina(m *MedicinaDiagnostico) (err error) {
 	o := orm.NewOrm()
-	v := DiagnosticoMedicina{IdDiagnosticoMedicina: m.IdDiagnosticoMedicina}
+	v := MedicinaDiagnostico{IdDiagnosticoMedicina: m.IdDiagnosticoMedicina}
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Update(m); err == nil {
@@ -138,10 +138,10 @@ func UpdateDiagnosticoMedicina(m *DiagnosticoMedicina) (err error) {
 // El registro a eliminar no existe
 func DeleteDiagnosticoMedicina(id int) (err error) {
 	o := orm.NewOrm()
-	v := DiagnosticoMedicina{IdDiagnosticoMedicina: id}
+	v := MedicinaDiagnostico{IdDiagnosticoMedicina: id}
 	if err = o.Read(&v); err == nil {
 		var num int64
-		if num, err = o.Delete(&DiagnosticoMedicina{IdDiagnosticoMedicina: id}); err == nil {
+		if num, err = o.Delete(&MedicinaDiagnostico{IdDiagnosticoMedicina: id}); err == nil {
 			fmt.Println("Numero de registros eliminados:", num)
 		}
 	}

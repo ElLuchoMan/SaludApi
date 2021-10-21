@@ -557,43 +557,6 @@
                 }
             }
         },
-        "models.DiagnosticoMedicina": {
-            "title": "DiagnosticoMedicina",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "Analisis": {
-                    "type": "string"
-                },
-                "Descripcion": {
-                    "type": "string"
-                },
-                "FechaCreacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "FechaModificacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "IdDiagnosticoMedicina": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Nombre": {
-                    "type": "string"
-                },
-                "Numero": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "PlanManejo": {
-                    "type": "string"
-                }
-            }
-        },
         "models.MedicinaAntecedente": {
             "title": "MedicinaAntecedente",
             "type": "object",
@@ -641,6 +604,43 @@
                 }
             }
         },
+        "models.MedicinaDiagnostico": {
+            "title": "MedicinaDiagnostico",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "Analisis": {
+                    "type": "string"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdDiagnosticoMedicina": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                },
+                "Numero": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "PlanManejo": {
+                    "type": "string"
+                }
+            }
+        },
         "models.MedicinaHistoriaClinica": {
             "title": "MedicinaHistoriaClinica",
             "type": "object",
@@ -667,7 +667,7 @@
                     "format": "datetime"
                 },
                 "IdDiagnostico": {
-                    "$ref": "#/definitions/models.DiagnosticoMedicina"
+                    "$ref": "#/definitions/models.MedicinaDiagnostico"
                 },
                 "IdEspecialidad": {
                     "type": "integer",

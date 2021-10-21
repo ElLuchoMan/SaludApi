@@ -14,7 +14,7 @@ type MedicinaHojaHistoria struct {
 	IdHojaHistoria    int                      `orm:"column(id_hoja_historia);pk;auto"`
 	FechaConsulta     time.Time                `orm:"column(fecha_consulta);type(date);null"`
 	Motivo            string                   `orm:"column(motivo);null"`
-	IdDiagnostico     *DiagnosticoMedicina     `orm:"column(id_diagnostico);rel(fk);null"`
+	IdDiagnostico     *MedicinaDiagnostico     `orm:"column(id_diagnostico);rel(fk);null"`
 	Observacion       string                   `orm:"column(observacion);null"`
 	Evolucion         string                   `orm:"column(evolucion);null"`
 	IdEspecialidad    int                      `orm:"column(id_especialidad);null"`
