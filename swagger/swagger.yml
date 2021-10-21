@@ -940,6 +940,19 @@ definitions:
         type: string
       Observacion:
         type: string
+  models.MedicinaSistemas:
+    title: MedicinaSistemas
+    type: object
+    properties:
+      IdHojaHistoria:
+        $ref: '#/definitions/models.MedicinaHojaHistoria'
+      IdSistema:
+        type: integer
+        format: int64
+      NombreSistema:
+        type: string
+      Observacion:
+        type: string
   models.MedicinaTipoAntecedente:
     title: MedicinaTipoAntecedente
     type: object

@@ -25,13 +25,10 @@ func init() {
 
 // AddMedicinaSistemas inserta un registro en la tabla sistemas
 // Último registro insertado con éxito
-func AddMedicinaSistemas(m *MedicinaSistemas) (err error) {
+func AddMedicinaSistemas(m *MedicinaSistemas) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdSistema = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetMedicinaSistemasById obtiene un registro de la tabla sistemas por su id
