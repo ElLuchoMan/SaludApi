@@ -34,7 +34,7 @@ func AddComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err err
 // Id no existe
 func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
 	o := orm.NewOrm()
-	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: v.IdPsicologiaComposicionFamiliar}
+	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}

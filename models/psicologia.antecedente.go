@@ -36,7 +36,7 @@ func AddPsicologiaAntecedente(m *PsicologiaAntecedente) (id int64, err error) {
 // Id no existe
 func GetPsicologiaAntecedenteById(id int) (v *PsicologiaAntecedente, err error) {
 	o := orm.NewOrm()
-	v = &PsicologiaAntecedente{IdPsicologiaAntecedente: v.IdPsicologiaAntecedente}
+	v = &PsicologiaAntecedente{IdPsicologiaAntecedente: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}

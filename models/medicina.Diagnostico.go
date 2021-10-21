@@ -139,6 +139,7 @@ func UpdateMedicinaDiagnostico(m *MedicinaDiagnostico) (err error) {
 func DeleteMedicinaDiagnostico(id int) (err error) {
 	o := orm.NewOrm()
 	v := MedicinaDiagnostico{IdDiagnosticoMedicina: id}
+	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
 		if num, err = o.Delete(&MedicinaDiagnostico{IdDiagnosticoMedicina: id}); err == nil {

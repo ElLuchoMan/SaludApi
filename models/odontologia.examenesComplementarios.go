@@ -13,7 +13,7 @@ type OdontologiaExamenesComplementarios struct {
 	IdExamenesComplementarios int    `orm:"column(id_examenes_complenmetarios);pk;auto"`
 	PeriapicalInicio          int    `orm:"column(periapical_inicio);null"`
 	PeriapicalFinal           byte   `orm:"column(periapical_final);null"`
-	PanoramicaInicio          byte   `orm:"column(panoramica_inicio);null"`
+	PanoramicaInicio          byte   `orm:"column(panoramica_inicio);null"` //String nuxeo
 	OtraInicio                byte   `orm:"column(otra_inicio);null"`
 	OtraFinal                 byte   `orm:"column(otra_final);null"`
 	LaboratorioInicio         byte   `orm:"column(laboratorio_inicio);null"`

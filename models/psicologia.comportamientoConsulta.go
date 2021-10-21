@@ -35,7 +35,7 @@ func AddComportamientoConsulta(m *PsicologiaComportamientoConsulta) (id int64, e
 //Id no existe
 func GetComportamientoConsultaById(id int) (v *PsicologiaComportamientoConsulta, err error) {
 	o := orm.NewOrm()
-	v = &PsicologiaComportamientoConsulta{IdComportamientoConsulta: v.IdComportamientoConsulta}
+	v = &PsicologiaComportamientoConsulta{IdComportamientoConsulta: id}
 	if err = o.Read(v); err == nil {
 		return v, nil
 	}
