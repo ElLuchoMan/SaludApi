@@ -26,13 +26,10 @@ func init() {
 
 // AddPsicologiaLimites inserta un registro en la tabla limites
 // Último registro insertado con éxito
-func AddPsicologiaLimites(m *PsicologiaLimites) (err error) {
+func AddPsicologiaLimites(m *PsicologiaLimites) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdLimite = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetPsicologiaLimitesById obtiene un registro de la tabla limites por su id
