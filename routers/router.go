@@ -75,6 +75,11 @@ func init() {
 				&controllers.OdontologiaControlPlacaController{},
 			),
 		),
+		beego.NSNamespace("/odontologiaDiagnostico",
+			beego.NSInclude(
+				&controllers.OdontologiaDiagnosticoController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

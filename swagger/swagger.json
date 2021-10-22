@@ -1293,7 +1293,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaSistemas",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaSistemas"
@@ -1355,7 +1355,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaSistemas",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaSistemas"
@@ -1639,7 +1639,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaTipoExamen",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaTipoExamen"
@@ -1701,7 +1701,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaTipoExamen",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaTipoExamen"
@@ -1750,7 +1750,7 @@
                 "tags": [
                     "odontologiaAnamnesis"
                 ],
-                "description": "consulta todos los registros de la tabla AccesoHistoriaClinica",
+                "description": "consulta todos los registros de la tabla OdontologiaAnamnesis",
                 "operationId": "OdontologiaAnamnesisController.Get All",
                 "parameters": [
                     {
@@ -1794,7 +1794,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.AccesoHistoriaClinica"
+                            "$ref": "#/definitions/models.OdontologiaAnamnesis"
                         }
                     },
                     "403": {
@@ -1812,7 +1812,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de OdontologiaAnamnesis",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.OdontologiaAnamnesis"
@@ -1874,7 +1874,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de OdontologiaAnamnesis",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.OdontologiaAnamnesis"
@@ -1899,6 +1899,352 @@
                 ],
                 "description": "elimina un registro de la tabla OdontologiaAnamnesis",
                 "operationId": "OdontologiaAnamnesisController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaControlPlaca/": {
+            "get": {
+                "tags": [
+                    "odontologiaControlPlaca"
+                ],
+                "description": "consulta todos los registros de la tabla OdontologiaControlPlaca",
+                "operationId": "OdontologiaControlPlacaController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaControlPlaca"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "odontologiaControlPlaca"
+                ],
+                "description": "agregar un registro en la tabla OdontologiaControlPlaca",
+                "operationId": "OdontologiaControlPlacaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de OdontologiaControlPlaca",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaControlPlaca"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.OdontologiaControlPlaca"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaControlPlaca/{id}": {
+            "get": {
+                "tags": [
+                    "odontologiaControlPlaca"
+                ],
+                "description": "consultar un registro de la tabla OdontologiaControlPlaca por su id",
+                "operationId": "OdontologiaControlPlacaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaControlPlaca"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "odontologiaControlPlaca"
+                ],
+                "description": "actualizar un registro de la tabla OdontologiaControlPlaca",
+                "operationId": "OdontologiaControlPlacaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de OdontologiaControlPlaca",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaControlPlaca"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaControlPlaca"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "odontologiaControlPlaca"
+                ],
+                "description": "elimina un registro de la tabla OdontologiaControlPlaca",
+                "operationId": "OdontologiaControlPlacaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaDiagnostico/": {
+            "get": {
+                "tags": [
+                    "odontologiaDiagnostico"
+                ],
+                "description": "consulta todos los registros de la tabla OdontologiaDiagnostico",
+                "operationId": "OdontologiaDiagnosticoController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "odontologiaDiagnostico"
+                ],
+                "description": "agregar un registro en la tabla OdontologiaDiagnostico",
+                "operationId": "OdontologiaDiagnosticoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de OdontologiaDiagnostico",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaDiagnostico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.OdontologiaDiagnostico"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/odontologiaDiagnostico/{id}": {
+            "get": {
+                "tags": [
+                    "odontologiaDiagnostico"
+                ],
+                "description": "consultar un registro de la tabla OdontologiaDiagnostico por su id",
+                "operationId": "OdontologiaDiagnosticoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "odontologiaDiagnostico"
+                ],
+                "description": "actualizar un registro de la tabla OdontologiaDiagnostico",
+                "operationId": "OdontologiaDiagnosticoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de OdontologiaDiagnostico",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaDiagnostico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.OdontologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "odontologiaDiagnostico"
+                ],
+                "description": "elimina un registro de la tabla OdontologiaDiagnostico",
+                "operationId": "OdontologiaDiagnosticoController.Delete",
                 "parameters": [
                     {
                         "in": "path",
@@ -2239,6 +2585,89 @@
                 "UltimaVisita": {
                     "type": "string",
                     "format": "datetime"
+                }
+            }
+        },
+        "models.OdontologiaControlPlaca": {
+            "title": "OdontologiaControlPlaca",
+            "type": "object",
+            "properties": {
+                "Fecha": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdTipoOdontograma": {
+                    "$ref": "#/definitions/models.OdontologiaTipoOdontograma"
+                },
+                "IdcontrolPlaca": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IndiceActual": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IndiceAnterior": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Vestibulares": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaDiagnostico": {
+            "title": "OdontologiaDiagnostico",
+            "type": "object",
+            "properties": {
+                "Diagnostivo": {
+                    "type": "string"
+                },
+                "Evolucion": {
+                    "type": "string"
+                },
+                "IdDiagnostico": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Pronostico": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaTipoOdontograma": {
+            "title": "OdontologiaTipoOdontograma",
+            "type": "object",
+            "properties": {
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdTipoOdontograma": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
                 }
             }
         }
