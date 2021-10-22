@@ -27,7 +27,7 @@ func (c *MedicinaSistemasController) URLMapping() {
 // Post ...
 // @Title Post
 // @Description agregar un registro en la tabla MedicinaSistemas
-// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de MedicinaSistemas"
 // @Success 201 {int} models.MedicinaSistemas
 // @Failure 403 Cuerpo Vacío
 // @router / [post]
@@ -131,7 +131,7 @@ func (c *MedicinaSistemasController) GetAll() {
 // @Title Put
 // @Description actualizar un registro de la tabla MedicinaSistemas
 // @Param	id		path 	string	true		"Id del registro a actualizar"
-// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Param	body		body 	models.MedicinaSistemas	true		"Cuerpo para el contenido de MedicinaSistemas"
 // @Success 200 {object} models.MedicinaSistemas
 // @Failure 403 :id no es entero
 // @router /:id [put]

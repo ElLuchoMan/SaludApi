@@ -47,9 +47,9 @@ func GetOdontologiaControlPlacaById(id int) (v *OdontologiaControlPlaca, err err
 	return nil, err
 }
 
-// GetOdontologiaControlPlaca obtiene todos los registros de la tabla controlplaca
+// GetAllOdontologiaControlPlaca obtiene todos los registros de la tabla controlplaca
 // No existen registros
-func GetOdontologiaControlPlaca(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllOdontologiaControlPlaca(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(OdontologiaControlPlaca))
