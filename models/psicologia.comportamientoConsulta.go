@@ -23,17 +23,17 @@ func init() {
 	orm.RegisterModel(new(PsicologiaComportamientoConsulta))
 }
 
-// AddComportamientoConsulta inserta un registro en la tabla comportamientoconsulta
+// AddPsicologiaComportamientoConsulta inserta un registro en la tabla comportamientoconsulta
 // Último registro insertado con éxito
-func AddComportamientoConsulta(m *PsicologiaComportamientoConsulta) (id int64, err error) {
+func AddPsicologiaComportamientoConsulta(m *PsicologiaComportamientoConsulta) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-//GetComportamientoConsultaById consulta el comportamiento por su id
+//GetPsicologiaComportamientoConsultaById consulta el comportamiento por su id
 //Id no existe
-func GetComportamientoConsultaById(id int) (v *PsicologiaComportamientoConsulta, err error) {
+func GetPsicologiaComportamientoConsultaById(id int) (v *PsicologiaComportamientoConsulta, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaComportamientoConsulta{IdComportamientoConsulta: id}
 	if err = o.Read(v); err == nil {
@@ -42,9 +42,9 @@ func GetComportamientoConsultaById(id int) (v *PsicologiaComportamientoConsulta,
 	return nil, err
 }
 
-// GetAllComportamientoConsulta obtiene todos los registros de la tabla comportamientoconsulta
+// GetAllPsicologiaComportamientoConsulta obtiene todos los registros de la tabla comportamientoconsulta
 // No existen registros
-func GetAllComportamientoConsulta(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllPsicologiaComportamientoConsulta(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(PsicologiaComportamientoConsulta))
@@ -113,9 +113,9 @@ func GetAllComportamientoConsulta(query map[string]string, fields []string, sort
 	return nil, err
 }
 
-// UpdateComportamientoConsulta actualiza un registro de la tabla comportamientoconsulta
+// UpdatePsicologiaComportamientoConsulta actualiza un registro de la tabla comportamientoconsulta
 // El registro a actualizar no existe
-func UpdateComportamientoConsulta(m *PsicologiaComportamientoConsulta) (err error) {
+func UpdatePsicologiaComportamientoConsulta(m *PsicologiaComportamientoConsulta) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComportamientoConsulta{IdComportamientoConsulta: m.IdComportamientoConsulta}
 	if err = o.Read(&v); err == nil {
@@ -127,9 +127,9 @@ func UpdateComportamientoConsulta(m *PsicologiaComportamientoConsulta) (err erro
 	return
 }
 
-// DeleteComportamientoConsulta elimina un registro de la tabla comportamientoconsulta
+// DeletePsicologiaComportamientoConsulta elimina un registro de la tabla comportamientoconsulta
 // El registro a eliminar no existe
-func DeleteComportamientoConsulta(id int) (err error) {
+func DeletePsicologiaComportamientoConsulta(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComportamientoConsulta{IdComportamientoConsulta: id}
 	if err = o.Read(&v); err == nil {

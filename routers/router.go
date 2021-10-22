@@ -110,6 +110,11 @@ func init() {
 				&controllers.PsicologiaAntecedenteController{},
 			),
 		),
+		beego.NSNamespace("/psicologiaComportamientoConsulta",
+			beego.NSInclude(
+				&controllers.PsicologiaComportamientoConsultaController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

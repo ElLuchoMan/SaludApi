@@ -3301,6 +3301,179 @@
                     }
                 }
             }
+        },
+        "/psicologiaComportamientoConsulta/": {
+            "get": {
+                "tags": [
+                    "psicologiaComportamientoConsulta"
+                ],
+                "description": "consulta todos los registros de la tabla PsicologiaComportamientoConsulta",
+                "operationId": "PsicologiaComportamientoConsultaController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComportamientoConsulta"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "psicologiaComportamientoConsulta"
+                ],
+                "description": "agregar un registro en la tabla PsicologiaComportamientoConsulta",
+                "operationId": "PsicologiaComportamientoConsultaController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaComportamientoConsulta",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComportamientoConsulta"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.PsicologiaComportamientoConsulta"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/psicologiaComportamientoConsulta/{id}": {
+            "get": {
+                "tags": [
+                    "psicologiaComportamientoConsulta"
+                ],
+                "description": "consultar un registro de la tabla PsicologiaComportamientoConsulta por su id",
+                "operationId": "PsicologiaComportamientoConsultaController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComportamientoConsulta"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "psicologiaComportamientoConsulta"
+                ],
+                "description": "actualizar un registro de la tabla PsicologiaComportamientoConsulta",
+                "operationId": "PsicologiaComportamientoConsultaController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaComportamientoConsulta",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComportamientoConsulta"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComportamientoConsulta"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "psicologiaComportamientoConsulta"
+                ],
+                "description": "elimina un registro de la tabla PsicologiaComportamientoConsulta",
+                "operationId": "PsicologiaComportamientoConsultaController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -3908,6 +4081,25 @@
                     "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
                 },
                 "Pasado_somatico": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaComportamientoConsulta": {
+            "title": "PsicologiaComportamientoConsulta",
+            "type": "object",
+            "properties": {
+                "Afrontamiento": {
+                    "type": "string"
+                },
+                "IdComportamientoConsulta": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Problematica": {
                     "type": "string"
                 }
             }
