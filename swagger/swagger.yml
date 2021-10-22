@@ -1608,6 +1608,9 @@ paths:
         "403":
           description: Id vacío
 definitions:
+  models.AccesoHOdontologiaOdontogramaistoriaClinica:
+    title: AccesoHOdontologiaOdontogramaistoriaClinica
+    type: object
   models.AccesoHistoriaClinica:
     title: AccesoHistoriaClinica
     type: object
@@ -1978,6 +1981,21 @@ definitions:
       Tp:
         type: string
       Tpt:
+        type: string
+  models.OdontologiaOdontograma:
+    title: OdontologiaOdontograma
+    type: object
+    properties:
+      Diagrama:
+        type: string
+      IdHojaHistoria:
+        $ref: '#/definitions/models.MedicinaHojaHistoria'
+      IdOdontograma:
+        type: integer
+        format: int64
+      IdTipoOdontograma:
+        $ref: '#/definitions/models.OdontologiaTipoOdontograma'
+      Observaciones:
         type: string
   models.OdontologiaTipoOdontograma:
     title: OdontologiaTipoOdontograma

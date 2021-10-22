@@ -26,13 +26,10 @@ func init() {
 
 // AddOdontologiaOdontograma inserta un registro en la tabla odontograma
 // Último registro insertado con éxito
-func AddOdontologiaOdontograma(m *OdontologiaOdontograma) (err error) {
+func AddOdontologiaOdontograma(m *OdontologiaOdontograma) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdOdontograma = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetOdontologiaOdontogramaById obtiene un registro de la tabla odontograma por su id
