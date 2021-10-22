@@ -28,13 +28,10 @@ func init() {
 
 // AddPsicologiaTipoAntecedente inserta un registro en la tabla tipoantecedentepsicologico
 // Último registro insertado con éxito
-func AddPsicologiaTipoAntecedente(m *PsicologiaTipoAntecedente) (err error) {
+func AddPsicologiaTipoAntecedente(m *PsicologiaTipoAntecedente) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdTipoAntecedentePsicologico = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetPsicologiaTipoAntecedenteById obtiene un registro de la tabla tipoantecedentepsicologico por su id

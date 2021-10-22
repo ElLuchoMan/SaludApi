@@ -3993,6 +3993,179 @@
                     }
                 }
             }
+        },
+        "/psicologiaTipoAntecedente/": {
+            "get": {
+                "tags": [
+                    "psicologiaTipoAntecedente"
+                ],
+                "description": "consulta todos los registros de la tabla PsicologiaTipoAntecedente",
+                "operationId": "PsicologiaTipoAntecedenteController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "psicologiaTipoAntecedente"
+                ],
+                "description": "agregar un registro en la tabla PsicologiaTipoAntecedente",
+                "operationId": "PsicologiaTipoAntecedenteController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaTipoAntecedente",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.PsicologiaTipoAntecedente"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/psicologiaTipoAntecedente/{id}": {
+            "get": {
+                "tags": [
+                    "psicologiaTipoAntecedente"
+                ],
+                "description": "consultar un registro de la tabla PsicologiaTipoAntecedente por su id",
+                "operationId": "PsicologiaTipoAntecedenteController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "psicologiaTipoAntecedente"
+                ],
+                "description": "actualizar un registro de la tabla PsicologiaTipoAntecedente",
+                "operationId": "PsicologiaTipoAntecedenteController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaTipoAntecedente",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "psicologiaTipoAntecedente"
+                ],
+                "description": "elimina un registro de la tabla PsicologiaTipoAntecedente",
+                "operationId": "PsicologiaTipoAntecedenteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -4496,222 +4669,4 @@
                 },
                 "LaboratorioFinal": {
                     "type": "string",
-                    "format": "byte"
-                },
-                "LaboratorioInicio": {
-                    "type": "string",
-                    "format": "byte"
-                },
-                "Otra": {
-                    "type": "string"
-                },
-                "OtraFinal": {
-                    "type": "string",
-                    "format": "byte"
-                },
-                "OtraInicio": {
-                    "type": "string",
-                    "format": "byte"
-                },
-                "PanoramicaInicio": {
-                    "type": "string",
-                    "format": "byte"
-                },
-                "PeriapicalFinal": {
-                    "type": "string",
-                    "format": "byte"
-                },
-                "PeriapicalInicio": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Sangria": {
-                    "type": "string"
-                },
-                "Tp": {
-                    "type": "string"
-                },
-                "Tpt": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.OdontologiaOdontograma": {
-            "title": "OdontologiaOdontograma",
-            "type": "object",
-            "properties": {
-                "Diagrama": {
-                    "type": "string"
-                },
-                "IdHojaHistoria": {
-                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
-                },
-                "IdOdontograma": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "IdTipoOdontograma": {
-                    "$ref": "#/definitions/models.OdontologiaTipoOdontograma"
-                },
-                "Observaciones": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.OdontologiaTipoOdontograma": {
-            "title": "OdontologiaTipoOdontograma",
-            "type": "object",
-            "properties": {
-                "Descripcion": {
-                    "type": "string"
-                },
-                "FechaCreacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "FechaModificacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "IdTipoOdontograma": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Nombre": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaAntecedente": {
-            "title": "PsicologiaAntecedente",
-            "type": "object",
-            "properties": {
-                "Actual_somatico": {
-                    "type": "string"
-                },
-                "IdHistoriaClinica": {
-                    "$ref": "#/definitions/models.MedicinaHistoriaClinica"
-                },
-                "IdPsicologiaAntecedente": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "IdTipoAntecedentePsicologico": {
-                    "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
-                },
-                "Pasado_somatico": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaComportamientoConsulta": {
-            "title": "PsicologiaComportamientoConsulta",
-            "type": "object",
-            "properties": {
-                "Afrontamiento": {
-                    "type": "string"
-                },
-                "IdComportamientoConsulta": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "IdHojaHistoria": {
-                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
-                },
-                "Problematica": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaComposicionFamiliar": {
-            "title": "PsicologiaComposicionFamiliar",
-            "type": "object",
-            "properties": {
-                "IdHojaHistoria": {
-                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
-                },
-                "IdPsicologiaComposicionFamiliar": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Observaciones": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaDiagnostico": {
-            "title": "PsicologiaDiagnostico",
-            "type": "object",
-            "properties": {
-                "Acuerdo": {
-                    "type": "string"
-                },
-                "Evolucion": {
-                    "type": "string"
-                },
-                "Hipotesis": {
-                    "type": "string"
-                },
-                "IdDiagnosticoPsicologia": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "IdHojaHistoria": {
-                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
-                },
-                "Observaciones": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaLimites": {
-            "title": "PsicologiaLimites",
-            "type": "object",
-            "properties": {
-                "Claros": {
-                    "type": "string"
-                },
-                "Difusos": {
-                    "type": "string"
-                },
-                "IdHojaHistoria": {
-                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
-                },
-                "IdLimite": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Rigidos": {
-                    "type": "string"
-                }
-            }
-        },
-        "models.PsicologiaTipoAntecedente": {
-            "title": "PsicologiaTipoAntecedente",
-            "type": "object",
-            "properties": {
-                "Activo": {
-                    "type": "boolean"
-                },
-                "Descripcion": {
-                    "type": "string"
-                },
-                "FechaCreacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "FechaModificacion": {
-                    "type": "string",
-                    "format": "datetime"
-                },
-                "IdTipoAntecedentePsicologico": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "Nombre": {
-                    "type": "string"
-                }
-            }
-        }
-    }
-}
+                    "format":
