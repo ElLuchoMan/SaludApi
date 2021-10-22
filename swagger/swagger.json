@@ -4669,4 +4669,268 @@
                 },
                 "LaboratorioFinal": {
                     "type": "string",
-                    "format":
+                    "format": "byte"
+                },
+                "LaboratorioInicio": {
+                    "type": "string",
+                    "format": "byte"
+                },
+                "Otra": {
+                    "type": "string"
+                },
+                "OtraFinal": {
+                    "type": "string",
+                    "format": "byte"
+                },
+                "OtraInicio": {
+                    "type": "string",
+                    "format": "byte"
+                },
+                "PanoramicaInicio": {
+                    "type": "string",
+                    "format": "byte"
+                },
+                "PeriapicalFinal": {
+                    "type": "string",
+                    "format": "byte"
+                },
+                "PeriapicalInicio": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Sangria": {
+                    "type": "string"
+                },
+                "Tp": {
+                    "type": "string"
+                },
+                "Tpt": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaOdontograma": {
+            "title": "OdontologiaOdontograma",
+            "type": "object",
+            "properties": {
+                "Diagrama": {
+                    "type": "string"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdOdontograma": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdTipoOdontograma": {
+                    "$ref": "#/definitions/models.OdontologiaTipoOdontograma"
+                },
+                "Observaciones": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaTipoOdontograma": {
+            "title": "OdontologiaTipoOdontograma",
+            "type": "object",
+            "properties": {
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdTipoOdontograma": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaAntecedente": {
+            "title": "PsicologiaAntecedente",
+            "type": "object",
+            "properties": {
+                "Actual_somatico": {
+                    "type": "string"
+                },
+                "IdHistoriaClinica": {
+                    "$ref": "#/definitions/models.MedicinaHistoriaClinica"
+                },
+                "IdPsicologiaAntecedente": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdTipoAntecedentePsicologico": {
+                    "$ref": "#/definitions/models.PsicologiaTipoAntecedente"
+                },
+                "Pasado_somatico": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaComportamientoConsulta": {
+            "title": "PsicologiaComportamientoConsulta",
+            "type": "object",
+            "properties": {
+                "Afrontamiento": {
+                    "type": "string"
+                },
+                "IdComportamientoConsulta": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Problematica": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaComposicionFamiliar": {
+            "title": "PsicologiaComposicionFamiliar",
+            "type": "object",
+            "properties": {
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdPsicologiaComposicionFamiliar": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Observaciones": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaDiagnostico": {
+            "title": "PsicologiaDiagnostico",
+            "type": "object",
+            "properties": {
+                "Acuerdo": {
+                    "type": "string"
+                },
+                "Evolucion": {
+                    "type": "string"
+                },
+                "Hipotesis": {
+                    "type": "string"
+                },
+                "IdDiagnosticoPsicologia": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Observaciones": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaLimites": {
+            "title": "PsicologiaLimites",
+            "type": "object",
+            "properties": {
+                "Claros": {
+                    "type": "string"
+                },
+                "Difusos": {
+                    "type": "string"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdLimite": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Rigidos": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaTipoAntecedente": {
+            "title": "PsicologiaTipoAntecedente",
+            "type": "object",
+            "properties": {
+                "Activo": {
+                    "type": "boolean"
+                },
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdTipoAntecedentePsicologico": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaValoracionInterpersonal": {
+            "title": "PsicologiaValoracionInterpersonal",
+            "type": "object",
+            "properties": {
+                "Autoridad": {
+                    "type": "string"
+                },
+                "Drogas": {
+                    "type": "string"
+                },
+                "Economicos": {
+                    "type": "string"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdValoracionInterpersonal": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Judiciales": {
+                    "type": "string"
+                },
+                "Motivo": {
+                    "type": "string"
+                },
+                "Orientacion": {
+                    "type": "string"
+                },
+                "Pareja": {
+                    "type": "string"
+                },
+                "Pares": {
+                    "type": "string"
+                },
+                "Proteccion": {
+                    "type": "string"
+                },
+                "Relaciones": {
+                    "type": "boolean"
+                },
+                "Satisfaccion": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

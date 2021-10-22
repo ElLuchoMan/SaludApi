@@ -40,9 +40,9 @@ func AddPsicologiaValoracionInterpersonal(m *PsicologiaValoracionInterpersonal) 
 	return
 }
 
-// GePsicologiaValoracionInterpersonalById obtiene un registro de la tabla valoracioninterpersonal por su id
+// GetPsicologiaValoracionInterpersonalById obtiene un registro de la tabla valoracioninterpersonal por su id
 // Id no existe
-func GePsicologiaValoracionInterpersonalById(id int) (v *PsicologiaValoracionInterpersonal, err error) {
+func GetPsicologiaValoracionInterpersonalById(id int) (v *PsicologiaValoracionInterpersonal, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaValoracionInterpersonal{IdValoracionInterpersonal: id}
 	if err = o.Read(v); err == nil {
