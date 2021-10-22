@@ -27,7 +27,7 @@ func (c *MedicinaTipoAntecedenteController) URLMapping() {
 // Post ...
 // @Title Post
 // @Description agregar un registro en la tabla MedicinaTipoAntecedente
-// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de MedicinaTipoAntecedente"
 // @Success 201 {int} models.MedicinaTipoAntecedente
 // @Failure 403 Cuerpo Vacío
 // @router / [post]
@@ -67,14 +67,14 @@ func (c *MedicinaTipoAntecedenteController) GetOne() {
 
 // GetAll ...
 // @Title Get All
-// @Description consulta todos los registros de la tabla AccesoHistoriaClinica
+// @Description consulta todos los registros de la tabla MedicinaTipoAntecedente
 // @Param   query   consulta    string  false   "Filtro. Por ejemplo, col1: v1, col2: v2 ..."
 // @Param   fields  consulta    string  false   "Campos devueltos. Por ejemplo, col1, col2 ..."
 // @Param   sortby  consulta    string  false   "Campos ordenados por. Por ejemplo, Col1, col2 ..."
 // @Param   order   consulta    string  false   "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ..."
 // @Param   limit   consulta    string  false   "Limite el tamaño del conjunto de resultados. Debe ser un número entero"
 // @Param   offset  consulta    string  false   "Posición inicial del conjunto de resultados. Debe ser un número entero"
-// @Success 200 {object} models.AccesoHistoriaClinica
+// @Success 200 {object} models.MedicinaTipoAntecedente
 // @Failure 403
 // @router / [get]
 func (c *MedicinaTipoAntecedenteController) GetAll() {
@@ -131,7 +131,7 @@ func (c *MedicinaTipoAntecedenteController) GetAll() {
 // @Title Put
 // @Description actualizar un registro de la tabla MedicinaTipoAntecedente
 // @Param	id		path 	string	true		"Id del registro a actualizar"
-// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de AccesoHistoriaClinica"
+// @Param	body		body 	models.MedicinaTipoAntecedente	true		"Cuerpo para el contenido de MedicinaTipoAntecedente"
 // @Success 200 {object} models.MedicinaTipoAntecedente
 // @Failure 403 :id no es entero
 // @router /:id [put]

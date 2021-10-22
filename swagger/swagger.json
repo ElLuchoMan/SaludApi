@@ -1404,7 +1404,7 @@
                 "tags": [
                     "medicinaTipoAntecedente"
                 ],
-                "description": "consulta todos los registros de la tabla AccesoHistoriaClinica",
+                "description": "consulta todos los registros de la tabla MedicinaTipoAntecedente",
                 "operationId": "MedicinaTipoAntecedenteController.Get All",
                 "parameters": [
                     {
@@ -1448,7 +1448,7 @@
                     "200": {
                         "description": "",
                         "schema": {
-                            "$ref": "#/definitions/models.AccesoHistoriaClinica"
+                            "$ref": "#/definitions/models.MedicinaTipoAntecedente"
                         }
                     },
                     "403": {
@@ -1466,7 +1466,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaTipoAntecedente",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaTipoAntecedente"
@@ -1528,7 +1528,7 @@
                     {
                         "in": "body",
                         "name": "body",
-                        "description": "Cuerpo para el contenido de AccesoHistoriaClinica",
+                        "description": "Cuerpo para el contenido de MedicinaTipoAntecedente",
                         "required": true,
                         "schema": {
                             "$ref": "#/definitions/models.MedicinaTipoAntecedente"
