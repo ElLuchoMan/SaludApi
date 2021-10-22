@@ -27,13 +27,10 @@ func init() {
 
 // AddPsicologiaDiagnostico inserta un registro en la tabla diagnosticopsicologia
 // Último registro insertado con éxito
-func AddPsicologiaDiagnostico(m *PsicologiaDiagnostico) (err error) {
+func AddPsicologiaDiagnostico(m *PsicologiaDiagnostico) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdDiagnosticoPsicologia = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetPsicologiaDiagnosticoById obtiene un registro de la tabla diagnosticopsicologia por su id

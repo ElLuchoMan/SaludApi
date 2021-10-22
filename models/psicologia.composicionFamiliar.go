@@ -22,17 +22,17 @@ func init() {
 	orm.RegisterModel(new(PsicologiaComposicionFamiliar))
 }
 
-// AddComposicionFamiliar inserta un registro en la tabla composicionfamiliar
+// AddPsicologiaComposicionFamiliar inserta un registro en la tabla composicionfamiliar
 // Último registro insertado con éxito
-func AddComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err error) {
+func AddPsicologiaComposicionFamiliar(m *PsicologiaComposicionFamiliar) (id int64, err error) {
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
 }
 
-// GetComposicionFamiliarById obtiene un registro de la tabla composicionfamiliar por su id
+// GetPsicologiaComposicionFamiliarById obtiene un registro de la tabla composicionfamiliar por su id
 // Id no existe
-func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
+func GetPsicologiaComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err error) {
 	o := orm.NewOrm()
 	v = &PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}
 	if err = o.Read(v); err == nil {
@@ -41,9 +41,9 @@ func GetComposicionFamiliarById(id int) (v *PsicologiaComposicionFamiliar, err e
 	return nil, err
 }
 
-// GetAllComposicionFamiliar obtiene todos los registros de la tabla composicionfamiliar
+// GetAllPsicologiaComposicionFamiliar obtiene todos los registros de la tabla composicionfamiliar
 // No existen registros
-func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby []string, order []string,
+func GetAllPsicologiaComposicionFamiliar(query map[string]string, fields []string, sortby []string, order []string,
 	offset int64, limit int64) (ml []interface{}, err error) {
 	o := orm.NewOrm()
 	qs := o.QueryTable(new(PsicologiaComposicionFamiliar))
@@ -112,9 +112,9 @@ func GetAllComposicionFamiliar(query map[string]string, fields []string, sortby 
 	return nil, err
 }
 
-// UpdateComposicionFamiliar actualiza un registro de la tabla composicionfamiliar
+// UpdatePsicologiaComposicionFamiliar actualiza un registro de la tabla composicionfamiliar
 // El registro a actualizar no existe
-func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
+func UpdatePsicologiaComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: m.IdPsicologiaComposicionFamiliar}
 	if err = o.Read(&v); err == nil {
@@ -126,9 +126,9 @@ func UpdateComposicionFamiliar(m *PsicologiaComposicionFamiliar) (err error) {
 	return
 }
 
-// DeleteComposicionFamiliar elimina un registro de la tabla composicionfamiliar
+// DeletePsicologiaComposicionFamiliar elimina un registro de la tabla composicionfamiliar
 // El registro a eliminar no existe
-func DeleteComposicionFamiliar(id int) (err error) {
+func DeletePsicologiaComposicionFamiliar(id int) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaComposicionFamiliar{IdPsicologiaComposicionFamiliar: id}
 	if err = o.Read(&v); err == nil {

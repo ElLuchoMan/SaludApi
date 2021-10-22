@@ -3474,6 +3474,352 @@
                     }
                 }
             }
+        },
+        "/psicologiaComposicionFamiliar/": {
+            "get": {
+                "tags": [
+                    "psicologiaComposicionFamiliar"
+                ],
+                "description": "consulta todos los registros de la tabla PsicologiaComposicionFamiliar",
+                "operationId": "PsicologiaComposicionFamiliarController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComposicionFamiliar"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "psicologiaComposicionFamiliar"
+                ],
+                "description": "agregar un registro en la tabla PsicologiaComposicionFamiliar",
+                "operationId": "PsicologiaComposicionFamiliarController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaComposicionFamiliar",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComposicionFamiliar"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.PsicologiaComposicionFamiliar"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/psicologiaComposicionFamiliar/{id}": {
+            "get": {
+                "tags": [
+                    "psicologiaComposicionFamiliar"
+                ],
+                "description": "consultar un registro de la tabla PsicologiaComposicionFamiliar por su id",
+                "operationId": "PsicologiaComposicionFamiliarController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComposicionFamiliar"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "psicologiaComposicionFamiliar"
+                ],
+                "description": "actualizar un registro de la tabla PsicologiaComposicionFamiliar",
+                "operationId": "PsicologiaComposicionFamiliarController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaComposicionFamiliar",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComposicionFamiliar"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaComposicionFamiliar"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "psicologiaComposicionFamiliar"
+                ],
+                "description": "elimina un registro de la tabla PsicologiaComposicionFamiliar",
+                "operationId": "PsicologiaComposicionFamiliarController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
+        },
+        "/psicologiaDiagnostico/": {
+            "get": {
+                "tags": [
+                    "psicologiaDiagnostico"
+                ],
+                "description": "consulta todos los registros de la tabla PsicologiaDiagnostico",
+                "operationId": "PsicologiaDiagnosticoController.Get All",
+                "parameters": [
+                    {
+                        "in": "consulta",
+                        "name": "query",
+                        "description": "Filtro. Por ejemplo, col1: v1, col2: v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "fields",
+                        "description": "Campos devueltos. Por ejemplo, col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "sortby",
+                        "description": "Campos ordenados por. Por ejemplo, Col1, col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "order",
+                        "description": "El orden correspondiente a cada campo de clasificación, si es un valor único, se aplica a todos los campos de clasificación. Por ejemplo, desc, asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "limit",
+                        "description": "Limite el tamaño del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    },
+                    {
+                        "in": "consulta",
+                        "name": "offset",
+                        "description": "Posición inicial del conjunto de resultados. Debe ser un número entero",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "psicologiaDiagnostico"
+                ],
+                "description": "agregar un registro en la tabla PsicologiaDiagnostico",
+                "operationId": "PsicologiaDiagnosticoController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaDiagnostico",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaDiagnostico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.PsicologiaDiagnostico"
+                    },
+                    "403": {
+                        "description": "Cuerpo Vacío"
+                    }
+                }
+            }
+        },
+        "/psicologiaDiagnostico/{id}": {
+            "get": {
+                "tags": [
+                    "psicologiaDiagnostico"
+                ],
+                "description": "consultar un registro de la tabla PsicologiaDiagnostico por su id",
+                "operationId": "PsicologiaDiagnosticoController.Get One",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id a consultar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id está vacío"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "psicologiaDiagnostico"
+                ],
+                "description": "actualizar un registro de la tabla PsicologiaDiagnostico",
+                "operationId": "PsicologiaDiagnosticoController.Put",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a actualizar",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Cuerpo para el contenido de PsicologiaDiagnostico",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaDiagnostico"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PsicologiaDiagnostico"
+                        }
+                    },
+                    "403": {
+                        "description": ":id no es entero"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "psicologiaDiagnostico"
+                ],
+                "description": "elimina un registro de la tabla PsicologiaDiagnostico",
+                "operationId": "PsicologiaDiagnosticoController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "Id del registro a eliminar",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} borrado exitoso!"
+                    },
+                    "403": {
+                        "description": "Id vacío"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -4100,6 +4446,47 @@
                     "$ref": "#/definitions/models.MedicinaHojaHistoria"
                 },
                 "Problematica": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaComposicionFamiliar": {
+            "title": "PsicologiaComposicionFamiliar",
+            "type": "object",
+            "properties": {
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdPsicologiaComposicionFamiliar": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Observaciones": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.PsicologiaDiagnostico": {
+            "title": "PsicologiaDiagnostico",
+            "type": "object",
+            "properties": {
+                "Acuerdo": {
+                    "type": "string"
+                },
+                "Evolucion": {
+                    "type": "string"
+                },
+                "Hipotesis": {
+                    "type": "string"
+                },
+                "IdDiagnosticoPsicologia": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Observaciones": {
                     "type": "string"
                 }
             }
