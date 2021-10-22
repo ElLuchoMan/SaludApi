@@ -35,13 +35,10 @@ func init() {
 
 // AddOdontologiaExamenesComplementarios inserta un registro en la tabla examenescomplementarios
 // Último registro insertado con éxito
-func AddOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementarios) (err error) {
+func AddOdontologiaExamenesComplementarios(m *OdontologiaExamenesComplementarios) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdExamenesComplementarios = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetOdontologiaExamenesComplementariosById obtiene un registro de la tabla examenescomplementarios por su id

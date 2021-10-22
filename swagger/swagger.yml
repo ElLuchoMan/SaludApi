@@ -1899,6 +1899,47 @@ definitions:
         type: string
       Supernumerarios:
         type: string
+  models.OdontologiaExamenesComplementarios:
+    title: OdontologiaExamenesComplementarios
+    type: object
+    properties:
+      Coagulacion:
+        type: string
+      IdExamenesComplementarios:
+        type: integer
+        format: int64
+      IdHojaHistoria:
+        type: integer
+        format: int64
+      LaboratorioFinal:
+        type: string
+        format: byte
+      LaboratorioInicio:
+        type: string
+        format: byte
+      Otra:
+        type: string
+      OtraFinal:
+        type: string
+        format: byte
+      OtraInicio:
+        type: string
+        format: byte
+      PanoramicaInicio:
+        type: string
+        format: byte
+      PeriapicalFinal:
+        type: string
+        format: byte
+      PeriapicalInicio:
+        type: integer
+        format: int64
+      Sangria:
+        type: string
+      Tp:
+        type: string
+      Tpt:
+        type: string
   models.OdontologiaTipoOdontograma:
     title: OdontologiaTipoOdontograma
     type: object
