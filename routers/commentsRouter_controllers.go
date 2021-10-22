@@ -637,6 +637,51 @@ func init() {
             Filters: nil,
             Params: nil})
 
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"],
+        beego.ControllerComments{
+            Method: "Post",
+            Router: "/",
+            AllowHTTPMethods: []string{"post"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"],
+        beego.ControllerComments{
+            Method: "GetAll",
+            Router: "/",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"],
+        beego.ControllerComments{
+            Method: "GetOne",
+            Router: "/:id",
+            AllowHTTPMethods: []string{"get"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"],
+        beego.ControllerComments{
+            Method: "Put",
+            Router: "/:id",
+            AllowHTTPMethods: []string{"put"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
+    beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenEstomatologicoController"],
+        beego.ControllerComments{
+            Method: "Delete",
+            Router: "/:id",
+            AllowHTTPMethods: []string{"delete"},
+            MethodParams: param.Make(),
+            Filters: nil,
+            Params: nil})
+
     beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenesComplementariosController"] = append(beego.GlobalControllerRouter["github.com/ElLuchoMan/SaludApi/controllers:OdontologiaExamenesComplementariosController"],
         beego.ControllerComments{
             Method: "Post",

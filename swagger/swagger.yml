@@ -1899,6 +1899,45 @@ definitions:
         type: string
       Supernumerarios:
         type: string
+  models.OdontologiaExamenEstomatologico:
+    title: OdontologiaExamenEstomatologico
+    type: object
+    properties:
+      ArticulacionTemporo:
+        type: string
+      Carrillos:
+        type: string
+      GlandulasSalivares:
+        type: string
+      IdExamenEstomatologico:
+        type: integer
+        format: int64
+      IdHojaHistoria:
+        $ref: '#/definitions/models.MedicinaHojaHistoria'
+      Labios:
+        type: string
+      Lengua:
+        type: string
+      Maxilares:
+        type: string
+      MusculosMasticadores:
+        type: string
+      Observaciones:
+        type: string
+      Paladar:
+        type: string
+      PisoBoca:
+        type: string
+      SenosMaxilares:
+        type: string
+      SistemaLinfatico:
+        type: string
+      SistemaMuscular:
+        type: string
+      SistemaNervioso:
+        type: string
+      SistemaRegional:
+        type: string
   models.OdontologiaExamenesComplementarios:
     title: OdontologiaExamenesComplementarios
     type: object
