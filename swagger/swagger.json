@@ -2660,4 +2660,229 @@
                 },
                 "FechaModificacion": {
                     "type": "string",
-                    "format": "datetime
+                    "format": "datetime"
+                },
+                "IdTipoAntecedente": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.MedicinaTipoExamen": {
+            "title": "MedicinaTipoExamen",
+            "type": "object",
+            "properties": {
+                "IdTipoExamen": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaAnamnesis": {
+            "title": "OdontologiaAnamnesis",
+            "type": "object",
+            "properties": {
+                "Alergias": {
+                    "type": "string"
+                },
+                "AntecedenteFamiliar": {
+                    "type": "string"
+                },
+                "Cardiopatias": {
+                    "type": "string"
+                },
+                "Ceda": {
+                    "type": "string"
+                },
+                "Cepillado": {
+                    "type": "string"
+                },
+                "Chicle": {
+                    "type": "string"
+                },
+                "Diabetes": {
+                    "type": "string"
+                },
+                "Dulces": {
+                    "type": "string"
+                },
+                "EnfermedadRespiratoria": {
+                    "type": "string"
+                },
+                "Enjuague": {
+                    "type": "string"
+                },
+                "FiebreReumatica": {
+                    "type": "string"
+                },
+                "Fuma": {
+                    "type": "string"
+                },
+                "Hemorragias": {
+                    "type": "string"
+                },
+                "Hepatitis": {
+                    "type": "string"
+                },
+                "Hipertension": {
+                    "type": "string"
+                },
+                "IdHistoriaClinica": {
+                    "$ref": "#/definitions/models.MedicinaHistoriaClinica"
+                },
+                "IdOdontologiaAnamnesis": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Irradiaciones": {
+                    "type": "string"
+                },
+                "Medicamentos": {
+                    "type": "string"
+                },
+                "Otras": {
+                    "type": "string"
+                },
+                "Sinusitis": {
+                    "type": "string"
+                },
+                "Tratamiento": {
+                    "type": "string"
+                },
+                "UltimaVisita": {
+                    "type": "string",
+                    "format": "datetime"
+                }
+            }
+        },
+        "models.OdontologiaControlPlaca": {
+            "title": "OdontologiaControlPlaca",
+            "type": "object",
+            "properties": {
+                "Fecha": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "IdTipoOdontograma": {
+                    "$ref": "#/definitions/models.OdontologiaTipoOdontograma"
+                },
+                "IdcontrolPlaca": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IndiceActual": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IndiceAnterior": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Vestibulares": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaDiagnostico": {
+            "title": "OdontologiaDiagnostico",
+            "type": "object",
+            "properties": {
+                "Diagnostivo": {
+                    "type": "string"
+                },
+                "Evolucion": {
+                    "type": "string"
+                },
+                "IdDiagnostico": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Pronostico": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaExamenDental": {
+            "title": "OdontologiaExamenDental",
+            "type": "object",
+            "properties": {
+                "Abrasion": {
+                    "type": "string"
+                },
+                "IdExamenDental": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "IdHojaHistoria": {
+                    "$ref": "#/definitions/models.MedicinaHojaHistoria"
+                },
+                "Manchas": {
+                    "type": "string"
+                },
+                "Observaciones": {
+                    "type": "string"
+                },
+                "Oclusion": {
+                    "type": "string"
+                },
+                "Otros": {
+                    "type": "string"
+                },
+                "PatologiaPulpar": {
+                    "type": "string"
+                },
+                "PlacaBlanda": {
+                    "type": "string"
+                },
+                "PlacaCalcificada": {
+                    "type": "string"
+                },
+                "Supernumerarios": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.OdontologiaTipoOdontograma": {
+            "title": "OdontologiaTipoOdontograma",
+            "type": "object",
+            "properties": {
+                "Descripcion": {
+                    "type": "string"
+                },
+                "FechaCreacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "FechaModificacion": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "IdTipoOdontograma": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
