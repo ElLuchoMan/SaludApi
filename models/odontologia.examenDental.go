@@ -32,13 +32,10 @@ func init() {
 
 // AddOdontologiaExamenDental inserta un registro en la tabla examendental
 // Último registro insertado con éxito
-func AddOdontologiaExamenDental(m *OdontologiaExamenDental) (err error) {
+func AddOdontologiaExamenDental(m *OdontologiaExamenDental) (id int64, err error) {
 	o := orm.NewOrm()
-	m.IdExamenDental = 0
-	if _, err = o.Insert(m); err == nil {
-		return nil
-	}
-	return err
+	id, err = o.Insert(m)
+	return
 }
 
 // GetOdontologiaExamenDentalById obtiene un registro de la tabla examendental por su id
