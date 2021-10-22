@@ -85,6 +85,31 @@ func init() {
 				&controllers.OdontologiaExamenDentalController{},
 			),
 		),
+		beego.NSNamespace("/odontologiaExamenesComplementarios",
+			beego.NSInclude(
+				&controllers.OdontologiaExamenesComplementariosController{},
+			),
+		),
+		beego.NSNamespace("/odontologiaExamenEstomatologico",
+			beego.NSInclude(
+				&controllers.OdontologiaExamenEstomatologicoController{},
+			),
+		),
+		beego.NSNamespace("/odontologiaOdontograma",
+			beego.NSInclude(
+				&controllers.OdontologiaOdontogramaController{},
+			),
+		),
+		beego.NSNamespace("/odontologiaTipoOdontograma",
+			beego.NSInclude(
+				&controllers.OdontologiaTipoOdontogramaController{},
+			),
+		),
+		beego.NSNamespace("/psicologiaAntecedente",
+			beego.NSInclude(
+				&controllers.PsicologiaAntecedenteController{},
+			),
+		),
 	)
 	beego.AddNamespace(ns)
 }

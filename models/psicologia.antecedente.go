@@ -114,9 +114,9 @@ func GetAllPsicologiaAntecedente(query map[string]string, fields []string, sortb
 	return nil, err
 }
 
-// UpdatePsicologiaAntecedenteById actualiza un registro de la tabla antecedentepsicologico por su id
+// UpdatePsicologiaAntecedente actualiza un registro de la tabla antecedentepsicologico por su id
 // El registro a actualizar no existe
-func UpdatePsicologiaAntecedenteById(m *PsicologiaAntecedente) (err error) {
+func UpdatePsicologiaAntecedente(m *PsicologiaAntecedente) (err error) {
 	o := orm.NewOrm()
 	v := PsicologiaAntecedente{IdPsicologiaAntecedente: m.IdPsicologiaAntecedente}
 	if err = o.Read(&v); err == nil {
