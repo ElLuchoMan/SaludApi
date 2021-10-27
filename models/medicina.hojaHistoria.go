@@ -16,7 +16,7 @@ type MedicinaHojaHistoria struct {
 	Motivo            string                   `orm:"column(motivo);null"`
 	IdDiagnostico     *MedicinaDiagnostico     `orm:"column(id_diagnostico);rel(fk);null"`
 	Observacion       string                   `orm:"column(observacion);null"`
-	Evolucion         string                   `orm:"column(evolucion);null"`
+	Evolucion         []string                 `orm:"column(evolucion);null"`
 	IdEspecialidad    int                      `orm:"column(id_especialidad);null"`
 	IdProfesional     int                      `orm:"column(id_profesional);null"`
 	IdHistoriaClinica *MedicinaHistoriaClinica `orm:"column(id_historia_clinica);rel(fk);null"`

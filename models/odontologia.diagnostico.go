@@ -13,7 +13,7 @@ type OdontologiaDiagnostico struct {
 	IdDiagnostico  int                   `orm:"column(id_diagnostico);pk;auto"`
 	Diagnostivo    string                `orm:"column(diagnostivo);null"`
 	Pronostico     string                `orm:"column(pronostico);null"`
-	Evolucion      string                `orm:"column(evolucion);null"`
+	Evolucion      []string              `orm:"column(evolucion);null"`
 	Observaciones  string                `orm:"column(observaciones);null"`
 	IdHojaHistoria *MedicinaHojaHistoria `orm:"column(id_hoja_historia);rel(fk);null"`
 }

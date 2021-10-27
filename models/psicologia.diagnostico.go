@@ -15,7 +15,7 @@ type PsicologiaDiagnostico struct {
 	Hipotesis               string                `orm:"column(hipotesis);null"`
 	Acuerdo                 string                `orm:"column(acuerdo);null"`
 	Observaciones           string                `orm:"column(observaciones);null"`
-	Evolucion               string                `orm:"column(evolucion);null"`
+	Evolucion               []string              `orm:"column(evolucion);null"`
 }
 
 func (p *PsicologiaDiagnostico) TableName() string {

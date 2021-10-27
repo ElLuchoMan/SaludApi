@@ -16,7 +16,7 @@ type OdontologiaControlPlaca struct {
 	IndiceActual      int                         `orm:"column(indice_actual);null"`
 	Fecha             time.Time                   `orm:"column(fecha);type(date);null"`
 	IdHojaHistoria    *MedicinaHojaHistoria       `orm:"column(id_hoja_historia);rel(fk);null"`
-	Vestibulares      string                      `orm:"column(vestibulares);null"`
+	Vestibulares      string                      `orm:"column(vestibulares);type(json);null"`
 	Observaciones     string                      `orm:"column(observaciones);null"`
 	IdTipoOdontograma *OdontologiaTipoOdontograma `orm:"column(id_tipo_odontograma);rel(fk);null"`
 }

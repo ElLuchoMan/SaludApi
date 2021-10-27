@@ -15,7 +15,7 @@ type MedicinaConsultaFisioterapia struct {
 	Motivo_consulta                string                `orm:"column(motivo_consulta);null"`
 	Valoracion                     string                `orm:"column(valoracion);null"`
 	PlanManejo                     string                `orm:"column(plan_manejo);null"`
-	Evolucion                      string                `orm:"column(evolucion);null"`
+	Evolucion                      []string              `orm:"column(evolucion);null"`
 	Observaciones                  string                `orm:"column(observaciones);null"`
 }
 

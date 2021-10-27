@@ -12,7 +12,7 @@ import (
 type OdontologiaOdontograma struct {
 	IdOdontograma     int                         `orm:"column(id_odontograma);pk;auto"`
 	IdHojaHistoria    *MedicinaHojaHistoria       `orm:"column(id_hoja_historia);rel(fk);null"`
-	Diagrama          string                      `orm:"column(diagrama);null"`
+	Diagrama          string                      `orm:"column(diagrama);type(json);null"`
 	Observaciones     string                      `orm:"column(observaciones);null"`
 	IdTipoOdontograma *OdontologiaTipoOdontograma `orm:"column(id_tipo_odontograma);rel(fk);null"`
 }
